@@ -65,6 +65,7 @@ router.post('/', async (req, res) => {
 // @desc    Lấy tất cả bộ đề
 // @access  Public
 router.get('/', async (req, res) => {
+    console.log("=== API LOG: Đang gọi route GET /api/quizzes ===");
     const { system } = req.query; 
 
     try {
@@ -77,10 +78,12 @@ router.get('/', async (req, res) => {
             filter = { isSystemQuiz: false }; 
         }
 
+        console.log("- Đang thực hiện Quiz.find với filter:", filter);
         const quizzes = await Quiz.find(filter);
+        console.log("- Tìm thấy số lượng bộ đề:", quizzes.length);
         res.json(quizzes);
     } catch (err) {
-        console.error(err.message);
+        console.error("- LỖI API /api/quizzes:", err.message);
         res.status(500).send('Lỗi Server');
     }
 });
