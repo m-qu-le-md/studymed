@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Sử dụng biến môi trường REACT_APP_API_URL
 // Khi chạy cục bộ hoặc chưa cài đặt biến môi trường, ứng dụng sẽ gọi trực tiếp đến backend trên Render
-const API_URL = process.env.REACT_APP_API_URL || 'https://studymed-backend.onrender.com';
+const API_URL = process.env.REACT_APP_API_URL || 'https://studymed.onrender.com';
 
 // Tạo một instance Axios tùy chỉnh
 const api = axios.create({
