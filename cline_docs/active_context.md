@@ -7,6 +7,7 @@
   - `/api/users`: Quản lý thông tin người dùng.
   - `/api/study`: Quản lý tiến trình học tập.
 - CORS đã được cấu hình mở (`app.use(cors())`) để hỗ trợ phát triển local.
+- Yêu cầu mới: Tự động push code lên GitHub sau mỗi thay đổi thành công.
 
 ## Các thay đổi gần đây (Dựa trên code)
 - Xóa bỏ `authRoutes` khỏi `server/index.js` (dòng 11, 33).

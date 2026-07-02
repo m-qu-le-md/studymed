@@ -77,7 +77,7 @@ router.get('/', async (req, res) => {
             filter = { isSystemQuiz: false }; 
         }
 
-        const quizzes = await Quiz.find(filter).populate('createdBy', 'username email');
+        const quizzes = await Quiz.find(filter);
         res.json(quizzes);
     } catch (err) {
         console.error(err.message);
