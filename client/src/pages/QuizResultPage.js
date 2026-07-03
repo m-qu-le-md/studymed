@@ -1,7 +1,7 @@
 // src/pages/QuizResultPage.js
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 
 const formatTime = (seconds) => {
@@ -87,39 +87,40 @@ function QuizResultPage() {
         return <div className="flex items-center justify-center min-h-screen">Đang tính toán kết quả...</div>;
     }
 
+    // Reading this as: Quiz result page for medical students, with a minimalist/calm language, leaning toward modern sans-serif typography + neutral palette.
     return (
-        <div className="min-h-screen bg-soft-gray flex items-center justify-center p-4">
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center max-w-md w-full">
-                <h1 className="text-3xl font-bold text-primary-blue mb-2">Kết Quả Bài Làm</h1>
-                <p className="text-gray-600 mb-6">Bộ đề: <span className="font-semibold">{results.quizTitle}</span></p>
+        <div className="min-h-[100dvh] bg-zinc-50 flex items-center justify-center p-6 selection:bg-accent selection:text-white">
+            <div className="w-full max-w-lg bg-white p-10 rounded-3xl border border-zinc-200 shadow-sm text-center">
+                <h1 className="text-xl font-semibold text-zinc-950 mb-2">Kết quả</h1>
+                <p className="text-sm text-zinc-500 mb-10">{results.quizTitle}</p>
 
-                <div className="mb-8">
-                    <p className="text-6xl font-bold text-indigo-600">{results.score}</p>
-                    <p className="text-gray-500">(thang điểm 10)</p>
+                <div className="mb-12">
+                    <p className="text-7xl font-semibold text-zinc-950 tracking-tighter">{results.score}</p>
+                    <p className="text-sm text-zinc-400 mt-2">điểm / 10</p>
                 </div>
 
-                <div className="flex justify-around items-center mb-8 text-center">
+                <div className="grid grid-cols-3 gap-4 mb-10 border-t border-b border-zinc-100 py-6">
                     <div>
-                        <p className="text-3xl font-bold text-blue-600">{results.totalQuestions}</p>
-                        <p className="text-sm text-gray-500">Tổng số câu</p>
+                        <p className="text-xl font-semibold text-zinc-950">{results.totalQuestions}</p>
+                        <p className="text-[10px] uppercase tracking-wider text-zinc-400 font-medium">Câu hỏi</p>
                     </div>
                     <div>
-                        <p className="text-3xl font-bold text-green-600">{results.correctCount}</p>
-                        <p className="text-sm text-gray-500">Số câu đúng</p>
+                        <p className="text-xl font-semibold text-emerald-600">{results.correctCount}</p>
+                        <p className="text-[10px] uppercase tracking-wider text-zinc-400 font-medium">Đúng</p>
                     </div>
                     <div>
-                        <p className="text-3xl font-bold text-red-600">{results.incorrectCount}</p>
-                        <p className="text-sm text-gray-500">Số câu sai</p>
+                        <p className="text-xl font-semibold text-red-600">{results.incorrectCount}</p>
+                        <p className="text-[10px] uppercase tracking-wider text-zinc-400 font-medium">Sai</p>
                     </div>
                 </div>
 
                 {location.state.timeTaken !== undefined && (
-                     <p className="text-gray-600 mb-8">Thời gian hoàn thành: <span className="font-semibold">{formatTime(location.state.timeTaken)}</span></p>
+                     <p className="text-sm text-zinc-500 mb-10">Thời gian: <span className="font-medium text-zinc-950">{formatTime(location.state.timeTaken)}</span></p>
                 )}
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Button secondary onClick={() => navigate('/dashboard')} className="w-full">Về Dashboard</Button>
-                    <Button primary onClick={handleReview} className="w-full">Xem lại bài làm</Button>
+                <div className="flex gap-4">
+                    <button onClick={() => navigate('/dashboard')} className="flex-1 px-6 py-3 rounded-full text-sm font-medium border border-zinc-200 hover:bg-zinc-50 transition-colors">Về Dashboard</button>
+                    <button onClick={handleReview} className="flex-1 bg-accent text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">Xem lại</button>
                 </div>
             </div>
         </div>

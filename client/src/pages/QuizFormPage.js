@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 import QuizGeneralInfo from '../components/QuizGeneralInfo';
 import QuestionSingleEditor from '../components/QuestionSingleEditor';
@@ -220,22 +220,21 @@ function QuizFormPage() {
 
   if (loading) return <div className="flex items-center justify-center min-h-screen">Đang tải...</div>;
 
+  // Reading this as: Form page for quiz management, with a minimalist/calm language, leaning toward modern sans-serif typography + neutral palette.
   return (
-    <div className="min-h-screen bg-soft-gray p-4">
-      <div className="container mx-auto p-8 bg-white rounded-xl shadow-lg max-w-4xl">
-        <h1 className="text-3xl font-bold text-primary-blue mb-8 text-center">{isEditMode ? 'Chỉnh Sửa Bộ Đề' : 'Tạo Bộ Đề Mới'}</h1>
-        <form onSubmit={handleSubmit}>
+    <div className="min-h-[100dvh] bg-zinc-50 p-6 md:p-12 selection:bg-accent selection:text-white">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-2xl font-semibold text-zinc-950 mb-10 tracking-tight">{isEditMode ? 'Chỉnh sửa bộ đề' : 'Tạo bộ đề mới'}</h1>
+        <form onSubmit={handleSubmit} className="space-y-10">
           
-          <QuizGeneralInfo 
-            quiz={quiz} 
-            handleInputChange={handleQuizChange} 
-          />
+          <div className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm">
+            <QuizGeneralInfo quiz={quiz} handleInputChange={handleQuizChange} />
+          </div>
           
-          <div className="mb-8 p-6 border border-gray-200 rounded-2xl shadow-sm">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Các câu hỏi</h2>
-            {/* ĐÃ CẮT BỎ LỚP VỎ BỌC CỨNG Ở ĐÂY */}
+          <div className="space-y-6">
+            <h2 className="text-lg font-medium text-zinc-950">Danh sách câu hỏi</h2>
             {quiz.questions.map((question, qIndex) => (
-              <div key={qIndex} className="mb-6">
+              <div key={qIndex} className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
                 {question.type === 'single' ? (
                   <QuestionSingleEditor
                     qIndex={qIndex}
@@ -269,14 +268,14 @@ function QuizFormPage() {
                 )}
               </div>
             ))}
-            <div className="flex gap-4 mt-4">
-              <Button type="button" onClick={handleAddSingleQuestion} className="w-full bg-primary-blue hover:bg-primary-blue-active">Thêm Câu Hỏi Đơn</Button>
-              <Button type="button" onClick={handleAddGroupQuestion} className="w-full bg-indigo-500 hover:bg-indigo-600">Thêm Nhóm Câu Hỏi (Case)</Button>
+            <div className="flex gap-4">
+              <button type="button" onClick={handleAddSingleQuestion} className="flex-1 border border-zinc-200 text-zinc-600 px-4 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors">Thêm câu hỏi đơn</button>
+              <button type="button" onClick={handleAddGroupQuestion} className="flex-1 border border-zinc-200 text-zinc-600 px-4 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors">Thêm nhóm câu hỏi</button>
             </div>
           </div>
-          <div className="flex justify-end space-x-4 mt-8">
-            <Button type="button" secondary onClick={() => navigate('/dashboard')}>Hủy</Button>
-            <Button type="submit" primary>{isEditMode ? 'Cập Nhật' : 'Lưu'}</Button>
+          <div className="flex justify-end gap-4 pt-8 border-t border-zinc-200">
+            <button type="button" onClick={() => navigate('/dashboard')} className="px-6 py-2.5 text-sm text-zinc-500 hover:text-zinc-950 font-medium">Hủy</button>
+            <button type="submit" className="bg-accent text-white px-8 py-2.5 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">{isEditMode ? 'Cập nhật' : 'Lưu bộ đề'}</button>
           </div>
         </form>
       </div>

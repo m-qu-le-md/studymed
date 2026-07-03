@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 import QuestionSingleDisplay from '../components/QuestionSingleDisplay';
 import ResizableCaseStudy from '../components/ResizableCaseStudy';
@@ -23,7 +23,7 @@ function QuizReviewPage() {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   
   // STATE CỠ CHỮ: 'sm' (Nhỏ), 'base' (Vừa), 'lg' (Lớn)
-  const [textSize, setTextSize] = useState('base'); 
+  const [textSize] = useState('base');
 
   const fetchBookmarks = useCallback(async () => {
     try {
@@ -147,7 +147,7 @@ function QuizReviewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col relative">
+    <div className="min-h-[100dvh] bg-zinc-50 flex flex-col relative selection:bg-accent selection:text-white">
       
       <QuizNavigationDrawer
         isOpen={isNavDrawerOpen}
@@ -157,36 +157,25 @@ function QuizReviewPage() {
         bookmarkedQuestions={bookmarkedQuestions}
         quizMode="review"
         currentQuestionIndex={0} 
-        setCurrentQuestionIndex={handleNavigateToQuestion} // Đã cập nhật khả năng nhận qId
+        setCurrentQuestionIndex={handleNavigateToQuestion}
       />
 
-      <div className="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-200 shadow-sm px-4 md:px-8 py-3 flex justify-between items-center transition-all">
-        <div className="flex items-center gap-4 truncate">
-            <h1 className="text-xl md:text-2xl font-bold text-blue-800 truncate">
+      <header className="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-zinc-200 px-6 py-4 flex items-center justify-between">
+        <div className="truncate">
+            <h1 className="text-sm font-semibold text-zinc-950 truncate">
                 Xem lại: {quiz.title}
             </h1>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-3">
-          {/* THANH ĐIỀU CHỈNH CỠ CHỮ */}
-          <div className="flex items-center bg-gray-100/80 rounded-lg p-1 border border-gray-200">
-            <button onClick={() => setTextSize('sm')} title="Thu nhỏ chữ" className={`px-2 py-1 rounded text-xs font-bold transition-all ${textSize === 'sm' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A-</button>
-            <button onClick={() => setTextSize('base')} title="Chữ mặc định" className={`px-2 py-1 rounded text-sm font-bold transition-all ${textSize === 'base' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A</button>
-            <button onClick={() => setTextSize('lg')} title="Phóng to chữ" className={`px-2 py-1 rounded text-base font-bold transition-all ${textSize === 'lg' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A+</button>
-          </div>
-
-          <button
-            onClick={() => setIsNavDrawerOpen(true)}
-            className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg font-semibold transition-colors text-sm md:text-base border border-blue-200"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-            <span className="hidden sm:inline">Danh sách</span>
+        <div className="flex items-center gap-4">
+          <button onClick={() => setIsNavDrawerOpen(true)} className="text-xs font-medium text-zinc-500 hover:text-accent transition-colors">
+            Danh sách câu hỏi
           </button>
-          <Button secondary onClick={() => navigate('/dashboard')} className="py-1.5 md:py-2 text-sm md:text-base hidden md:block">
+          <button onClick={() => navigate('/dashboard')} className="text-xs font-medium text-zinc-500 hover:text-zinc-950">
             Thoát
-          </Button>
+          </button>
         </div>
-      </div>
+      </header>
 
       <div className="w-full max-w-[1600px] flex-1 mx-auto my-4 md:my-8 p-4 md:p-6 lg:p-8">
         
@@ -238,10 +227,10 @@ function QuizReviewPage() {
           return null;
         })}
         
-        <div className="flex justify-center mt-12 border-t pt-10 max-w-5xl mx-auto w-full mb-12">
-          <Button primary onClick={() => navigate('/dashboard')} className="py-3 px-12 text-lg shadow-xl bg-blue-600 hover:bg-blue-700">
-            Hoàn tất xem lại
-          </Button>
+        <div className="flex justify-center mt-12 border-t border-zinc-200 pt-10 max-w-5xl mx-auto w-full mb-12">
+          <button onClick={() => navigate('/dashboard')} className="bg-zinc-950 text-white px-12 py-3 rounded-full font-medium hover:bg-zinc-800 transition-colors">
+            Hoàn tất
+          </button>
         </div>
       </div>
     </div>

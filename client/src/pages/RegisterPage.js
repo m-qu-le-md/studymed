@@ -33,44 +33,44 @@ function RegisterPage() {
     }
   };
 
+  // Reading this as: Registration page for medical students, with a minimalist/calm language, leaning toward modern sans-serif typography + neutral palette.
   return (
-    <div 
-      className="fixed top-0 left-0 w-full h-dvh bg-cover bg-center font-sans" 
-      style={{ backgroundImage: `url(${AuthBackground})` }}
-    >
-      <Link to="/" className="absolute top-0 left-0 p-8 text-xl font-bold text-white tracking-wider">
+    <div className="min-h-[100dvh] bg-zinc-50 flex items-center justify-center p-6">
+      <Link to="/" className="fixed top-6 left-6 text-sm font-semibold tracking-tight text-zinc-950">
         STUDYMED
       </Link>
 
-      <div className="w-full h-full flex items-center justify-center p-4">
-        <div className="w-full max-w-sm bg-black/30 backdrop-blur-lg rounded-2xl shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">
-            Chào mừng bạn
-          </h2>
-          <form onSubmit={onSubmit}>
-            <label className="block text-white text-sm font-semibold mb-1 text-left">Tên đăng nhập</label>
-            <InputField name="username" value={username} onChange={onChange} required />
-            
-            <label className="block text-white text-sm font-semibold mb-1 mt-4 text-left">Email</label>
-            <InputField type="email" name="email" value={email} onChange={onChange} required />
-            
-            <label className="block text-white text-sm font-semibold mb-1 mt-4 text-left">Mật khẩu</label>
-            <InputField type="password" name="password" value={password} onChange={onChange} required minLength="6" />
-
-            <label className="block text-white text-sm font-semibold mb-1 mt-4 text-left">Xác nhận mật khẩu</label>
-            <InputField type="password" name="password2" value={password2} onChange={onChange} required />
-            
-            <Button primary type="submit" className="w-full mt-6 py-3 text-base">
-              Đăng Ký
-            </Button>
-          </form>
-          <p className="mt-6 text-center text-gray-300 text-sm">
-            Bạn đã có tài khoản?{' '}
-            <Link to="/login" className="text-white hover:underline font-semibold">
-              Đăng nhập ngay
-            </Link>
-          </p>
-        </div>
+      <div className="w-full max-w-md bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm">
+        <h2 className="text-2xl font-semibold text-zinc-950 mb-8 tracking-tight text-center">
+          Đăng ký tài khoản
+        </h2>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div>
+            <label className="block text-xs font-medium text-zinc-500 mb-1.5">Tên đăng nhập</label>
+            <InputField name="username" value={username} onChange={onChange} required className="w-full" />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-zinc-500 mb-1.5">Email</label>
+            <InputField type="email" name="email" value={email} onChange={onChange} required className="w-full" />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-zinc-500 mb-1.5">Mật khẩu</label>
+            <InputField type="password" name="password" value={password} onChange={onChange} required className="w-full" />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-zinc-500 mb-1.5">Xác nhận mật khẩu</label>
+            <InputField type="password" name="password2" value={password2} onChange={onChange} required className="w-full" />
+          </div>
+          <button type="submit" className="w-full bg-accent text-white px-4 py-2.5 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors mt-6">
+            Đăng ký
+          </button>
+        </form>
+        <p className="mt-6 text-center text-sm text-zinc-500">
+          Đã có tài khoản?{' '}
+          <Link to="/login" className="text-accent font-medium hover:underline">
+            Đăng nhập
+          </Link>
+        </p>
       </div>
     </div>
   );

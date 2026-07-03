@@ -11,30 +11,32 @@ function HomePage() {
     };
   }, []);
 
+  // Reading this as: Landing page for medical students, with a minimalist/calm language, leaning toward modern sans-serif typography + neutral palette.
   return (
-    <div 
-      className="fixed top-0 left-0 w-full h-dvh bg-cover bg-center text-white font-sans" 
-      style={{ backgroundImage: `url(${HomeBackground})` }}
-    >
-      <header className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center">
-        <div className="text-xl font-bold tracking-wider">
-          STUDYMED
-        </div>
-        
-        <nav className="flex space-x-6 text-sm">
-          <Link to="/dashboard" className="bg-white text-blue-900 px-4 py-2 rounded font-semibold hover:bg-gray-200 transition-colors duration-200">
-            Vào Dashboard
+    <div className="min-h-[100dvh] bg-zinc-50 text-zinc-950 font-sans selection:bg-accent selection:text-white">
+      <header className="fixed top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
+        <div className="text-sm font-semibold tracking-tight">STUDYMED</div>
+        <nav>
+          <Link to="/dashboard" className="text-sm font-medium hover:text-accent transition-colors">
+            Dashboard
           </Link>
         </nav>
       </header>
 
-      <main className="absolute bottom-48 left-8 right-8 md:bottom-32 md:left-32 md:right-auto max-w-lg">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 lowercase">
-          welcome
-        </h1>
-        <p className="text-base leading-relaxed text-gray-300">
-          Nền tảng học tập y khoa toàn diện, được thiết kế để nâng cao kiến thức và kỹ năng của bạn qua các bộ đề ôn tập chuyên sâu, làm bài trắc nghiệm thông minh, và tính năng theo dõi tiến độ.
-        </p>
+      <main className="max-w-7xl mx-auto px-6 pt-32 pb-20">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1] mb-8">
+            Nền tảng y khoa chuyên sâu.
+          </h1>
+          <p className="text-lg md:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-12">
+            Nâng cao năng lực chẩn đoán qua các bộ đề trắc nghiệm thông minh và hệ thống theo dõi tiến độ học tập toàn diện.
+          </p>
+          <div className="flex gap-4">
+            <Link to="/dashboard" className="bg-accent text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">
+              Bắt đầu ngay
+            </Link>
+          </div>
+        </div>
       </main>
     </div>
   );

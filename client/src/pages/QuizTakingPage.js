@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams, useLocation } from 'react-router-dom';
 import api from '../services/api';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 import QuestionItem from '../components/QuestionItem';
 import ResizableCaseStudy from '../components/ResizableCaseStudy';
@@ -43,7 +43,7 @@ function QuizTakingPage() {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   
   // STATE CỠ CHỮ: 'sm' (Nhỏ), 'base' (Vừa), 'lg' (Lớn)
-  const [textSize, setTextSize] = useState('base'); 
+  const [textSize] = useState('base');
   
   const timerRef = useRef(null);
 
@@ -235,7 +235,7 @@ function QuizTakingPage() {
     : (currentQuestion?.questionType === 'multi-select' ? userAnswers[currentQuestion._id]?.length > 0 : false);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col relative">
+    <div className="min-h-[100dvh] bg-zinc-50 flex flex-col relative selection:bg-accent selection:text-white">
       <QuizNavigationDrawer
         isOpen={isNavDrawerOpen}
         onClose={() => setIsNavDrawerOpen(false)}
@@ -248,55 +248,43 @@ function QuizTakingPage() {
       />
 
       {isTimeUp && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-xl shadow-lg text-center max-w-sm mx-4">
-            <h2 className="text-2xl font-bold text-red-600 mb-4">Đã Hết Giờ!</h2>
-            <div className="flex justify-center space-x-4">
-              <Button secondary onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }}>Làm tiếp</Button>
-              <Button primary onClick={handleSubmitQuiz}>Xem kết quả</Button>
+        <div className="fixed inset-0 bg-zinc-950/50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-xl text-center max-w-sm mx-4">
+            <h2 className="text-xl font-semibold text-zinc-950 mb-4">Hết giờ!</h2>
+            <div className="flex gap-3 justify-center">
+              <button onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }} className="px-4 py-2 text-sm text-zinc-600 hover:text-zinc-950">Làm tiếp</button>
+              <button onClick={handleSubmitQuiz} className="bg-accent text-white px-4 py-2 rounded-full text-sm font-medium">Nộp bài</button>
             </div>
           </div>
         </div>
       )}
 
-      <div className="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-200 shadow-sm px-4 py-2 flex justify-between items-center transition-all">
+      <header className="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-zinc-200 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <div className={`flex items-center gap-2 font-bold text-lg ${isTimeUp && !isTimerPaused ? 'text-red-500 animate-pulse' : 'text-blue-800'}`}>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div className={`flex items-center gap-2 font-semibold text-sm tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-zinc-950'}`}>
             {formatTime(timeLeft)}
           </div>
-          <div className="hidden md:flex items-center gap-3 text-gray-600 font-medium border-l pl-6 border-gray-300">
-            <span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded text-sm uppercase tracking-wide">
-              {quizMode === 'review' ? 'Ôn tập' : 'Kiểm tra'}
-            </span>
-            <span className="text-sm">
-              Câu hỏi: <strong className="text-blue-600">{quizMode === 'review' ? currentQuestionDisplay : answeredCount}</strong> / {totalQuestionsCount}
-            </span>
+          <div className="flex items-center gap-3 text-zinc-500 text-sm">
+             <span className="bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">
+               {quizMode === 'review' ? 'Ôn tập' : 'Kiểm tra'}
+             </span>
+             <span className="text-xs">
+               Câu hỏi: <strong className="text-zinc-950">{quizMode === 'review' ? currentQuestionDisplay : answeredCount}</strong> / {totalQuestionsCount}
+             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-3">
-          {/* THANH ĐIỀU CHỈNH CỠ CHỮ */}
-          <div className="flex items-center bg-gray-100/80 rounded-lg p-1 border border-gray-200">
-            <button onClick={() => setTextSize('sm')} title="Thu nhỏ chữ" className={`px-2 py-1 rounded text-xs font-bold transition-all ${textSize === 'sm' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A-</button>
-            <button onClick={() => setTextSize('base')} title="Chữ mặc định" className={`px-2 py-1 rounded text-sm font-bold transition-all ${textSize === 'base' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A</button>
-            <button onClick={() => setTextSize('lg')} title="Phóng to chữ" className={`px-2 py-1 rounded text-base font-bold transition-all ${textSize === 'lg' ? 'bg-white shadow text-blue-700' : 'text-gray-500 hover:text-gray-800'}`}>A+</button>
-          </div>
-
-          <button
-            onClick={() => setIsNavDrawerOpen(true)}
-            className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-semibold transition-colors text-sm md:text-base border border-gray-200"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-            <span className="hidden sm:inline">Danh sách</span>
+        <div className="flex items-center gap-2">
+          <button onClick={() => setIsNavDrawerOpen(true)} className="text-xs font-medium text-zinc-500 hover:text-accent transition-colors">
+            Danh sách câu hỏi
           </button>
           {quizMode === 'test' && (
-            <Button primary onClick={handleSubmitQuiz} className="py-1.5 px-3 md:px-6 shadow-md bg-green-600 hover:bg-green-700 border-none text-sm md:text-base">
+            <button onClick={handleSubmitQuiz} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-zinc-800 transition-colors">
               Nộp bài
-            </Button>
+            </button>
           )}
         </div>
-      </div>
+      </header>
 
       <div className="w-full max-w-[1600px] flex-1 mx-auto my-4 md:my-6 p-4 md:p-6 lg:p-8">
         {quizMode === 'test' ? (
@@ -335,8 +323,10 @@ function QuizTakingPage() {
               return null;
             })}
             
-            <div className="flex justify-center mt-12 border-t pt-8 max-w-5xl mx-auto w-full mb-20">
-              <Button primary onClick={handleSubmitQuiz} className="py-3 px-12 text-lg shadow-xl bg-green-600 hover:bg-green-700">Xác nhận nộp bài</Button>
+            <div className="flex justify-center mt-12 border-t border-zinc-200 pt-8 max-w-5xl mx-auto w-full mb-20">
+              <button onClick={handleSubmitQuiz} className="bg-accent text-white px-12 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                Nộp bài
+              </button>
             </div>
           </div>
         ) : (
@@ -364,26 +354,33 @@ function QuizTakingPage() {
               );
             })()}
 
-            <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-              <Button 
-                secondary 
+            <div className="flex justify-between items-center mt-8 pt-6 border-t border-zinc-200">
+              <button 
                 onClick={() => {
                   localStorage.removeItem(`studyMed_bookmarks_${id || 'virtual'}`);
                   navigate('/dashboard');
                 }} 
-                className="px-6 py-2.5"
+                className="text-sm text-zinc-500 hover:text-zinc-950 font-medium"
               >
                 Thoát
-              </Button>
+              </button>
               <div className="flex gap-3">
-                <Button secondary onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>Trang trước</Button>
+                <button onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0} className="text-sm text-zinc-600 hover:text-zinc-950 disabled:opacity-50">
+                    Trang trước
+                </button>
                 
                 {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
-                    <Button primary onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer}>Xem đáp án</Button>
+                    <button onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-sm font-medium disabled:opacity-50">
+                        Xem đáp án
+                    </button>
                 ) : currentQuestionIndex < displayQuestions.length - 1 ? (
-                    <Button primary onClick={handleNextQuestion}>Trang tiếp theo</Button>
+                    <button onClick={handleNextQuestion} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-sm font-medium">
+                        Tiếp theo
+                    </button>
                 ) : (
-                    <Button primary onClick={handleSubmitQuiz} className="bg-green-600 hover:bg-green-700">Kết thúc ôn tập</Button>
+                    <button onClick={handleSubmitQuiz} className="bg-accent text-white px-4 py-2 rounded-full text-sm font-medium">
+                        Kết thúc
+                    </button>
                 )}
               </div>
             </div>

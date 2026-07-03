@@ -1,0 +1,38 @@
+# Project Rules: StudyMed (MERN Stack)
+
+## Core Philosophy
+- This is a MERN stack project (React, Express, MongoDB, Node.js).
+- Maintain modular structure: `client/` for frontend and `server/` for backend.
+- Prioritize security: Always check for `authMiddleware` implementation when touching protected routes.
+
+## Development Workflow
+- **State Management**: Use React hooks; keep logic clean in custom hooks if complex.
+- **API Requests**: Use `axios` with configured `baseURL` (env variables). Always handle loading and error states in UI.
+- **Database**: Use Mongoose schemas strictly. Ensure all CRUD operations validate input before database interaction.
+- **File Handling**: When managing images/media, use `Multer` + `Cloudinary` as per architectural guidelines.
+- **Routing**: Utilize `react-router-dom` v7. Ensure protected routes are guarded.
+- **Frontend Design**: Always follow the "Anti-Slop Frontend Skill" rules defined in `.agents\skills\design-taste-frontend\SKILL.md`. Ensure design consistency, responsiveness, performance, and accessibility (WCAG AA).
+
+## Coding Standards
+- Use modern ES6+ syntax.
+- Maintain consistent indentation (2 spaces).
+- Update `cline_docs/active_context.md` whenever core business logic or infrastructure changes significantly.
+
+## Deployment & Version Control
+- Deployment targets: Render (server), Vercel (client).
+- Ensure `.env` variables are never committed (check `.gitignore`).
+
+### GitHub Workflow (Work Account)
+- Always verify local git configuration before pushing:
+  ```bash
+  git config --local user.name "Quang Le"
+  git config --local user.email "mqule.md.hmu@gmail.com"
+  ```
+- Remote URL must be routed through `github.com-work`:
+  `git remote set-url origin git@github.com-work:m-qu-le-md/studymed.git`
+- Before pushing, verify with: `git config --local user.email` and `git remote -v`.
+- AUTOMATION: Always commit and push changes after completing a feature or fix.
+
+## Communication with Cline
+- Keep updates direct and technical.
+- When fixing bugs, prioritize existing test suites (if available) before implementing new reproduction scripts.
