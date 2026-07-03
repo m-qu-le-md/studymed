@@ -6,16 +6,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // MỚI: Thay đổi font mặc định thành Poppins
+      // Typography update: move to Geist-like sans-serif
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      // Các màu và transition giữ nguyên
       colors: {
-        'primary-blue': '#0381fe',
-        'primary-blue-active': '#3e91ff',
-        'soft-gray': '#f5f5f5',
-        'dark-gray-text': '#333333',
+        // Modernized Neutral Palette
+        zinc: {
+          950: '#09090b',
+        },
+        // One accent color locked
+        accent: '#0381fe', 
       },
       transitionTimingFunction: {
         'one-ui-ease-out': 'cubic-bezier(0.22, 0.25, 0.00, 1.00)',

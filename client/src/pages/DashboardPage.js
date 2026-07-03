@@ -83,74 +83,69 @@ function DashboardPage() {
   }
 
   return (
-    <div className="relative flex h-dvh bg-gray-100 font-sans overflow-hidden">
+    <div className="relative flex h-[100dvh] bg-zinc-50 font-sans overflow-hidden">
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"
+          className="fixed inset-0 bg-zinc-950/20 backdrop-blur-sm z-20 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         ></div>
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-white flex flex-col border-r z-30
+        className={`fixed top-0 left-0 h-full w-64 bg-white flex flex-col border-r border-zinc-200 z-30
                     transform transition-transform duration-300 ease-in-out
                     ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
                     lg:translate-x-0`}
       >
-        <div className="h-16 flex items-center justify-center border-b">
-          <h1 className="text-xl font-bold tracking-wider text-primary-blue">STUDYMED</h1>
+        <div className="h-16 flex items-center px-6 border-b border-zinc-100">
+          <h1 className="text-lg font-bold tracking-tight text-zinc-950">STUDYMED</h1>
         </div>
-        <nav className="flex-1 p-4 space-y-2">
-          <Link to="/quiz/new" className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+        <nav className="flex-1 p-4 space-y-1">
+          <Link to="/quiz/new" className="flex items-center px-3 py-2 text-sm text-zinc-600 rounded-md hover:bg-zinc-100 transition-colors">
             Tạo bộ đề mới
           </Link>
-          <Link to="/bulk-upload" className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+          <Link to="/bulk-upload" className="flex items-center px-3 py-2 text-sm text-zinc-600 rounded-md hover:bg-zinc-100 transition-colors">
             Nhập bộ đề (JSON)
           </Link>
-          <Link to="/study-by-tag" className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+          <Link to="/study-by-tag" className="flex items-center px-3 py-2 text-sm text-zinc-600 rounded-md hover:bg-zinc-100 transition-colors">
             Ôn tập theo tag
           </Link>
         </nav>
       </aside>
 
       <div className="flex-1 flex flex-col lg:ml-64">
-        <header className="h-16 bg-white border-b flex items-center justify-between p-4">
+        <header className="h-16 bg-white/50 backdrop-blur-md border-b border-zinc-200 flex items-center justify-between px-6">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="text-gray-700 text-2xl lg:hidden"
+            className="text-zinc-600 text-xl lg:hidden"
           >
             <FiMenu />
           </button>
-          <span className="text-gray-700 ml-auto font-medium">Xin chào Bác sĩ!</span>
+          <span className="text-sm text-zinc-500 ml-auto">Chào bác sĩ, chúc một ngày tốt lành</span>
         </header>
 
-        <main className="flex-1 p-4 md:p-8 overflow-y-auto">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
-            <p className="text-gray-500 capitalize">{currentDate}</p>
+        <main className="flex-1 p-6 md:p-10 overflow-y-auto">
+          <div className="mb-10">
+            <h1 className="text-2xl font-semibold text-zinc-950 tracking-tight">Dashboard</h1>
+            <p className="text-sm text-zinc-500 mt-1 capitalize">{currentDate}</p>
           </div>
 
           {quizzes.length === 0 ? (
-            <p className="text-center text-gray-600 text-lg">Hệ thống chưa có bộ đề nào. Hãy tạo một cái mới!</p>
+            <div className="flex flex-col items-center justify-center py-20 text-zinc-400">
+              <p>Hệ thống chưa có bộ đề nào.</p>
+            </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {quizzes.map((quiz) => (
-                <div key={quiz._id} className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200 flex flex-col">
-                  <h2 className="text-xl font-semibold text-blue-700 mb-2 truncate">{quiz.title}</h2>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{quiz.description || "Không có mô tả."}</p>
-                  <div className="text-xs text-gray-500 mb-4">
-                    <span>Môn: {quiz.subject}</span>
-                  </div>
-                  <div className="flex justify-end gap-2 mt-auto flex-wrap">
-                    <Button secondary onClick={() => navigate(`/quiz/edit/${quiz._id}`)} className="text-xs py-1 px-3">
-                      Quản lý
-                    </Button>
-                    <Button primary onClick={() => handleStartQuizClick(quiz._id)} className="text-xs py-1 px-3">
-                      Làm Bài
-                    </Button>
-                    <Button onClick={() => handleDeleteQuiz(quiz._id)} className="bg-red-500 hover:bg-red-600 text-white text-xs py-1 px-3">
-                      Xóa
-                    </Button>
+                <div key={quiz._id} className="bg-white p-5 rounded-xl border border-zinc-200 hover:border-zinc-300 transition-all flex flex-col group">
+                  <h2 className="text-sm font-semibold text-zinc-950 truncate">{quiz.title}</h2>
+                  <p className="text-xs text-zinc-500 mt-1 mb-4 line-clamp-2 flex-grow">{quiz.description || "Không có mô tả."}</p>
+                  <div className="flex items-center justify-between pt-4 border-t border-zinc-100">
+                    <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-medium">{quiz.subject}</span>
+                    <div className="flex gap-2">
+                        <button onClick={() => navigate(`/quiz/edit/${quiz._id}`)} className="text-[10px] font-medium text-zinc-500 hover:text-zinc-900">Quản lý</button>
+                        <button onClick={() => handleStartQuizClick(quiz._id)} className="text-[10px] font-medium text-accent">Làm bài</button>
+                    </div>
                   </div>
                 </div>
               ))}
