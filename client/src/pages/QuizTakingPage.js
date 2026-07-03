@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams, useLocation } from 'react-router-dom';
 import api from '../services/api';
-// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 import QuestionItem from '../components/QuestionItem';
 import ResizableCaseStudy from '../components/ResizableCaseStudy';
@@ -42,9 +41,7 @@ function QuizTakingPage() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   
-  // STATE CỠ CHỮ: 'sm' (Nhỏ), 'base' (Vừa), 'lg' (Lớn)
   const [textSize] = useState('base');
-  
   const timerRef = useRef(null);
 
   const handleSubmitQuiz = useCallback(() => {
@@ -57,12 +54,9 @@ function QuizTakingPage() {
       state: { quizData: originalQuiz, userAnswers, timeTaken, quizMode } 
     });
     localStorage.removeItem('quizStartTime');
-    
-    // Dọn dẹp cờ khi kết thúc bài làm
     localStorage.removeItem(`studyMed_bookmarks_${quizId}`); 
   }, [id, navigate, originalQuiz, userAnswers, quizMode]);
 
-  // --- HÀM LẤY CỜ TỪ LOCAL STORAGE (Đã gắn ID bộ đề) ---
   const fetchBookmarks = useCallback(() => {
     try {
       const bookmarkKey = `studyMed_bookmarks_${id || 'virtual'}`;
@@ -77,22 +71,14 @@ function QuizTakingPage() {
 
   useEffect(() => {
     const setupQuiz = (quizData) => {
-      // Khởi tạo một mảng copy từ mảng gốc để tránh mutate (đột biến) dữ liệu gốc
       let processedQuestions = quizData?.questions ? [...quizData.questions] : [];
-
-      // Nếu hệ thống nhận được tín hiệu isShuffle = true, tiến hành xáo trộn (enzym hoạt động)
       if (isShuffle) {
         for (let i = processedQuestions.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          // Tráo đổi vị trí 2 phần tử
           [processedQuestions[i], processedQuestions[j]] = [processedQuestions[j], processedQuestions[i]];
         }
       }
-
-      // Cập nhật lại não bộ (originalQuiz) bằng chính danh sách đã xáo trộn
       setOriginalQuiz({ ...quizData, questions: processedQuestions });
-
-      // Cập nhật môi trường nội môi với danh sách đã xử lý
       setDisplayQuestions(processedQuestions);
       localStorage.setItem('quizStartTime', Date.now().toString());
       setLoadingQuiz(false);
@@ -117,7 +103,6 @@ function QuizTakingPage() {
       setAlert('Không có dữ liệu bộ đề.', 'error');
       navigate('/dashboard');
     }
-  // LƯU Ý: Thêm isShuffle vào mảng phụ thuộc (dependency array) để useEffect biết mà theo dõi
   }, [id, location.state, navigate, setAlert, isShuffle]);
 
   useEffect(() => {
@@ -136,7 +121,6 @@ function QuizTakingPage() {
     return () => clearInterval(timerRef.current);
   }, [timeLeft, isTimerPaused, loadingQuiz, isTimeUp, setAlert]);
 
-  // --- HÀM GẮN CỜ (Đã gắn ID bộ đề) ---
   const handleToggleBookmark = (questionId) => {
     setBookmarkedQuestions(prev => {
       const newSet = new Set(prev);
@@ -145,7 +129,6 @@ function QuizTakingPage() {
       } else {
           newSet.add(questionId);
       }
-      
       const bookmarkKey = `studyMed_bookmarks_${id || 'virtual'}`;
       localStorage.setItem(bookmarkKey, JSON.stringify([...newSet]));
       return newSet;
@@ -153,15 +136,12 @@ function QuizTakingPage() {
   };
 
   const handleAnswerChange = (questionId, optionId, questionType) => {
-    // 1. Chỉ tắt feedback nếu chuyển sang câu mới hoặc đang ở chế độ review mà KHÔNG PHẢI đang làm multi-select dở dang
     if (quizMode === 'review' && displayQuestions[currentQuestionIndex]?.type !== 'group' && questionType !== 'multi-select') {
       setShowFeedback(false);
     }
-    
     setUserAnswers((prevAnswers) => {
       const currentAnswers = prevAnswers[questionId] || [];
       let newAnswers;
-
       if (questionType === 'multi-select') {
         newAnswers = currentAnswers.includes(optionId) 
           ? currentAnswers.filter((id) => id !== optionId) 
@@ -171,8 +151,6 @@ function QuizTakingPage() {
       }
       return { ...prevAnswers, [questionId]: newAnswers };
     });
-
-    // 2. Chặn việc tự động bật feedback nếu là multi-select
     const isGroupQuestion = displayQuestions[currentQuestionIndex]?.type === 'group';
     if (quizMode === 'review' && questionType !== 'multi-select' && !isGroupQuestion) {
       setShowFeedback(true);
@@ -210,32 +188,41 @@ function QuizTakingPage() {
     return count;
   }, [displayQuestions]); 
 
-  if (loadingQuiz) return <div className="flex items-center justify-center min-h-screen">Đang tải bộ đề...</div>;
-  if (!originalQuiz || displayQuestions.length === 0) return <div className="flex items-center justify-center min-h-screen">Lỗi tải bộ đề.</div>;
+  if (loadingQuiz) return (
+    <div className="flex items-center justify-center min-h-screen bg-slate-50">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-8 h-8 border-4 border-slate-300 border-t-slate-800 rounded-full animate-spin"></div>
+        <p className="text-slate-600 font-medium">Đang chuẩn bị bộ đề...</p>
+      </div>
+    </div>
+  );
+  
+  if (!originalQuiz || displayQuestions.length === 0) return (
+    <div className="flex items-center justify-center min-h-screen bg-slate-50 text-red-600 font-medium">
+      Không thể tải dữ liệu bộ đề. Vui lòng thử lại.
+    </div>
+  );
 
   const currentQuestion = displayQuestions[currentQuestionIndex];
-  
-  // Total count vẫn lấy từ originalQuiz để đảm bảo tổng số câu hỏi luôn đúng kể cả khi xáo trộn
   const totalQuestionsCount = originalQuiz.questions.reduce((total, q) => total + (q.type === 'group' && q.childQuestions ? q.childQuestions.length : 1), 0);
   const answeredCount = Object.values(userAnswers).filter(a => a.length > 0).length;
-
-  let currentQuestionDisplay = '';
-  if (quizMode === 'review' && currentQuestion) {
-    const startNum = getGlobalQuestionNumber(currentQuestionIndex);
-    if (currentQuestion.type === 'group' && currentQuestion.childQuestions) {
-      const endNum = startNum + currentQuestion.childQuestions.length - 1;
-      currentQuestionDisplay = `${startNum} - ${endNum}`;
-    } else {
-      currentQuestionDisplay = `${startNum}`;
-    }
-  }
+  const progressPercentage = (answeredCount / (totalQuestionsCount || 1)) * 100;
 
   const canCheckAnswer = currentQuestion?.type === 'group'
     ? currentQuestion.childQuestions.every(cq => userAnswers[cq._id] && userAnswers[cq._id].length > 0)
     : (currentQuestion?.questionType === 'multi-select' ? userAnswers[currentQuestion._id]?.length > 0 : false);
 
   return (
-    <div className="h-screen w-screen bg-[conic-gradient(from_at_50%_50%,_#fdf2f8,_#eef2ff,_#f0fdfa)] flex flex-col overflow-hidden relative selection:bg-accent selection:text-white">
+    <div className="h-screen w-screen bg-slate-50 flex flex-col overflow-hidden relative selection:bg-slate-800 selection:text-white">
+      
+      {/* Progress Bar Top Edge */}
+      <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-200 z-50">
+        <div 
+          className="h-full bg-blue-600 transition-all duration-500 ease-out" 
+          style={{ width: `${progressPercentage}%` }}
+        />
+      </div>
+
       <QuizNavigationDrawer
         isOpen={isNavDrawerOpen}
         onClose={() => setIsNavDrawerOpen(false)}
@@ -247,62 +234,65 @@ function QuizTakingPage() {
         setCurrentQuestionIndex={setCurrentQuestionIndex}
       />
 
+      {/* Time Up Modal */}
       {isTimeUp && (
-        <div className="fixed inset-0 bg-zinc-950/50 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-xl text-center max-w-sm mx-4">
-            <h2 className="text-xl font-semibold text-zinc-950 mb-4">Hết giờ!</h2>
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm mx-4 border border-slate-100">
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">Đã hết thời gian</h2>
+            <p className="text-slate-500 mb-6 text-sm">Hệ thống đã ghi nhận toàn bộ quá trình làm bài của bạn.</p>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }} className="px-4 py-2 text-sm text-zinc-600 hover:text-zinc-950">Làm tiếp</button>
-              <button onClick={handleSubmitQuiz} className="bg-accent text-white px-4 py-2 rounded-full text-sm font-medium">Nộp bài</button>
+              <button onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }} className="px-5 py-2.5 text-sm font-medium text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+                Xem lại bài
+              </button>
+              <button onClick={handleSubmitQuiz} className="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md">
+                Nộp bài ngay
+              </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Header với thanh tiến trình nhiều màu sắc */}
-      <header className="h-[10vh] bg-white/90 backdrop-blur-lg z-40 border-b border-zinc-200 px-6 flex items-center justify-between shrink-0">
+      {/* Clinical Header */}
+      <header className="h-[72px] bg-white z-40 border-b border-slate-200 px-6 flex items-center justify-between shrink-0 shadow-sm mt-1.5">
         <div className="flex items-center gap-6">
-          {/* Progress Bar & Timer */}
-          <div className="flex items-center gap-4">
-            <div className="w-32 h-2 bg-zinc-100 rounded-full overflow-hidden border border-zinc-200">
-              <div 
-                className="h-full bg-gradient-to-r from-emerald-400 to-cyan-500 transition-all duration-500 ease-out" 
-                style={{ width: `${(answeredCount / (totalQuestionsCount || 1)) * 100}%` }}
-              />
-            </div>
-            <div className={`font-mono font-bold text-sm tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-zinc-950'}`}>
+          <div className="flex flex-col">
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">
+              {quizMode === 'review' ? 'Chế độ: Ôn tập' : 'Chế độ: Kiểm tra'}
+            </span>
+            <div className={`font-mono text-xl font-semibold tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-slate-800'}`}>
               {formatTime(timeLeft)}
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-zinc-500 text-sm">
-             <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-               {quizMode === 'review' ? 'Ôn tập' : 'Kiểm tra'}
-             </span>
+          <div className="hidden md:flex items-center gap-2 pl-6 border-l border-slate-200">
+            <span className="text-sm text-slate-500 font-medium">Tiến độ:</span>
+            <span className="text-sm font-bold text-slate-800">{answeredCount} / {totalQuestionsCount}</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button onClick={() => setIsNavDrawerOpen(true)} className="text-sm font-medium text-zinc-600 hover:text-accent transition-colors">
-            Danh sách
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsNavDrawerOpen(true)} className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 transition-colors">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            Danh sách câu hỏi
           </button>
-          <button onClick={handleSubmitQuiz} className="bg-zinc-950 text-white px-5 py-2 rounded-2xl text-sm font-semibold hover:bg-zinc-800 transition-all active:scale-95">
-            Kết thúc
+          <button onClick={handleSubmitQuiz} className="bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-slate-900 transition-all shadow-sm active:scale-95">
+            Kết thúc thi
           </button>
         </div>
       </header>
 
-      <div className="flex-1 overflow-hidden p-4 md:p-6 lg:p-8">
-        <div className="h-full w-full max-w-[1600px] mx-auto overflow-y-auto pr-2">
+      {/* Main Content Area */}
+      <main className="flex-1 overflow-hidden p-0 relative">
+        <div className="h-full w-full overflow-y-auto px-4 md:px-8 py-6 pb-32">
           {quizMode === 'test' ? (
-            <div className="w-full">
+            <div className="w-full max-w-5xl mx-auto space-y-8">
               {displayQuestions.map((item, index) => {
                 const startNum = getGlobalQuestionNumber(index);
                 const caseNum = getCaseStudyNumber(index); 
                 
                 if (item.type === 'single') {
                   return (
-                    <div key={item._id || index} id={`question-${item._id}`} className="max-w-5xl mx-auto mb-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div key={item._id || index} id={`question-${item._id}`} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 transition-shadow hover:shadow-md">
                       <QuestionItem 
                         question={item} 
                         index={startNum - 1} 
@@ -330,74 +320,86 @@ function QuizTakingPage() {
                 return null;
               })}
               
-              <div className="flex justify-center mt-12 border-t border-zinc-200 pt-8 max-w-5xl mx-auto w-full mb-20">
-                <button onClick={handleSubmitQuiz} className="bg-accent text-white px-12 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                  Nộp bài
+              <div className="flex justify-center mt-16 pt-8 max-w-2xl mx-auto w-full mb-10">
+                <button onClick={handleSubmitQuiz} className="w-full bg-blue-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
+                  Nộp bài và Xem kết quả
                 </button>
               </div>
             </div>
           ) : (
-            <div className="w-full flex flex-col h-full">
-              <div className="flex-1">
-                {(() => {
-                  const startNum = getGlobalQuestionNumber(currentQuestionIndex);
-                  const caseNum = getCaseStudyNumber(currentQuestionIndex);
-                  return currentQuestion.type === 'group' ? (
-                    <ResizableCaseStudy
-                      question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
-                      handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
-                      startingNumber={startNum}
-                      caseStudyNumber={caseNum}
-                      textSize={textSize}
-                    />
-                  ) : (
-                    <QuestionSingleDisplay
-                      currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
-                      handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
-                      globalNumber={startNum}
-                      textSize={textSize}
-                    />
-                  );
-                })()}
-              </div>
-
-              <footer className="h-[15vh] flex justify-between items-center border-t border-zinc-200 bg-white/50 backdrop-blur-sm shrink-0 px-6">
-                <button 
-                  onClick={() => navigate('/dashboard')} 
-                  className="px-6 py-2 rounded-xl text-sm font-medium text-zinc-500 hover:bg-white border border-transparent hover:border-zinc-200 transition-all"
-                >
-                  Thoát
-                </button>
-                <div className="flex gap-4">
-                  <button 
-                    onClick={handlePreviousQuestion} 
-                    disabled={currentQuestionIndex === 0} 
-                    className="px-8 py-3 rounded-2xl border-2 border-zinc-900 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-all disabled:opacity-30 disabled:border-zinc-300"
-                  >
-                      Câu trước
-                  </button>
-                  
-                  {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
-                      <button onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer} className="px-8 py-3 bg-blue-600 text-white rounded-2xl text-sm font-bold hover:bg-blue-700 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50">
-                          Kiểm tra
-                      </button>
-                  ) : currentQuestionIndex < displayQuestions.length - 1 ? (
-                      <button onClick={handleNextQuestion} className="px-8 py-3 bg-zinc-950 text-white rounded-2xl text-sm font-bold hover:bg-zinc-800 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                          Câu sau
-                      </button>
-                  ) : (
-                      <button onClick={handleSubmitQuiz} className="px-8 py-3 bg-emerald-500 text-white rounded-2xl text-sm font-bold hover:bg-emerald-600 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                          Nộp bài
-                      </button>
-                  )}
-                </div>
-              </footer>
+            <div className="w-full max-w-5xl mx-auto flex flex-col h-full">
+              {(() => {
+                const startNum = getGlobalQuestionNumber(currentQuestionIndex);
+                const caseNum = getCaseStudyNumber(currentQuestionIndex);
+                return currentQuestion.type === 'group' ? (
+                  <ResizableCaseStudy
+                    question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
+                    handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
+                    startingNumber={startNum}
+                    caseStudyNumber={caseNum}
+                    textSize={textSize}
+                  />
+                ) : (
+                  <QuestionSingleDisplay
+                    currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
+                    handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
+                    globalNumber={startNum}
+                    textSize={textSize}
+                  />
+                );
+              })()}
             </div>
           )}
         </div>
-      </div>
+      </main>
+
+      {/* Floating Action Footer (chỉ hiển thị ở chế độ Review) */}
+      {quizMode === 'review' && (
+        <footer className="absolute bottom-0 left-0 w-full h-[80px] bg-white border-t border-slate-200 px-6 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+          <button 
+            onClick={() => navigate('/dashboard')} 
+            className="px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+          >
+            Thoát ra ngoài
+          </button>
+          
+          <div className="flex gap-3">
+            <button 
+              onClick={handlePreviousQuestion} 
+              disabled={currentQuestionIndex === 0} 
+              className="px-6 py-2.5 rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+                Câu trước
+            </button>
+            
+            {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
+                <button 
+                  onClick={() => setShowFeedback(true)} 
+                  disabled={!canCheckAnswer} 
+                  className="px-8 py-2.5 bg-indigo-500 text-white rounded-lg text-sm font-semibold hover:bg-indigo-600 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    Kiểm tra đáp án
+                </button>
+            ) : currentQuestionIndex < displayQuestions.length - 1 ? (
+                <button 
+                  onClick={handleNextQuestion} 
+                  className="px-8 py-2.5 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-900 transition-all shadow-md"
+                >
+                    Câu tiếp theo
+                </button>
+            ) : (
+                <button 
+                  onClick={handleSubmitQuiz} 
+                  className="px-8 py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md"
+                >
+                    Hoàn thành & Nộp bài
+                </button>
+            )}
+          </div>
+        </footer>
+      )}
     </div>
   );
 }
