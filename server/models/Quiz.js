@@ -24,13 +24,7 @@ const childQuestionSchema = new mongoose.Schema({
       message: 'Một câu hỏi phải có ít nhất 2 lựa chọn.'
     }
   },
-  generalExplanation: { type: String, trim: true },
-  // Đã phẫu thuật cắt bỏ "ruột thừa": tags
-  difficulty: {
-    type: String,
-    enum: ['Nhận biết', 'Thông hiểu', 'Vận dụng', 'Vận dụng cao'],
-    default: 'Thông hiểu'
-  }
+  generalExplanation: { type: String, trim: true }
 });
 
 // questionSchema giờ là một cấu trúc "lai"
@@ -61,13 +55,7 @@ const questionSchema = new mongoose.Schema({
   generalExplanation: { type: String, trim: true },
   
   // "Kháng nguyên bề mặt" - Giữ nguyên tuyệt đối để phục vụ hệ tuần hoàn lọc dữ liệu
-  tags: { type: [String], default: [] }, 
-  
-  difficulty: {
-    type: String,
-    enum: ['Nhận biết', 'Thông hiểu', 'Vận dụng', 'Vận dụng cao'],
-    default: 'Thông hiểu'
-  }
+  tags: { type: [String], default: [] }
 });
 
 const quizSchema = new mongoose.Schema({
@@ -75,9 +63,7 @@ const quizSchema = new mongoose.Schema({
   description: { type: String, trim: true },
   subject: { type: String, required: true, trim: true },
   topic: { type: String, trim: true },
-  questions: [questionSchema], 
-  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  isSystemQuiz: { type: Boolean, default: false }
+  questions: [questionSchema]
 }, {
   timestamps: true
 });

@@ -2,6 +2,7 @@
 
 ## Trạng thái hiện tại
 - Dự án đang ở giai đoạn phát triển tính năng (Features development).
+- Deployment: Server chạy liên tục trên Render, Frontend chạy trên Vercel.
 - Cấu hình server đã thiết lập các API endpoint:
   - `/api/quizzes`: Quản lý quiz.
   - `/api/users`: Quản lý thông tin người dùng.

@@ -37,7 +37,7 @@ const upload = multer({ storage: storage });
 // @desc    Tạo một bộ đề mới
 // @access  Public (Đã bỏ auth)
 router.post('/', async (req, res) => {
-  const { title, description, subject, topic, questions, isSystemQuiz } = req.body;
+  const { title, description, subject, topic, questions } = req.body;
 
   try {
     const newQuiz = new Quiz({
@@ -45,9 +45,7 @@ router.post('/', async (req, res) => {
       description,
       subject,
       topic,
-      questions,
-      // Đã bỏ createdBy
-      isSystemQuiz: isSystemQuiz || false 
+      questions
     });
 
     const quiz = await newQuiz.save();
@@ -71,13 +69,6 @@ router.get('/', async (req, res) => {
     try {
         let filter = {};
 
-        // Lọc cơ bản theo query param nếu có
-        if (system === 'true') {
-            filter = { isSystemQuiz: true }; 
-        } else if (system === 'false') {
-            filter = { isSystemQuiz: false }; 
-        }
-
         console.log("- Đang thực hiện Quiz.find với filter:", filter);
         const quizzes = await Quiz.find(filter);
         console.log("- Tìm thấy số lượng bộ đề:", quizzes.length);
@@ -93,7 +84,7 @@ router.get('/', async (req, res) => {
 // @access  Public
 router.get('/:id', async (req, res) => {
     try {
-        const quiz = await Quiz.findById(req.params.id).populate('createdBy', 'username email');
+        const quiz = await Quiz.findById(req.params.id);
         if (!quiz) {
             return res.status(404).json({ msg: 'Bộ đề không tìm thấy' });
         }
@@ -185,9 +176,6 @@ router.post('/bulk-upload', async (req, res) => {
 
         const insertedQuizzes = [];
         for (const quizData of quizzesData) {
-            // Đã bỏ dòng gán quizData.createdBy = userId;
-            quizData.isSystemQuiz = true; // Các bộ đề nhập hàng loạt mặc định là hệ thống
-
             const newQuiz = new Quiz(quizData);
             const savedQuiz = await newQuiz.save();
             insertedQuizzes.push(savedQuiz);

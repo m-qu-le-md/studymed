@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Bộ đề mẫu Tim mạch",
+    "description": "Kiểm tra cấu trúc hệ thống mới với các loại câu hỏi khác nhau",
+    "subject": "Tim mạch",
+    "topic": "Tổng quát",
+    "questions": [
+      {
+        "type": "single",
+        "questionType": "single-choice",
+        "questionText": "Dấu hiệu nào trên điện tâm đồ gợi ý nhồi máu cơ tim cấp thành trước?",
+        "options": [
+          { "text": "ST chênh lên ở các chuyển đạo V1-V4", "isCorrect": true },
+          { "text": "ST chênh xuống ở V5-V6", "isCorrect": false },
+          { "text": "Sóng T âm sâu ở DII, DIII, aVF", "isCorrect": false },
+          { "text": "Block nhánh phải hoàn toàn", "isCorrect": false }
+        ],
+        "generalExplanation": "ST chênh lên ở V1-V4 là dấu hiệu kinh điển của tổn thương thành trước."
+      },
+      {
+        "type": "single",
+        "questionType": "multi-select",
+        "questionText": "Các yếu tố nguy cơ tim mạch không thay đổi được bao gồm:",
+        "options": [
+          { "text": "Tuổi", "isCorrect": true },
+          { "text": "Giới tính", "isCorrect": true },
+          { "text": "Hút thuốc lá", "isCorrect": false },
+          { "text": "Di truyền", "isCorrect": true }
+        ]
+      },
+      {
+        "type": "single",
+        "questionType": "true-false",
+        "questionText": "Tiếng T1 nghe rõ nhất ở mỏm tim.",
+        "options": [
+          { "text": "Đúng", "isCorrect": true },
+          { "text": "Sai", "isCorrect": false }
+        ]
+      },
+      {
+        "type": "group",
+        "caseStem": "Bệnh nhân nam 65 tuổi, đau ngực trái dữ dội kèm vã mồ hôi.",
+        "childQuestions": [
+          {
+            "questionText": "Chẩn đoán ban đầu ưu tiên nhất là gì?",
+            "questionType": "single-choice",
+            "options": [
+              { "text": "Nhồi máu cơ tim", "isCorrect": true },
+              { "text": "Viêm phổi", "isCorrect": false }
+            ]
+          }
+        ],
+        "generalExplanation": "Bệnh cảnh lâm sàng của một bệnh nhân có hội chứng vành cấp."
+      }
+    ]
+  }
+]
