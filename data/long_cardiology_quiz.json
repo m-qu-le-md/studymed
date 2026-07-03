@@ -1,0 +1,31 @@
+{
+  "title": "Bộ đề Cardiology Nâng cao",
+  "description": "Bộ đề trắc nghiệm y khoa tích hợp các ca lâm sàng phức tạp và câu hỏi lý thuyết.",
+  "questions": [
+    {
+      "type": "group",
+      "caseStudy": "Bệnh nhân nam, 65 tuổi, tiền sử tăng huyết áp 10 năm, nhập viện vì đau ngực trái sau xương ức kéo dài 30 phút, lan lên vai trái, vã mồ hôi. Huyết áp 160/90 mmHg, nhịp tim 95 lần/phút. Điện tâm đồ ghi nhận ST chênh lên ở các chuyển đạo V2-V5. Troponin T siêu nhạy tăng cao.",
+      "childQuestions": [
+        {
+          "question": "Chẩn đoán xác định phù hợp nhất trên bệnh nhân này là gì?",
+          "options": ["Đau thắt ngực ổn định", "Nhồi máu cơ tim cấp ST chênh lên (STEMI) thành trước", "Viêm màng ngoài tim cấp", "Bóc tách động mạch chủ"],
+          "correctAnswer": [1],
+          "explanation": "Bệnh nhân có triệu chứng đau thắt ngực điển hình kèm biến đổi ECG đặc hiệu (ST chênh lên V2-V5) và men tim tăng, phù hợp với chẩn đoán STEMI."
+        },
+        {
+          "question": "Thuốc nào dưới đây nên được ưu tiên sử dụng ngay lập tức sau khi đánh giá lâm sàng?",
+          "options": ["Aspirin và Ticagrelor", "Furosemide", "Digoxin", "Warfarin"],
+          "correctAnswer": [0],
+          "explanation": "Kháng kết tập tiểu cầu kép là tiêu chuẩn vàng trong điều trị ban đầu của STEMI."
+        }
+      ]
+    },
+    {
+      "type": "single",
+      "question": "Cơ chế chính của thuốc ức chế men chuyển trong điều trị suy tim là gì?",
+      "options": ["Giảm hậu gánh bằng cách ức chế tạo Angiotensin II", "Tăng co bóp cơ tim", "Ức chế chọn lọc thụ thể Beta-1", "Lợi tiểu mạnh"],
+      "correctAnswer": [0],
+      "explanation": "Ức chế men chuyển làm giảm tạo Angiotensin II, dẫn đến giãn mạch, giảm hậu gánh và cải thiện triệu chứng suy tim."
+    }
+  ]
+}
