@@ -42,7 +42,7 @@ const QuestionSingleDisplay = ({
   // Mảng này sẽ giữ nguyên, không bị random lại khi bạn click chọn đáp án (re-render)
   const randomColors = useMemo(() => {
     return [...PASTEL_VARIANTS].sort(() => 0.5 - Math.random());
-  }, [currentQuestion._id]);
+  }, []);
 
   return (
     <div className="w-full h-full max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 overflow-hidden">

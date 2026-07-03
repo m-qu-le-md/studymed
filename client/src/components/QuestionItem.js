@@ -40,7 +40,7 @@ const QuestionItem = ({
   // Tạo mảng ngẫu nhiên và khóa cứng lại bằng useMemo để chống giật nháy màu
   const randomColors = useMemo(() => {
     return [...PASTEL_VARIANTS].sort(() => 0.5 - Math.random());
-  }, [questionId]);
+  }, []);
 
   return (
     <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 mb-6">
