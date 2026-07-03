@@ -36,3 +36,13 @@
 ## Communication with Cline
 - Keep updates direct and technical.
 - When fixing bugs, prioritize existing test suites (if available) before implementing new reproduction scripts.
+
+## Documentation Workflow
+- Always refer to `cline_docs/` for project standards and workflows:
+  - Read `cline_docs/project_brief.md` for project overview.
+  - Read `cline_docs/architecture.md` for technical structure.
+  - Read `cline_docs/github_config.md` for GitHub account/push configuration.
+  - Read `cline_docs/tech_stack.md` for information on project technologies.
+  - Read `cline_docs/quiz_upload_guide.md` for instructions on uploading quiz data.
+  - Read `cline_docs/active_context.md` for current project state.
+- When starting a task, search/read relevant documentation files first to understand existing procedures.

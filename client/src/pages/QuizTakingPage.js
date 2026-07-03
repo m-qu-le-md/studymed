@@ -235,7 +235,7 @@ function QuizTakingPage() {
     : (currentQuestion?.questionType === 'multi-select' ? userAnswers[currentQuestion._id]?.length > 0 : false);
 
   return (
-    <div className="min-h-[100dvh] bg-zinc-50 flex flex-col relative selection:bg-accent selection:text-white">
+    <div className="h-screen w-screen bg-[conic-gradient(from_at_50%_50%,_#fdf2f8,_#eef2ff,_#f0fdfa)] flex flex-col overflow-hidden relative selection:bg-accent selection:text-white">
       <QuizNavigationDrawer
         isOpen={isNavDrawerOpen}
         onClose={() => setIsNavDrawerOpen(false)}
@@ -259,133 +259,144 @@ function QuizTakingPage() {
         </div>
       )}
 
-      <header className="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-zinc-200 px-6 py-4 flex items-center justify-between">
+      {/* Header với thanh tiến trình nhiều màu sắc */}
+      <header className="h-[10vh] bg-white/90 backdrop-blur-lg z-40 border-b border-zinc-200 px-6 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-6">
-          <div className={`flex items-center gap-2 font-semibold text-sm tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-zinc-950'}`}>
-            {formatTime(timeLeft)}
+          {/* Progress Bar & Timer */}
+          <div className="flex items-center gap-4">
+            <div className="w-32 h-2 bg-zinc-100 rounded-full overflow-hidden border border-zinc-200">
+              <div 
+                className="h-full bg-gradient-to-r from-emerald-400 to-cyan-500 transition-all duration-500 ease-out" 
+                style={{ width: `${(answeredCount / (totalQuestionsCount || 1)) * 100}%` }}
+              />
+            </div>
+            <div className={`font-mono font-bold text-sm tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-zinc-950'}`}>
+              {formatTime(timeLeft)}
+            </div>
           </div>
+          
           <div className="flex items-center gap-3 text-zinc-500 text-sm">
-             <span className="bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">
+             <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                {quizMode === 'review' ? 'Ôn tập' : 'Kiểm tra'}
-             </span>
-             <span className="text-xs">
-               Câu hỏi: <strong className="text-zinc-950">{quizMode === 'review' ? currentQuestionDisplay : answeredCount}</strong> / {totalQuestionsCount}
              </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button onClick={() => setIsNavDrawerOpen(true)} className="text-xs font-medium text-zinc-500 hover:text-accent transition-colors">
-            Danh sách câu hỏi
+        <div className="flex items-center gap-4">
+          <button onClick={() => setIsNavDrawerOpen(true)} className="text-sm font-medium text-zinc-600 hover:text-accent transition-colors">
+            Danh sách
           </button>
-          {quizMode === 'test' && (
-            <button onClick={handleSubmitQuiz} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-zinc-800 transition-colors">
-              Nộp bài
-            </button>
-          )}
+          <button onClick={handleSubmitQuiz} className="bg-zinc-950 text-white px-5 py-2 rounded-2xl text-sm font-semibold hover:bg-zinc-800 transition-all active:scale-95">
+            Kết thúc
+          </button>
         </div>
       </header>
 
-      <div className="w-full max-w-[1600px] flex-1 mx-auto my-4 md:my-6 p-4 md:p-6 lg:p-8">
-        {quizMode === 'test' ? (
-          <div className="w-full">
-            {displayQuestions.map((item, index) => {
-              const startNum = getGlobalQuestionNumber(index);
-              const caseNum = getCaseStudyNumber(index); 
-              
-              if (item.type === 'single') {
-                return (
-                  <div key={item._id || index} id={`question-${item._id}`} className="max-w-5xl mx-auto mb-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <QuestionItem 
-                      question={item} 
-                      index={startNum - 1} 
-                      userAnswer={userAnswers[item._id]} 
-                      onAnswerChange={handleAnswerChange} 
-                      isBookmarked={bookmarkedQuestions.has(item._id)}
-                      onToggleBookmark={() => handleToggleBookmark(item._id)}
+      <div className="flex-1 overflow-hidden p-4 md:p-6 lg:p-8">
+        <div className="h-full w-full max-w-[1600px] mx-auto overflow-y-auto pr-2">
+          {quizMode === 'test' ? (
+            <div className="w-full">
+              {displayQuestions.map((item, index) => {
+                const startNum = getGlobalQuestionNumber(index);
+                const caseNum = getCaseStudyNumber(index); 
+                
+                if (item.type === 'single') {
+                  return (
+                    <div key={item._id || index} id={`question-${item._id}`} className="max-w-5xl mx-auto mb-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                      <QuestionItem 
+                        question={item} 
+                        index={startNum - 1} 
+                        userAnswer={userAnswers[item._id]} 
+                        onAnswerChange={handleAnswerChange} 
+                        isBookmarked={bookmarkedQuestions.has(item._id)}
+                        onToggleBookmark={() => handleToggleBookmark(item._id)}
+                        textSize={textSize}
+                      />
+                    </div>
+                  );
+                }
+                if (item.type === 'group') {
+                  return (
+                    <ResizableCaseStudy
+                      key={item._id || index} question={item} groupIndex={index} userAnswers={userAnswers}
+                      handleAnswerChange={handleAnswerChange} showFeedback={false}
+                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
+                      startingNumber={startNum} 
+                      caseStudyNumber={caseNum} 
                       textSize={textSize}
                     />
-                  </div>
-                );
-              }
-              if (item.type === 'group') {
-                return (
-                  <ResizableCaseStudy
-                    key={item._id || index} question={item} groupIndex={index} userAnswers={userAnswers}
-                    handleAnswerChange={handleAnswerChange} showFeedback={false}
-                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
-                    startingNumber={startNum} 
-                    caseStudyNumber={caseNum} 
-                    textSize={textSize}
-                  />
-                );
-              }
-              return null;
-            })}
-            
-            <div className="flex justify-center mt-12 border-t border-zinc-200 pt-8 max-w-5xl mx-auto w-full mb-20">
-              <button onClick={handleSubmitQuiz} className="bg-accent text-white px-12 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                Nộp bài
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="w-full">
-            {(() => {
-              const startNum = getGlobalQuestionNumber(currentQuestionIndex);
-              const caseNum = getCaseStudyNumber(currentQuestionIndex);
-              return currentQuestion.type === 'group' ? (
-                <ResizableCaseStudy
-                  question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
-                  handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                  bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
-                  startingNumber={startNum}
-                  caseStudyNumber={caseNum}
-                  textSize={textSize}
-                />
-              ) : (
-                <QuestionSingleDisplay
-                  currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
-                  handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                  bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
-                  globalNumber={startNum}
-                  textSize={textSize}
-                />
-              );
-            })()}
-
-            <div className="flex justify-between items-center mt-8 pt-6 border-t border-zinc-200">
-              <button 
-                onClick={() => {
-                  localStorage.removeItem(`studyMed_bookmarks_${id || 'virtual'}`);
-                  navigate('/dashboard');
-                }} 
-                className="text-sm text-zinc-500 hover:text-zinc-950 font-medium"
-              >
-                Thoát
-              </button>
-              <div className="flex gap-3">
-                <button onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0} className="text-sm text-zinc-600 hover:text-zinc-950 disabled:opacity-50">
-                    Trang trước
+                  );
+                }
+                return null;
+              })}
+              
+              <div className="flex justify-center mt-12 border-t border-zinc-200 pt-8 max-w-5xl mx-auto w-full mb-20">
+                <button onClick={handleSubmitQuiz} className="bg-accent text-white px-12 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                  Nộp bài
                 </button>
-                
-                {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
-                    <button onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-sm font-medium disabled:opacity-50">
-                        Xem đáp án
-                    </button>
-                ) : currentQuestionIndex < displayQuestions.length - 1 ? (
-                    <button onClick={handleNextQuestion} className="bg-zinc-950 text-white px-4 py-2 rounded-full text-sm font-medium">
-                        Tiếp theo
-                    </button>
-                ) : (
-                    <button onClick={handleSubmitQuiz} className="bg-accent text-white px-4 py-2 rounded-full text-sm font-medium">
-                        Kết thúc
-                    </button>
-                )}
               </div>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="w-full flex flex-col h-full">
+              <div className="flex-1">
+                {(() => {
+                  const startNum = getGlobalQuestionNumber(currentQuestionIndex);
+                  const caseNum = getCaseStudyNumber(currentQuestionIndex);
+                  return currentQuestion.type === 'group' ? (
+                    <ResizableCaseStudy
+                      question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
+                      handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
+                      startingNumber={startNum}
+                      caseStudyNumber={caseNum}
+                      textSize={textSize}
+                    />
+                  ) : (
+                    <QuestionSingleDisplay
+                      currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
+                      handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
+                      globalNumber={startNum}
+                      textSize={textSize}
+                    />
+                  );
+                })()}
+              </div>
+
+              <footer className="h-[15vh] flex justify-between items-center border-t border-zinc-200 bg-white/50 backdrop-blur-sm shrink-0 px-6">
+                <button 
+                  onClick={() => navigate('/dashboard')} 
+                  className="px-6 py-2 rounded-xl text-sm font-medium text-zinc-500 hover:bg-white border border-transparent hover:border-zinc-200 transition-all"
+                >
+                  Thoát
+                </button>
+                <div className="flex gap-4">
+                  <button 
+                    onClick={handlePreviousQuestion} 
+                    disabled={currentQuestionIndex === 0} 
+                    className="px-8 py-3 rounded-2xl border-2 border-zinc-900 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-all disabled:opacity-30 disabled:border-zinc-300"
+                  >
+                      Câu trước
+                  </button>
+                  
+                  {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
+                      <button onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer} className="px-8 py-3 bg-blue-600 text-white rounded-2xl text-sm font-bold hover:bg-blue-700 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50">
+                          Kiểm tra
+                      </button>
+                  ) : currentQuestionIndex < displayQuestions.length - 1 ? (
+                      <button onClick={handleNextQuestion} className="px-8 py-3 bg-zinc-950 text-white rounded-2xl text-sm font-bold hover:bg-zinc-800 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                          Câu sau
+                      </button>
+                  ) : (
+                      <button onClick={handleSubmitQuiz} className="px-8 py-3 bg-emerald-500 text-white rounded-2xl text-sm font-bold hover:bg-emerald-600 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                          Nộp bài
+                      </button>
+                  )}
+                </div>
+              </footer>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

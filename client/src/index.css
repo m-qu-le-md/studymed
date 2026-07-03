@@ -5,11 +5,32 @@
 
 /* MỚI: Áp dụng font Roboto và các kiểu cơ bản cho body */
 body {
-  font-family: 'Roboto', sans-serif; /* Đảm bảo Roboto được sử dụng */
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  overflow-x: hidden; /* Ngăn cuộn ngang */
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Neo-brutalism utility */
+.neo-brutal {
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* Fluid typography with clamp */
+.fluid-text {
+  font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1.25rem);
 }
 
 /* MỚI: Điều chỉnh một số kiểu mặc định của form để phù hợp với Tailwind/Material You */
