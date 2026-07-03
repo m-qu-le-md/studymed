@@ -145,6 +145,7 @@ function DashboardPage() {
                     <div className="flex gap-2">
                         <button onClick={() => navigate(`/quiz/edit/${quiz._id}`)} className="text-[10px] font-medium text-zinc-500 hover:text-zinc-900">Quản lý</button>
                         <button onClick={() => handleStartQuizClick(quiz._id)} className="text-[10px] font-medium text-accent">Làm bài</button>
+                        <button onClick={() => handleDeleteQuiz(quiz._id)} className="text-[10px] font-medium text-red-500 hover:text-red-700">Xóa</button>
                     </div>
                   </div>
                 </div>
