@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
-// import Button from '../components/Button';
 import { useAlert } from '../context/AlertContext';
 import QuestionSingleDisplay from '../components/QuestionSingleDisplay';
 import ResizableCaseStudy from '../components/ResizableCaseStudy';
@@ -20,9 +19,9 @@ function QuizReviewPage() {
   const [loading, setLoading] = useState(true);
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState(new Set());
   
+  // Quản lý hiển thị từng câu
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
-  
-  // STATE CỠ CHỮ: 'sm' (Nhỏ), 'base' (Vừa), 'lg' (Lớn)
   const [textSize] = useState('base');
 
   const fetchBookmarks = useCallback(async () => {
@@ -72,10 +71,10 @@ function QuizReviewPage() {
     try {
       const res = await api.put(`/api/users/bookmark/${questionId}`, {});
       if (res.data.bookmarked) {
-        setAlert('Đã thêm câu hỏi vào bookmark.', 'success');
+        setAlert('Đã thêm cờ đánh dấu.', 'success');
         setBookmarkedQuestions(prev => new Set(prev).add(questionId));
       } else {
-        setAlert('Đã xóa câu hỏi khỏi bookmark.', 'info');
+        setAlert('Đã xóa cờ đánh dấu.', 'info');
         setBookmarkedQuestions(prev => {
           const newSet = new Set(prev);
           newSet.delete(questionId);
@@ -84,7 +83,7 @@ function QuizReviewPage() {
       }
     } catch (err) {
       console.error('Lỗi khi cập nhật bookmark:', err);
-      setAlert(err.response?.data?.msg || 'Lỗi khi cập nhật bookmark.', 'error');
+      setAlert(err.response?.data?.msg || 'Lỗi hệ thống.', 'error');
     }
   };
 
@@ -109,45 +108,28 @@ function QuizReviewPage() {
     return count;
   }, [displayQuestions]);
 
-  /**
-   * PHẢN XẠ ĐỊNH VỊ CHÍNH XÁC:
-   * Chấp nhận index (để fallback) và qId (để trỏ thẳng tới tế bào đích).
-   */
-  const handleNavigateToQuestion = useCallback((index, qId) => {
-    // Ưu tiên dùng qId để tìm ID HTML chính xác của câu hỏi (dù là câu đơn hay câu con trong group)
-    const targetId = qId ? `question-${qId}` : (
-      displayQuestions[index]?.type === 'single' 
-        ? `question-${displayQuestions[index]._id}`
-        : `question-${displayQuestions[index]?.childQuestions?.[0]?._id}`
-    );
+  // Điều hướng nhảy câu từ Drawer
+  const handleNavigateToQuestion = useCallback((index) => {
+    setCurrentQuestionIndex(index);
+    setIsNavDrawerOpen(false);
+  }, []);
 
-    if (targetId) {
-      const element = document.getElementById(targetId);
-      if (element) {
-        // Trừ hao 80px để không bị Header che lấp (giống như đặt khoảng cách an toàn khi mổ)
-        const headerOffset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < displayQuestions.length - 1) setCurrentQuestionIndex(prev => prev + 1);
+  };
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-      setIsNavDrawerOpen(false); 
-    }
-  }, [displayQuestions]);
+  const handlePreviousQuestion = () => {
+    if (currentQuestionIndex > 0) setCurrentQuestionIndex(prev => prev - 1);
+  };
 
-  if (loading) {
-    return <div className="flex justify-center items-center min-h-screen">Đang tải...</div>;
-  }
+  if (loading) return <div className="flex justify-center items-center min-h-screen bg-slate-50">Đang chuẩn bị dữ liệu...</div>;
+  if (!quiz || displayQuestions.length === 0) return <div className="flex justify-center items-center min-h-screen bg-slate-50">Lỗi không tìm thấy dữ liệu.</div>;
 
-  if (!quiz) {
-    return <div className="flex justify-center items-center min-h-screen">Không tìm thấy dữ liệu bộ đề.</div>;
-  }
+  const currentQuestion = displayQuestions[currentQuestionIndex];
 
   return (
-    <div className="min-h-[100dvh] bg-zinc-50 flex flex-col relative selection:bg-accent selection:text-white">
+    // Khóa cứng chiều cao màn hình để kế thừa Panel cuộn độc lập
+    <div className="h-screen w-screen bg-slate-50 flex flex-col overflow-hidden relative selection:bg-blue-200 selection:text-slate-900">
       
       <QuizNavigationDrawer
         isOpen={isNavDrawerOpen}
@@ -156,83 +138,85 @@ function QuizReviewPage() {
         userAnswers={userAnswers}
         bookmarkedQuestions={bookmarkedQuestions}
         quizMode="review"
-        currentQuestionIndex={0} 
-        setCurrentQuestionIndex={handleNavigateToQuestion}
+        currentQuestionIndex={currentQuestionIndex} 
+        setCurrentQuestionIndex={handleNavigateToQuestion} // Đã sửa logic truyền ID thành Index
       />
 
-      <header className="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-zinc-200 px-6 py-4 flex items-center justify-between">
-        <div className="truncate">
-            <h1 className="text-sm font-semibold text-zinc-950 truncate">
-                Xem lại: {quiz.title}
+      {/* Header */}
+      <header className="h-[64px] bg-white z-40 border-b border-slate-200 px-6 flex items-center justify-between shrink-0 shadow-sm">
+        <div className="flex flex-col truncate">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+              Lịch sử bài làm
+            </span>
+            <h1 className="text-base font-bold text-slate-800 truncate">
+                {quiz.title}
             </h1>
         </div>
 
         <div className="flex items-center gap-4">
-          <button onClick={() => setIsNavDrawerOpen(true)} className="text-xs font-medium text-zinc-500 hover:text-accent transition-colors">
-            Danh sách câu hỏi
+          <button onClick={() => setIsNavDrawerOpen(true)} className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            Danh sách
           </button>
-          <button onClick={() => navigate('/dashboard')} className="text-xs font-medium text-zinc-500 hover:text-zinc-950">
+          <button onClick={() => navigate('/dashboard')} className="bg-slate-100 text-slate-700 px-4 py-1.5 rounded-lg text-sm font-bold hover:bg-slate-200 transition-all">
             Thoát
           </button>
         </div>
       </header>
 
-      <div className="w-full max-w-[1600px] flex-1 mx-auto my-4 md:my-8 p-4 md:p-6 lg:p-8">
-        
-        {quiz.description && (
-            <div className="max-w-5xl mx-auto mb-10 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 text-center">
-                <p className="text-gray-600 text-lg">{quiz.description}</p>
-            </div>
-        )}
+      {/* Main Content Area - Render duy nhất 1 câu đang focus */}
+      <main className="flex-1 overflow-hidden p-4 md:p-6">
+        {(() => {
+            const startNum = getGlobalQuestionNumber(currentQuestionIndex);
+            const caseNum = getCaseStudyNumber(currentQuestionIndex);
 
-        {displayQuestions.map((item, index) => {
-          const startNum = getGlobalQuestionNumber(index);
-          const caseNum = getCaseStudyNumber(index);
-
-          if (item.type === 'single') {
-            return (
-              <QuestionSingleDisplay
-                key={item._id || index}
-                currentQuestion={item}
-                currentQuestionIndex={index}
-                userAnswers={userAnswers}
-                handleAnswerChange={() => {}}
-                showFeedback={true}
-                bookmarkedQuestions={bookmarkedQuestions}
-                handleToggleBookmark={handleToggleBookmark}
-                globalNumber={startNum}
-                textSize={textSize}
-              />
+            return currentQuestion.type === 'group' ? (
+                <ResizableCaseStudy
+                    question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
+                    handleAnswerChange={() => {}} // Disabled trong chế độ xem lại
+                    showFeedback={true} // Bắt buộc mở bảng giải thích
+                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode="review"
+                    startingNumber={startNum} caseStudyNumber={caseNum} textSize={textSize}
+                />
+            ) : (
+                <QuestionSingleDisplay
+                    currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
+                    handleAnswerChange={() => {}} // Disabled
+                    showFeedback={true} // Bắt buộc mở bảng giải thích
+                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
+                    globalNumber={startNum} textSize={textSize}
+                />
             );
-          }
+        })()}
+      </main>
 
-          if (item.type === 'group') {
-            return (
-              <ResizableCaseStudy
-                key={item._id || index}
-                question={item}
-                groupIndex={index}
-                userAnswers={userAnswers}
-                handleAnswerChange={() => {}}
-                showFeedback={true}
-                bookmarkedQuestions={bookmarkedQuestions}
-                handleToggleBookmark={handleToggleBookmark}
-                quizMode="review"
-                startingNumber={startNum}
-                caseStudyNumber={caseNum}
-                textSize={textSize}
-              />
-            );
-          }
-          return null;
-        })}
+      {/* Footer Navigation */}
+      <footer className="h-[72px] flex justify-between items-center border-t border-slate-200 bg-white px-6 shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.02)]">
+        <button 
+          onClick={() => navigate('/dashboard')} 
+          className="px-4 py-2 rounded-lg text-sm font-medium text-slate-500 hover:bg-slate-100 transition-all"
+        >
+          Về trang chủ
+        </button>
         
-        <div className="flex justify-center mt-12 border-t border-zinc-200 pt-10 max-w-5xl mx-auto w-full mb-12">
-          <button onClick={() => navigate('/dashboard')} className="bg-zinc-950 text-white px-12 py-3 rounded-full font-medium hover:bg-zinc-800 transition-colors">
-            Hoàn tất
+        <div className="flex gap-3">
+          <button 
+            onClick={handlePreviousQuestion} 
+            disabled={currentQuestionIndex === 0} 
+            className="px-5 py-2.5 rounded-lg border border-slate-300 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+              Câu trước
+          </button>
+          
+          <button 
+            onClick={handleNextQuestion} 
+            disabled={currentQuestionIndex === displayQuestions.length - 1}
+            className="px-6 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+          >
+              Câu tiếp theo
           </button>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

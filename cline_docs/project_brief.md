@@ -14,3 +14,16 @@ StudyMed là một nền tảng học tập y khoa toàn diện được phát t
 ## Đối tượng sử dụng
 - Sinh viên y khoa.
 - Học viên đang ôn tập các chứng chỉ ngành y.
+
+## Hướng dẫn khởi động dự án
+Muốn khởi động dự án thì từ thư mục gốc `PS D:\Dự án StudyMed\StudyMed>` chạy lệnh:
+```bash
+cd server
+npm run dev
+```
+để khởi động server, rồi từ một terminal khác chạy lệnh:
+```bash
+cd client
+npm start
+```
+thì web sẽ được triển khai trên [http://localhost:3000/](http://localhost:3000/).

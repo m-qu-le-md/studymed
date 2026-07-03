@@ -15,3 +15,4 @@
 - Đảm bảo các route `quiz`, `user`, `study` đã được kết nối đúng.
 - Sử dụng Mongoose để kết nối database thông qua biến môi trường `MONGODB_URI`.
 - Fix lỗi `textSize` is not defined trong `QuizReviewPage` và `QuizTakingPage`.
+- Đã bổ sung hướng dẫn khởi động dự án vào `cline_docs/project_brief.md`.

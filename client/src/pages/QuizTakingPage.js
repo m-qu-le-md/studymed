@@ -188,38 +188,23 @@ function QuizTakingPage() {
     return count;
   }, [displayQuestions]); 
 
-  if (loadingQuiz) return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-50">
-      <div className="flex flex-col items-center gap-4">
-        <div className="w-8 h-8 border-4 border-slate-300 border-t-slate-800 rounded-full animate-spin"></div>
-        <p className="text-slate-600 font-medium">Đang chuẩn bị bộ đề...</p>
-      </div>
-    </div>
-  );
-  
-  if (!originalQuiz || displayQuestions.length === 0) return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-50 text-red-600 font-medium">
-      Không thể tải dữ liệu bộ đề. Vui lòng thử lại.
-    </div>
-  );
+  if (loadingQuiz) return <div className="flex items-center justify-center min-h-screen bg-slate-50">Đang tải bộ đề...</div>;
+  if (!originalQuiz || displayQuestions.length === 0) return <div className="flex items-center justify-center min-h-screen bg-slate-50">Lỗi tải bộ đề.</div>;
 
   const currentQuestion = displayQuestions[currentQuestionIndex];
   const totalQuestionsCount = originalQuiz.questions.reduce((total, q) => total + (q.type === 'group' && q.childQuestions ? q.childQuestions.length : 1), 0);
   const answeredCount = Object.values(userAnswers).filter(a => a.length > 0).length;
-  const progressPercentage = (answeredCount / (totalQuestionsCount || 1)) * 100;
-
   const canCheckAnswer = currentQuestion?.type === 'group'
     ? currentQuestion.childQuestions.every(cq => userAnswers[cq._id] && userAnswers[cq._id].length > 0)
     : (currentQuestion?.questionType === 'multi-select' ? userAnswers[currentQuestion._id]?.length > 0 : false);
 
   return (
     <div className="h-screen w-screen bg-slate-50 flex flex-col overflow-hidden relative selection:bg-slate-800 selection:text-white">
-      
-      {/* Progress Bar Top Edge */}
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-200 z-50">
+      {/* Progress Bar Top */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-slate-200 z-50">
         <div 
           className="h-full bg-blue-600 transition-all duration-500 ease-out" 
-          style={{ width: `${progressPercentage}%` }}
+          style={{ width: `${(answeredCount / (totalQuestionsCount || 1)) * 100}%` }}
         />
       </div>
 
@@ -234,65 +219,54 @@ function QuizTakingPage() {
         setCurrentQuestionIndex={setCurrentQuestionIndex}
       />
 
-      {/* Time Up Modal */}
       {isTimeUp && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm mx-4 border border-slate-100">
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Đã hết thời gian</h2>
-            <p className="text-slate-500 mb-6 text-sm">Hệ thống đã ghi nhận toàn bộ quá trình làm bài của bạn.</p>
+        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-xl shadow-xl text-center max-w-sm mx-4">
+            <h2 className="text-lg font-bold text-slate-900 mb-4">Hết giờ làm bài!</h2>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }} className="px-5 py-2.5 text-sm font-medium text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
-                Xem lại bài
-              </button>
-              <button onClick={handleSubmitQuiz} className="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md">
-                Nộp bài ngay
-              </button>
+              <button onClick={() => { setIsTimeUp(false); setIsTimerPaused(true); }} className="px-4 py-2 text-sm text-slate-500 hover:text-slate-900">Làm tiếp</button>
+              <button onClick={handleSubmitQuiz} className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium">Nộp bài</button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Clinical Header */}
-      <header className="h-[72px] bg-white z-40 border-b border-slate-200 px-6 flex items-center justify-between shrink-0 shadow-sm mt-1.5">
+      {/* Header */}
+      <header className="h-[64px] bg-white z-40 border-b border-slate-200 px-6 flex items-center justify-between shrink-0 shadow-sm mt-1">
         <div className="flex items-center gap-6">
           <div className="flex flex-col">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">
-              {quizMode === 'review' ? 'Chế độ: Ôn tập' : 'Chế độ: Kiểm tra'}
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+              {quizMode === 'review' ? 'Ôn tập' : 'Kiểm tra'}
             </span>
-            <div className={`font-mono text-xl font-semibold tracking-tight ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-slate-800'}`}>
+            <div className={`font-mono font-bold text-base ${isTimeUp && !isTimerPaused ? 'text-red-600 animate-pulse' : 'text-slate-800'}`}>
               {formatTime(timeLeft)}
             </div>
           </div>
-          
-          <div className="hidden md:flex items-center gap-2 pl-6 border-l border-slate-200">
-            <span className="text-sm text-slate-500 font-medium">Tiến độ:</span>
-            <span className="text-sm font-bold text-slate-800">{answeredCount} / {totalQuestionsCount}</span>
-          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button onClick={() => setIsNavDrawerOpen(true)} className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 transition-colors">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+        <div className="flex items-center gap-4">
+          <button onClick={() => setIsNavDrawerOpen(true)} className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
             Danh sách câu hỏi
           </button>
-          <button onClick={handleSubmitQuiz} className="bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-slate-900 transition-all shadow-sm active:scale-95">
-            Kết thúc thi
+          <button onClick={handleSubmitQuiz} className="bg-slate-900 text-white px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all active:scale-95">
+            Kết thúc
           </button>
         </div>
       </header>
 
-      {/* Main Content Area */}
-      <main className="flex-1 overflow-hidden p-0 relative">
-        <div className="h-full w-full overflow-y-auto px-4 md:px-8 py-6 pb-32">
-          {quizMode === 'test' ? (
-            <div className="w-full max-w-5xl mx-auto space-y-8">
+      {/* Main Container - Khống chế cuộn tổng thể */}
+      <div className="flex-1 overflow-hidden relative">
+        {quizMode === 'test' ? (
+          /* Chế độ thi thử: Cho phép cuộn dọc toàn trang tự do */
+          <div className="h-full w-full overflow-y-auto p-4 md:p-6 lg:p-8 pb-32">
+            <div className="w-full max-w-5xl mx-auto space-y-6">
               {displayQuestions.map((item, index) => {
                 const startNum = getGlobalQuestionNumber(index);
                 const caseNum = getCaseStudyNumber(index); 
                 
                 if (item.type === 'single') {
                   return (
-                    <div key={item._id || index} id={`question-${item._id}`} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 transition-shadow hover:shadow-md">
+                    <div key={item._id || index} id={`question-${item._id}`} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                       <QuestionItem 
                         question={item} 
                         index={startNum - 1} 
@@ -319,82 +293,71 @@ function QuizTakingPage() {
                 }
                 return null;
               })}
-              
-              <div className="flex justify-center mt-16 pt-8 max-w-2xl mx-auto w-full mb-10">
-                <button onClick={handleSubmitQuiz} className="w-full bg-blue-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
-                  Nộp bài và Xem kết quả
+              <div className="flex justify-center pt-8 max-w-xl mx-auto w-full">
+                <button onClick={handleSubmitQuiz} className="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors">
+                  Nộp bài và xem kết quả
                 </button>
               </div>
             </div>
-          ) : (
-            <div className="w-full max-w-5xl mx-auto flex flex-col h-full">
-              {(() => {
-                const startNum = getGlobalQuestionNumber(currentQuestionIndex);
-                const caseNum = getCaseStudyNumber(currentQuestionIndex);
-                return currentQuestion.type === 'group' ? (
-                  <ResizableCaseStudy
-                    question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
-                    handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
-                    startingNumber={startNum}
-                    caseStudyNumber={caseNum}
-                    textSize={textSize}
-                  />
-                ) : (
-                  <QuestionSingleDisplay
-                    currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
-                    handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
-                    bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
-                    globalNumber={startNum}
-                    textSize={textSize}
-                  />
-                );
-              })()}
-            </div>
-          )}
-        </div>
-      </main>
+          </div>
+        ) : (
+          /* Chế độ Ôn tập: Khóa cứng h-full để ép các panel con tự cuộn độc lập */
+          <div className="h-full w-full p-4 md:p-6 overflow-hidden">
+            {(() => {
+              const startNum = getGlobalQuestionNumber(currentQuestionIndex);
+              const caseNum = getCaseStudyNumber(currentQuestionIndex);
+              return currentQuestion.type === 'group' ? (
+                <ResizableCaseStudy
+                  question={currentQuestion} groupIndex={currentQuestionIndex} userAnswers={userAnswers}
+                  handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                  bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
+                  startingNumber={startNum}
+                  caseStudyNumber={caseNum}
+                  textSize={textSize}
+                />
+              ) : (
+                <QuestionSingleDisplay
+                  currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} userAnswers={userAnswers}
+                  handleAnswerChange={handleAnswerChange} showFeedback={showFeedback}
+                  bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark}
+                  globalNumber={startNum}
+                  textSize={textSize}
+                />
+              );
+            })()}
+          </div>
+        )}
+      </div>
 
-      {/* Floating Action Footer (chỉ hiển thị ở chế độ Review) */}
+      {/* Footer cố định cho chế độ Ôn tập */}
       {quizMode === 'review' && (
-        <footer className="absolute bottom-0 left-0 w-full h-[80px] bg-white border-t border-slate-200 px-6 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+        <footer className="h-[72px] flex justify-between items-center border-t border-slate-200 bg-white px-6 shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.02)]">
           <button 
             onClick={() => navigate('/dashboard')} 
-            className="px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+            className="px-4 py-2 rounded-lg text-sm font-medium text-slate-500 hover:bg-slate-100 transition-all"
           >
-            Thoát ra ngoài
+            Thoát
           </button>
-          
           <div className="flex gap-3">
             <button 
               onClick={handlePreviousQuestion} 
               disabled={currentQuestionIndex === 0} 
-              className="px-6 py-2.5 rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+              className="px-5 py-2 rounded-lg border border-slate-300 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all disabled:opacity-30"
             >
                 Câu trước
             </button>
             
             {!showFeedback && (currentQuestion.type === 'group' || currentQuestion.questionType === 'multi-select') ? (
-                <button 
-                  onClick={() => setShowFeedback(true)} 
-                  disabled={!canCheckAnswer} 
-                  className="px-8 py-2.5 bg-indigo-500 text-white rounded-lg text-sm font-semibold hover:bg-indigo-600 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                    Kiểm tra đáp án
+                <button onClick={() => setShowFeedback(true)} disabled={!canCheckAnswer} className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition-all disabled:opacity-40">
+                    Kiểm tra
                 </button>
             ) : currentQuestionIndex < displayQuestions.length - 1 ? (
-                <button 
-                  onClick={handleNextQuestion} 
-                  className="px-8 py-2.5 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-900 transition-all shadow-md"
-                >
-                    Câu tiếp theo
+                <button onClick={handleNextQuestion} className="px-6 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800 transition-all">
+                    Câu sau
                 </button>
             ) : (
-                <button 
-                  onClick={handleSubmitQuiz} 
-                  className="px-8 py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md"
-                >
-                    Hoàn thành & Nộp bài
+                <button onClick={handleSubmitQuiz} className="px-6 py-2 bg-emerald-600 text-white rounded-lg text-sm font-bold hover:bg-emerald-700 transition-all">
+                    Nộp bài
                 </button>
             )}
           </div>
