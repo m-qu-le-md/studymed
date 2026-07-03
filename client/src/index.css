@@ -31,14 +31,13 @@ input[type="radio"] {
 
 input[type="radio"]:checked,
 input[type="checkbox"]:checked {
-  background-color: theme('colors.primary-blue');
-  border-color: theme('colors.primary-blue');
+  background-color: theme('colors.accent');
+  border-color: theme('colors.accent');
 }
 
 input[type="radio"]:checked:focus,
 input[type="checkbox"]:checked:focus {
-  /* ĐÃ SỬA: Gọi trực tiếp màu primary-blue, không có .500 */
-  box-shadow: 0 0 0 3px rgba(theme('colors.primary-blue'), 0.5); /* Thêm đổ bóng khi focus */
+  box-shadow: 0 0 0 3px rgba(3, 129, 254, 0.5); /* Hardcoded fallback for theme function */
 }
 
 /* CSS cho CustomTagInput */
