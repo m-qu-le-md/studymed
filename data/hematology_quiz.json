@@ -1,0 +1,1455 @@
+{
+  "title": "Bộ đề Huyết học cơ bản (Full)",
+  "description": "Bộ câu hỏi ôn tập huyết học đầy đủ",
+  "subject": "Huyết học",
+  "topic": "Tổng quát",
+  "questions": [
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một phụ nữ 40 tuổi đến phòng khám với triệu chứng mệt mỏi. Cô ấy gần đây đã được điều trị một tình trạng nhiễm trùng. Các giá trị xét nghiệm của cô ấy như sau: số lượng hồng cầu (RBC - Red blood cell) là 1,8 × 10^6/µl; hemoglobin (Hb) là 5,2 g/dl; hematocrit (Hct) là 15; số lượng bạch cầu (WBC - White blood cell) là 7,6 × 10^3/µl; số lượng tiểu cầu là 320.000/µl; thể tích trung bình hồng cầu (MCV - Mean corpuscular volume) là 92 fL; và số lượng hồng cầu lưới là 24%. Giải thích nào là khả dĩ nhất cho bệnh cảnh này?",
+      "options": [
+        {
+          "text": "Thiếu máu bất sản (Aplastic anemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu máu tán huyết (Hemolytic anemia)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bệnh hồng cầu hình cầu di truyền (Hereditary spherocytosis)",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu vitamin B12",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Bệnh nhân này có sự gia tăng sản xuất hồng cầu (RBC - Red Blood Cell), được biểu hiện bằng số lượng hồng cầu lưới (reticulocyte) tăng rõ rệt trong bối cảnh thiếu máu đáng kể (giảm số lượng hồng cầu, hemoglobin và hematocrit). Các hồng cầu đang được sản xuất có kích thước bình thường (MCV = 90), do đó bệnh nhân không bị bệnh hồng cầu hình cầu (spherocytosis - hồng cầu nhỏ) hoặc thiếu vitamin B12 (hồng cầu lớn). Số lượng bạch cầu (WBC - White Blood Cell) bình thường và số lượng hồng cầu lưới tăng cho thấy tủy xương vẫn đang hoạt động. Số lượng hồng cầu lưới tăng có nghĩa là một lượng lớn hồng cầu đang được sản xuất. Những giá trị xét nghiệm này ủng hộ chẩn đoán thiếu máu do mất máu—trong trường hợp này là thiếu máu do tan máu (hemolysis)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Enzyme nào của hồng cầu tạo điều kiện thuận lợi cho việc vận chuyển carbon dioxide (CO2)?",
+      "options": [
+        {
+          "text": "Myeloperoxidase",
+          "isCorrect": false
+        },
+        {
+          "text": "Carbonic anhydrase",
+          "isCorrect": true
+        },
+        {
+          "text": "Superoxide dismutase",
+          "isCorrect": false
+        },
+        {
+          "text": "Globin reductase",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Carbonic anhydrase xúc tác phản ứng của CO2 với nước để cho phép một lượng lớn CO2 được vận chuyển trong máu dưới dạng ion bicarbonate hòa tan."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bệnh nhân có nồng độ hemoglobin là 7,9 g/dl, hematocrit là 23% và thể tích trung bình hồng cầu là 89 fl. Nồng độ erythropoietin khá thấp. Chẩn đoán nào là khả dĩ nhất?",
+      "options": [
+        {
+          "text": "Thiếu máu hồng cầu hình liềm (Sickle cell anemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu máu ác tính (Pernicious anemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh thận giai đoạn cuối (End-stage renal disease)",
+          "isCorrect": true
+        },
+        {
+          "text": "Mất máu mãn tính (Chronic blood loss)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Trong bệnh thận giai đoạn cuối (end-stage renal disease), thận ngừng sản xuất erythropoietin, dẫn đến thiếu máu nặng. Các loại thiếu máu trong ba phương án còn lại dẫn đến mất hoặc phá hủy hồng cầu và làm tăng erythropoietin do thiếu oxy mô (tissue hypoxemia)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bệnh nhân có hematocrit là 63% và nồng độ erythropoietin giảm. Chỉ dựa trên thông tin này, chẩn đoán nào là khả dĩ nhất?",
+      "options": [
+        {
+          "text": "Tiếp xúc kéo dài và liên tục với độ cao lớn",
+          "isCorrect": false
+        },
+        {
+          "text": "Đa hồng cầu nguyên phát (Polycythemia vera)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bệnh phổi tắc nghẽn mãn tính kèm giảm oxy máu (Chronic obstructive pulmonary disease with hypoxemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh nhiễm sắt (Hemochromatosis)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Trong bệnh đa hồng cầu nguyên phát (polycythemia vera), sự sản xuất hồng cầu vô tính (clonal production) tự phát dẫn đến tăng hemoglobin, hematocrit và số lượng hồng cầu, đồng thời làm giảm erythropoietin, vì động lực thiếu oxy cho việc sản xuất \"epo\" bị giảm. Tiếp xúc với độ cao và bệnh phổi tắc nghẽn mạn tính (chronic obstructive pulmonary disease) đều liên quan đến tình trạng thiếu oxy mô, thúc đẩy tăng sản xuất erythropoietin."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 74 tuổi có nồng độ hemoglobin là 6,0 g/dl, hematocrit là 19%, thể tích trung bình hồng cầu là 117, và các hồng cầu có hình dạng lớn, kỳ dị trên phết máu ngoại biên. Nồng độ acid folic trong huyết thanh của ông ấy bình thường. Nguyên nhân nào có khả năng gây ra rối loạn này?",
+      "options": [
+        {
+          "text": "Thiếu yếu tố nội tại (Intrinsic factor)",
+          "isCorrect": true
+        },
+        {
+          "text": "Thiếu vitamin K",
+          "isCorrect": false
+        },
+        {
+          "text": "Xơ gan (Hepatic cirrhosis)",
+          "isCorrect": false
+        },
+        {
+          "text": "Alpha thalassemia",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Biểu hiện lâm sàng là thiếu máu hồng cầu khổng lồ (megaloblastic anemia), có thể do thiếu hụt vitamin B12 hoặc acid folic. Vì mức acid folic của bệnh nhân này bình thường, nguyên nhân phải là do thiếu vitamin B12 gây ra bởi teo niêm mạc dạ dày, dẫn đến sản xuất không đủ yếu tố nội tại (intrinsic factor), vốn cần thiết cho quá trình hấp thụ vitamin B12 bình thường ở đường tiêu hóa."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Khi hồng cầu bị phá hủy, phần porphyrin của hemoglobin được các đại thực bào chuyển hóa thành sản phẩm nào?",
+      "options": [
+        {
+          "text": "Xanthine",
+          "isCorrect": false
+        },
+        {
+          "text": "Các acid amin chuỗi nhánh (Branched-chain amino acids)",
+          "isCorrect": false
+        },
+        {
+          "text": "Homocysteine",
+          "isCorrect": false
+        },
+        {
+          "text": "Bilirubin",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Các đại thực bào (macrophages) chuyển đổi phần porphyrin của hemoglobin thành bilirubin."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Mỗi phân tử hemoglobin có thể vận chuyển bao nhiêu nguyên tử oxy?",
+      "options": [
+        {
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "text": "4",
+          "isCorrect": false
+        },
+        {
+          "text": "8",
+          "isCorrect": true
+        },
+        {
+          "text": "16",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Mỗi phân tử hemoglobin có bốn chuỗi globin (trong hemoglobin A, dạng chiếm ưu thế ở người trưởng thành, phân tử hemoglobin bao gồm hai chuỗi alpha và hai chuỗi beta). Mỗi chuỗi globin liên kết với một nhóm heme, chứa một nguyên tử sắt. Mỗi nguyên tử trong bốn nguyên tử sắt có thể liên kết lỏng lẻo với một phân tử (hai nguyên tử) oxy. Do đó, mỗi phân tử hemoglobin có thể vận chuyển tám nguyên tử oxy."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Trong tam cá nguyệt thứ hai của thai kỳ, vị trí sản xuất hồng cầu chủ yếu ở phôi thai là ở đâu?",
+      "options": [
+        {
+          "text": "Túi noãn hoàng (Yolk sac)",
+          "isCorrect": false
+        },
+        {
+          "text": "Tủy xương (Bone marrow)",
+          "isCorrect": false
+        },
+        {
+          "text": "Hạch bạch huyết (Lymph nodes)",
+          "isCorrect": false
+        },
+        {
+          "text": "Gan (Liver)",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Quá trình sản xuất hồng cầu bắt đầu ở túi noãn hoàng (yolk sac) trong tam cá nguyệt đầu tiên. Quá trình sản xuất tại túi noãn hoàng giảm vào đầu tam cá nguyệt thứ hai, và gan trở thành nguồn sản xuất hồng cầu chủ yếu. Quá trình sản xuất hồng cầu từ tủy xương tăng lên trong tam cá nguyệt thứ ba và tiếp tục trong suốt cuộc đời."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Vitamin B12 và acid folic thực hiện chức năng nào quan trọng đối với quá trình tạo máu (hematopoiesis)?",
+      "options": [
+        {
+          "text": "Hỗ trợ sản xuất porphyrin",
+          "isCorrect": false
+        },
+        {
+          "text": "Đóng vai trò là đồng yếu tố (cofactor) cho sự hấp thụ sắt",
+          "isCorrect": false
+        },
+        {
+          "text": "Hỗ trợ biệt hóa giai đoạn cuối của các tế bào dòng hồng cầu và dòng tủy",
+          "isCorrect": false
+        },
+        {
+          "text": "Hỗ trợ sản xuất thymidine triphosphate",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Sự tăng sinh tế bào đòi hỏi quá trình sao chép DNA, vốn cần nguồn cung cấp đầy đủ thymidine triphosphate. Cả vitamin B12 và folate đều cần thiết để tạo ra thymidine triphosphate."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 62 tuổi phàn nàn về đau đầu, khó khăn về thị giác và đau ngực. Khám thực thể cho thấy da mặt đỏ và lách to. Công thức máu toàn phần (CBC - Complete blood cell count) của ông ấy như sau: Hct, 58%; WBC, 13.300/µl; và tiểu cầu, 600.000/µl. Độ bão hòa oxy động mạch của ông ấy là 97% khi thở khí phòng. Bạn sẽ đề nghị phương pháp điều trị nào?",
+      "options": [
+        {
+          "text": "Hóa trị",
+          "isCorrect": false
+        },
+        {
+          "text": "Trích máu (Phlebotomy)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bổ sung sắt",
+          "isCorrect": false
+        },
+        {
+          "text": "Liệu pháp oxy hít",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Bệnh nhân này mắc bệnh đa hồng cầu nguyên phát: tăng hồng cầu, bạch cầu và tiểu cầu. Độ bão hòa oxy động mạch bình thường cho thấy không có lý do gì để bị đa hồng cầu bù trừ. Hematocrit tăng cũng làm tăng độ nhớt của máu, dẫn đến tăng hậu tải (afterload) cho tim, đây có lẽ là lý do gây đau ngực. Do đó, cần trích máu (phlebotomy) để giảm số lượng tế bào máu và độ nhớt của máu."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một phụ nữ 38 tuổi khỏe mạnh đến khám định kỳ. Cô ấy đã dành 2 tháng qua để đi bộ đường dài qua dãy Himalaya và leo đến trại căn cứ (base camp) của đỉnh Everest. Bạn mong đợi thấy kết quả nào trên công thức máu (CBC - Complete Blood Count) của cô ấy? | | Hematocrit | Số lượng hồng cầu (RBC count) | Số lượng bạch cầu (WBC count) | MCV | | :--- | :--- | :--- | :--- | :--- | | A) | ↑ | ↑ | ↑ | ↑ | | B) | ↑ | ↑ | ↔ | ↑ | | C) | ↑ | ↑ | ↔ | ↔ | | D) | ↑ | ↔ | ↔ | ↔ | | E) | ↔ | ↑ | ↑ | ↔ | | F) | ↑ | ↔ | ↑ | ↑ | | G) | ↔ | ↑ | ↔ | ↑ |",
+      "options": [],
+      "generalExplanation": "Đa hồng cầu thứ phát (secondary polycythemia) đã phát triển do tiếp xúc với mức oxy thấp. Bệnh nhân sẽ có mức hematocrit và số lượng hồng cầu tăng nhưng số lượng bạch cầu bình thường. Các tế bào vẫn bình thường, vì vậy MCV sẽ bình thường."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một nam giới người Mỹ gốc Phi 24 tuổi đến khoa cấp cứu 3 giờ sau khi khởi phát đau lưng và đau ngực dữ dội. Các vấn đề này bắt đầu khi anh ta đang đi bộ nhanh qua một khu phố đồi núi. Anh ta đã từng có những đợt tương tự nhiều lần trong quá khứ. Bệnh nhân đang đau rõ rệt. Các xét nghiệm cận lâm sàng cho thấy các giá trị sau: Hemoglobin = 11 g/dl Số lượng bạch cầu (Leukocyte count) = 22.000/µl Số lượng hồng cầu lưới (Reticulocyte count) = 3,5% Chẩn đoán của bệnh nhân này là gì?",
+      "options": [
+        {
+          "text": "Mất máu cấp tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu máu hồng cầu hình liềm (Sickle cell anemia)",
+          "isCorrect": true
+        },
+        {
+          "text": "Thiếu máu do bệnh mạn tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh thận giai đoạn cuối",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Người đàn ông Mỹ gốc Phi này mắc bệnh hồng cầu hình liềm (sickle cell anemia), được chứng minh bằng nồng độ hemoglobin giảm, số lượng hồng cầu lưới tăng vừa phải và tiền sử các cơn đau. Số lượng bạch cầu tăng cho thấy phản ứng với các hormone căng thẳng, với sự huy động các bạch cầu trưởng thành vào tuần hoàn. Nhu cầu oxy tăng do đi bộ trên địa hình đồi núi có khả năng gây thiếu máu cục bộ mô (tissue ischemia), dẫn đến hiện tượng hồng cầu hình liềm."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sau khi một người được đặt trong môi trường thiếu oxy, mất bao lâu để số lượng hồng cầu lưới tăng lên?",
+      "options": [
+        {
+          "text": "6 giờ",
+          "isCorrect": false
+        },
+        {
+          "text": "12 giờ",
+          "isCorrect": false
+        },
+        {
+          "text": "3 ngày",
+          "isCorrect": true
+        },
+        {
+          "text": "5 ngày",
+          "isCorrect": false
+        },
+        {
+          "text": "2 tuần",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Mức EPO tăng để đáp ứng với mức oxy động mạch giảm, với mức sản xuất EPO tối đa xảy ra trong vòng 24 giờ. Mất 3 ngày để các hồng cầu lưới mới xuất hiện trong tuần hoàn, và sau tổng cộng 5 ngày kể từ khi bắt đầu thiếu oxy, các hồng cầu lưới này sẽ lưu thông dưới dạng hồng cầu trưởng thành (erythrocytes). Vì mất 1 đến 2 ngày để một hồng cầu lưới trở thành hồng cầu trưởng thành, đáp án đúng là 3 ngày cho đến khi người đó có số lượng hồng cầu lưới tăng lên."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bệnh nhân đến phòng khám của bạn với triệu chứng mệt mỏi cực độ và khó thở khi gắng sức, tình trạng này đã trở nên tồi tệ dần trong 2 tuần qua. Khám thực thể cho thấy một phụ nữ có thể trạng tốt, trông thoải mái nhưng hơi khó thở. Các dấu hiệu sinh tồn bao gồm mạch 120 lần/phút, nhịp thở 20 lần/phút và huyết áp 120/70 mmHg. Khi đứng dậy, mạch của cô ấy tăng lên 150 lần/phút và huyết áp giảm xuống 80/50 mmHg. Các giá trị huyết học của cô ấy như sau: Hb, 7 g/dl; Hct, 20%; số lượng hồng cầu, 2 × 10^6/µl; và số lượng tiểu cầu, 400.000/µl. Trên tiêu bản máu ngoại vi, các hồng cầu có kích thước nhỏ và nhược sắc (microcytic and hypochromic). Chẩn đoán của bạn là gì?",
+      "options": [
+        {
+          "text": "Thiếu máu bất sản (Aplastic anemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Suy thận",
+          "isCorrect": false
+        },
+        {
+          "text": "Mất máu mạn tính và cấp tính kèm thiếu máu thiếu sắt",
+          "isCorrect": true
+        },
+        {
+          "text": "Thiếu máu hồng cầu hình liềm",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu máu nguyên hồng cầu khổng lồ (Megaloblastic anemia)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Công thức máu cho thấy bệnh nhân bị thiếu máu. Tủy xương của bệnh nhân vẫn hoạt động bình thường và số lượng tiểu cầu bình thường, nhưng bệnh nhân đang sản xuất một lượng hồng cầu (RBC - Red Blood Cell) bất thường bị giảm. Hồng cầu hồng cầu nhỏ (microcytic), nhược sắc (hypochromic - giảm hemoglobin nội bào) là dấu hiệu điển hình của thiếu máu do thiếu sắt, cho thấy tình trạng mất máu đã kéo dài đủ lâu dẫn đến cạn kiệt sắt. Huyết áp giảm khi đứng (hạ huyết áp tư thế đứng - postural hypotension) gợi ý giảm thể tích nội mạch, cho thấy có thể có một thành phần mất máu cấp tính. Nếu bệnh nhân bị suy thận, bệnh nhân sẽ bị thiếu máu với hồng cầu bình thường. Người bị bệnh hồng cầu hình liềm có hồng cầu bị biến dạng. Thiếu máu nguyên bào khổng lồ (megaloblastic anemia) được đặc trưng bởi hồng cầu đại hồng cầu (macrocytic - kích thước lớn)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Loại thực bào nào có thể đẩy các sản phẩm tiêu hóa ra ngoài và tiếp tục tồn tại cũng như hoạt động trong nhiều tháng?",
+      "options": [
+        {
+          "text": "Bạch cầu trung tính (Neutrophils)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu ái kiềm (Basophils)",
+          "isCorrect": false
+        },
+        {
+          "text": "Đại thực bào (Macrophages)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bạch cầu ái toan (Eosinophils)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các đại thực bào (macrophage) trở nên hoạt hóa và to ra tại các vị trí viêm và có thể thực bào tới 100 vi khuẩn trên mỗi đại thực bào. Chúng có thể đẩy các vật chất đã tiêu hóa ra ngoài và vẫn duy trì khả năng sống sót và hoạt động trong nhiều tháng. Bạch cầu ái kiềm (basophil) không có khả năng thực bào, và bạch cầu ái toan (eosinophil) là những tế bào thực bào yếu. Bạch cầu trung tính (neutrophil) phản ứng nhanh chóng với nhiễm trùng hoặc viêm và thực bào từ 3 đến 20 vi khuẩn hoặc các hạt khác trước khi chết."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Tế bào nào thực bào vật lạ và vi sinh vật bên trong các xoang gan?",
+      "options": [
+        {
+          "text": "Tế bào đuôi gai (Dendritic cells)",
+          "isCorrect": false
+        },
+        {
+          "text": "Mẫu tiểu cầu (Megakaryocytes)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu ái kiềm",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào Kupffer",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Tế bào Kupffer là các đại thực bào chuyên biệt tại mô, cư trú trong các xoang gan (hepatic sinusoids)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 45 tuổi đến khoa cấp cứu với tiền sử tiêu chảy 2 tuần, tình trạng trở nên tồi tệ dần trong vài ngày qua. Bệnh nhân có lượng nước tiểu tối thiểu và được nhập viện vì mất nước. Mẫu phân của bệnh nhân dương tính với trứng ký sinh trùng. Loại bạch cầu (WBC) nào sẽ có số lượng tăng cao?",
+      "options": [
+        {
+          "text": "Bạch cầu ái toan",
+          "isCorrect": true
+        },
+        {
+          "text": "Bạch cầu trung tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào lympho T",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào lympho B",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu đơn nhân (Monocytes)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Bạch cầu ái toan thường chiếm khoảng 2% tổng số lượng bạch cầu (WBC - White Blood Cell), nhưng chúng được sản xuất với số lượng lớn ở những người bị nhiễm ký sinh trùng."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một nam giới 24 tuổi đến khoa cấp cứu với tình trạng gãy chân. Xét nghiệm máu cho thấy số lượng bạch cầu của anh ta là 22 × 10^3/µl. Năm giờ sau, xét nghiệm máu lần thứ hai cho thấy số lượng bạch cầu là 7 × 10^3/µl. Nguyên nhân gây tăng số lượng bạch cầu trong xét nghiệm đầu tiên là gì?",
+      "options": [
+        {
+          "text": "Tăng sản xuất bạch cầu bởi tủy xương",
+          "isCorrect": false
+        },
+        {
+          "text": "Giải phóng các bạch cầu trưởng thành đã được dự trữ vào tuần hoàn",
+          "isCorrect": true
+        },
+        {
+          "text": "Giảm phá hủy bạch cầu",
+          "isCorrect": false
+        },
+        {
+          "text": "Tăng sản xuất selectin",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Phần lớn bạch cầu được dự trữ trong tủy xương, chờ đợi mức độ tăng cao của các cytokine hoặc hormone căng thẳng (ví dụ: epinephrine, corticosteroid) để kích thích giải phóng chúng vào tuần hoàn. Chấn thương xương có thể dẫn đến việc giải phóng bạch cầu vào tuần hoàn. Sự gia tăng số lượng bạch cầu này không chủ yếu do bất kỳ phản ứng viêm nào mà thay vào đó là do chấn thương cơ học và các phản ứng căng thẳng liên quan."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 62 tuổi, được biết có số lượng tế bào máu và công thức bạch cầu bình thường cách đây 3 tháng, nay xuất hiện tình trạng xanh xao, đau xương, bầm tím và số lượng bạch cầu là 42.000. Tám mươi lăm phần trăm các tế bào trong tuần hoàn có vẻ là bạch cầu hạt chưa trưởng thành. Chẩn đoán là gì?",
+      "options": [
+        {
+          "text": "Bạch cầu cấp dòng lympho (Acute lymphocytic leukemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu cấp dòng tủy (Acute myelocytic leukemia)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bạch cầu mạn dòng lympho (Chronic lymphocytic leukemia)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu mạn dòng tủy (Chronic myelocytic leukemia)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Số lượng bạch cầu là 42.000, cao hơn mức thường thấy khi phản ứng với nhiễm trùng và gợi ý bệnh bạch cầu (leukemia). Biểu hiện lâm sàng rầm rộ của bệnh nhân gợi ý một quá trình cấp tính, và kết quả công thức máu toàn phần (CBC - Complete Blood Count) bình thường 3 tháng trước đó xác nhận rằng bệnh nhân này mắc bệnh bạch cầu cấp tính. Bạch cầu hạt (granulocyte) là các tế bào dòng tủy (myeloid cells), và việc chúng xuất hiện trong tuần hoàn khi vẫn còn non là hoàn toàn phù hợp với bệnh bạch cầu. Do đó, bệnh nhân mắc bệnh bạch cầu dòng tủy cấp tính (còn được gọi là \"myelogenous\" hoặc \"myeloid\" leukemia)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Loại tế bào nào có thể tương tác với IgE và giải phóng một lượng lớn histamine, bradykinin, serotonin, heparin, các enzyme lysosome và các chất trung gian gây viêm khác?",
+      "options": [
+        {
+          "text": "Bạch cầu trung tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu ái kiềm và tế bào mast (Basophils and mast cells)",
+          "isCorrect": true
+        },
+        {
+          "text": "Bạch cầu ái toan",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu đơn nhân",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Sự liên kết chéo (cross-linking) của các thụ thể IgE trên bề mặt bạch cầu ái kiềm và tế bào mast dẫn đến quá trình khử hạt (degranulation) của chúng, giải phóng một loạt các chất trung gian gây viêm."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 60 tuổi được ghi nhận trong một lần khám sức khỏe định kỳ có số lượng bạch cầu (WBC - White Blood Cell) tăng đáng kể là 22.000/µl, và 80% tế bào là các tế bào trông trưởng thành với nhân lớn, tròn và ít bào tương. Xem xét hồ sơ cho thấy số lượng WBC đã tăng vừa phải trong ít nhất 18 tháng. Chẩn đoán có khả năng nhất là gì?",
+      "options": [
+        {
+          "text": "Bệnh bạch cầu dòng lympho cấp tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh bạch cầu dòng lympho mạn tính",
+          "isCorrect": true
+        },
+        {
+          "text": "Bệnh bạch cầu dòng tủy cấp tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh bạch cầu dòng tủy mạn tính",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Số lượng bạch cầu đã tăng cao trong hơn một năm và các tế bào dư thừa là những tế bào có vẻ ngoài trưởng thành, rõ ràng là các tế bào lympho. Do đó, đây là bệnh bạch cầu dòng lympho mạn tính (CLL - Chronic Lymphocytic Leukemia). Bệnh nhân mắc CLL thường không có triệu chứng trong thời gian dài, thường là nhiều năm."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sự xuyên mạch (transmigration) của các WBC xảy ra ở đâu để đáp ứng với các tác nhân gây nhiễm trùng?",
+      "options": [
+        {
+          "text": "Tiểu động mạch",
+          "isCorrect": false
+        },
+        {
+          "text": "Ống bạch huyết",
+          "isCorrect": false
+        },
+        {
+          "text": "Mao mạch và tiểu tĩnh mạch",
+          "isCorrect": true
+        },
+        {
+          "text": "Động mạch bị viêm",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Sự xuyên mạch (transmigration) của bạch cầu xảy ra qua các phần của hệ mạch có thành rất mỏng và lớp cơ trơn mạch máu tối thiểu. Điều này bao gồm các mao mạch và tiểu tĩnh mạch."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một cậu bé 8 tuổi thường xuyên đến phòng khám vì các nhiễm trùng da dai dẳng không lành trong khoảng thời gian bình thường. Cậu bé đã hồi phục bình thường sau khi mắc bệnh sởi. Kiểm tra kháng thể sau khi tiêm chủng cho thấy phản ứng kháng thể bình thường. Khiếm khuyết ở loại tế bào nào sau đây có khả năng cao nhất là nguyên nhân gây ra các nhiễm trùng thường xuyên và kéo dài?",
+      "options": [
+        {
+          "text": "Tế bào lympho B",
+          "isCorrect": false
+        },
+        {
+          "text": "Tương bào (Plasma cells)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu trung tính (Neutrophils)",
+          "isCorrect": true
+        },
+        {
+          "text": "Đại thực bào (Macrophages)",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào lympho T CD4",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Việc tiêu diệt vi khuẩn trong các nhiễm trùng da phần lớn được thực hiện bởi bạch cầu trung tính, vốn sản xuất các tác nhân diệt khuẩn, bao gồm các loại oxy phản ứng (reactive oxygen species). Để đáp ứng miễn dịch thu được hoạt động bình thường, cần có sự tham gia của tế bào lympho T, tế bào lympho B và tương bào (plasma cell), cùng với các đại thực bào."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Loại tế bào nào di chuyển vào các vị trí viêm để làm sạch mô hoại tử và điều hướng quá trình tái tạo mô?",
+      "options": [
+        {
+          "text": "Bạch cầu trung tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Đại thực bào",
+          "isCorrect": true
+        },
+        {
+          "text": "Tế bào tua (Dendritic cell)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bạch cầu ái toan (Eosinophil)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các đại thực bào theo sau sự xâm nhập ban đầu của bạch cầu trung tính vào vị trí viêm. Trong khi bạch cầu trung tính thực bào một số lượng vi khuẩn khiêm tốn trên mỗi tế bào trước khi chết, các đại thực bào vẫn tồn tại tại vị trí đó, thực bào và tiêu hóa các vi sinh vật gây bệnh và vật chất hoại tử, đồng thời sản xuất các cytokine điều hướng quá trình tái tạo mô bởi các nguyên bào sợi (fibroblast) và các loại tế bào khác. Tế bào đuôi gai (dendritic cell) là các tế bào trình diện kháng nguyên thường trú, trong khi bạch cầu ái toan là các tế bào thực bào yếu mà các sản phẩm của chúng (ví dụ: protein cơ bản chính - major basic protein) có thể tiêu diệt ký sinh trùng mà không cần bạch cầu ái toan thực bào chúng."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một trẻ 3 tuổi bị nhiễm trùng tai thường xuyên được phát hiện có nồng độ globulin miễn dịch giảm và không đáp ứng với tiêm chủng giải độc tố uốn ván (tetanus toxoid). Tuy nhiên, trẻ có phản ứng thử nghiệm da bình thường (đỏ và cứng muộn) với một kháng nguyên môi trường thông thường. Dòng tế bào nào không hoạt động bình thường?",
+      "options": [
+        {
+          "text": "Đại thực bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào T hỗ trợ (Helper T cells)",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào T gây độc (Cytotoxic T cells)",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào B",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Sự hiện diện của phản ứng thử nghiệm da bình thường, vốn qua trung gian tế bào T, cho thấy chức năng bình thường của đại thực bào và các tế bào trình diện kháng nguyên khác, tế bào T hỗ trợ (helper T cells) và tế bào T gây độc (cytotoxic T cells). Thông tin này, cùng với sự giảm sản xuất kháng thể, khu trú khiếm khuyết vào dòng tế bào B."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Bệnh nhân nhiễm virus gây suy giảm miễn dịch ở người (HIV) biểu hiện sự hoạt động bất thường của cơ chế nào sau đây?",
+      "options": [
+        {
+          "text": "Chỉ sản xuất kháng thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Chỉ gây độc tế bào qua trung gian tế bào T",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự khử hạt (degranulation) của các tế bào mast được kích thích thích hợp",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả sản xuất kháng thể và gây độc tế bào qua trung gian tế bào T",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Bệnh nhân nhiễm HIV bị mất đặc hiệu các tế bào T hỗ trợ, dẫn đến mất sự hỗ trợ của tế bào T cho cả quá trình sản xuất kháng thể cũng như sự hoạt hóa và tăng sinh của tế bào T gây độc. Giả sử rằng các tế bào mast có thể được kích thích một cách thích hợp (tức là mang đủ IgE bề mặt còn lại và tiếp xúc với kháng nguyên tương ứng), các quá trình khử hạt của chúng vẫn còn nguyên vẹn."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Thuật ngữ nào dùng để chỉ sự gắn kết của IgG và bổ thể vào vi khuẩn xâm nhập để tạo điều kiện cho quá trình nhận diện?",
+      "options": [
+        {
+          "text": "Hóa ứng động (Chemokinesis)",
+          "isCorrect": false
+        },
+        {
+          "text": "Opsonin hóa (Opsonization)",
+          "isCorrect": true
+        },
+        {
+          "text": "Sự hòa màng thực bào-lysosome (Phagolysosome fusion)",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền tín hiệu (Signal transduction)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Quá trình thực bào vi khuẩn được tăng cường nhờ sự hiện diện trên bề mặt của chúng cả globulin miễn dịch (immunoglobulin) và các sản phẩm của hệ thống bổ thể (complement cascade), những thành phần này sau đó liên kết với các thụ thể bề mặt trên các tế bào thực bào. Việc \"gắn thẻ\" vi khuẩn và các hạt khác để tăng cường thực bào này được gọi là opsonin hóa (opsonization)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sự trình diện của một tế bào về kháng nguyên lạ gắn với phức hợp hòa hợp mô chủ yếu (MHC - Major Histocompatibility Complex) loại I sẽ dẫn đến kết quả nào sau đây?",
+      "options": [
+        {
+          "text": "Tạo ra kháng thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Hoạt hóa tế bào T gây độc",
+          "isCorrect": true
+        },
+        {
+          "text": "Tăng cường thực bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Giải phóng histamine bởi tế bào mast",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Sự trình diện kháng nguyên ngoại lai gắn với MHC I trên tế bào nhiễm bệnh dẫn đến sự hoạt hóa các tế bào T gây độc (cytotoxic T cells) để tiêu diệt tế bào nhiễm bệnh. Sự trình diện kháng nguyên bởi MHC II trên các đại thực bào (macrophages) giúp hoạt hóa các tế bào T hỗ trợ (helper T cells), từ đó thúc đẩy quá trình sản xuất kháng thể và hỗ trợ sự tăng sinh của cả tế bào T hỗ trợ và tế bào T gây độc."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Các vùng biến đổi và siêu biến đổi của globulin miễn dịch chịu trách nhiệm cho sự gắn kết kháng nguyên và tính đặc hiệu nằm ở phần nào của phân tử globulin miễn dịch?",
+      "options": [
+        {
+          "text": "Các chuỗi nặng (heavy chains)",
+          "isCorrect": false
+        },
+        {
+          "text": "Các chuỗi nhẹ (light chains)",
+          "isCorrect": false
+        },
+        {
+          "text": "Các vùng bản lề (hinge regions)",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả chuỗi nặng và chuỗi nhẹ",
+          "isCorrect": true
+        },
+        {
+          "text": "Vùng FC",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các vùng biến đổi (variable regions) và siêu biến đổi (hypervariable regions) hiện diện ở các đầu của cả chuỗi nặng và chuỗi nhẹ của globulin miễn dịch (immunoglobulin), cho phép cả hai chuỗi tham gia vào quá trình gắn kết kháng nguyên."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sự thoát dịch (exudation) vào mô trong phản ứng viêm cấp tính là do nguyên nhân nào sau đây?",
+      "options": [
+        {
+          "text": "Giảm huyết áp",
+          "isCorrect": false
+        },
+        {
+          "text": "Giảm protein trong mô kẽ",
+          "isCorrect": false
+        },
+        {
+          "text": "Tắc nghẽn các mạch bạch huyết",
+          "isCorrect": false
+        },
+        {
+          "text": "Tăng các yếu tố đông máu",
+          "isCorrect": false
+        },
+        {
+          "text": "Tăng tính thấm thành mạch",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Dịch rò rỉ vào mô do sự gia tăng tính thấm mao mạch (capillary permeability)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Các phân tử miễn dịch nào có thể gắn với kháng nguyên nguyên vẹn?",
+      "options": [
+        {
+          "text": "Thụ thể tế bào T (T cell receptors)",
+          "isCorrect": false
+        },
+        {
+          "text": "MHC loại I",
+          "isCorrect": false
+        },
+        {
+          "text": "MHC loại II",
+          "isCorrect": false
+        },
+        {
+          "text": "Globulin miễn dịch",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Chỉ có các globulin miễn dịch mới gắn với kháng nguyên nguyên vẹn. Các thụ thể tế bào T (T-cell receptors) và các phân tử MHC lớp I và II gắn với các peptide đã qua xử lý nhưng không gắn với kháng nguyên nguyên vẹn."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Cơ chế nào chịu trách nhiệm chính trong việc gây ra vết loét môi do virus herpes simplex?",
+      "options": [
+        {
+          "text": "Hoạt hóa bradykinin bởi các kháng thể hướng vào kháng nguyên herpes",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự tràn nhanh chóng của bạch cầu trung tính và tế bào tua để đáp ứng với các yếu tố hóa hướng động có nguồn gốc từ virus",
+          "isCorrect": false
+        },
+        {
+          "text": "Trình diện kháng nguyên virus bởi MHC loại I và sự gắn kết bởi tế bào T gây độc",
+          "isCorrect": true
+        },
+        {
+          "text": "Trình diện kháng nguyên virus bởi MHC loại II và sự gắn kết bởi tế bào T gây độc",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các tế bào môi bị nhiễm bệnh xử lý các kháng nguyên virus và trình diện chúng dưới dạng gắn với các phân tử MHC lớp I. Các kháng nguyên virus khi kết hợp với các phân tử MHC lớp I sẽ được nhận diện bởi các tế bào T gây độc đặc hiệu kháng nguyên, sau đó các tế bào này sẽ tiêu diệt các tế bào bị nhiễm virus, tạo thành vết loét môi."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Chức năng của IL-2 trong đáp ứng miễn dịch là gì?",
+      "options": [
+        {
+          "text": "Gắn và trình diện kháng nguyên",
+          "isCorrect": false
+        },
+        {
+          "text": "Kích thích sự tăng sinh của tế bào T",
+          "isCorrect": true
+        },
+        {
+          "text": "Tiêu diệt các tế bào bị nhiễm virus",
+          "isCorrect": false
+        },
+        {
+          "text": "Cần thiết cho phản ứng phản vệ",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "IL-2 (Interleukin-2) được tiết ra bởi các tế bào T hỗ trợ khi các tế bào T này được hoạt hóa bởi các kháng nguyên đặc hiệu. IL-2 đóng vai trò quan trọng trong sự tăng sinh của các tế bào T hỗ trợ, T gây độc và T ức chế (suppressor T cells)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Điều nào sau đây là đúng về tế bào T hỗ trợ?",
+      "options": [
+        {
+          "text": "Chúng được hoạt hóa bởi sự trình diện kháng nguyên của một tế bào bị nhiễm bệnh",
+          "isCorrect": false
+        },
+        {
+          "text": "Chúng đòi hỏi sự hiện diện của một hệ thống tế bào B hoàn thiện",
+          "isCorrect": false
+        },
+        {
+          "text": "Chúng tiêu diệt vi khuẩn bằng cách thực bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Chúng được hoạt hóa bởi sự trình diện kháng nguyên của đại thực bào hoặc tế bào tua",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Các tế bào T hỗ trợ được hoạt hóa bởi sự trình diện các kháng nguyên đã qua xử lý thông qua các phân tử MHC lớp II trên bề mặt của các tế bào trình diện kháng nguyên (chủ yếu là đại thực bào và tế bào tua - dendritic cells). Các tế bào T hỗ trợ kích hoạt các tế bào B để tạo thành kháng thể, nhưng các tế bào B không cần thiết cho sự hoạt hóa các tế bào T hỗ trợ. Các tế bào T hỗ trợ giúp tăng cường quá trình thực bào bởi các đại thực bào nhưng bản thân chúng không có khả năng thực bào vi khuẩn."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Phát biểu nào sau đây đúng với tế bào T gây độc (cytotoxic T cells)?",
+      "options": [
+        {
+          "text": "Chúng đòi hỏi sự hiện diện của hệ thống tế bào lympho B hoàn chỉnh",
+          "isCorrect": false
+        },
+        {
+          "text": "Chúng đòi hỏi sự hiện diện của hệ thống tế bào T ức chế hoàn chỉnh",
+          "isCorrect": false
+        },
+        {
+          "text": "Chúng được hoạt hóa bởi sự trình diện kháng nguyên lạ từ một tế bào bị nhiễm",
+          "isCorrect": true
+        },
+        {
+          "text": "Chúng tiêu diệt vi khuẩn bằng cách khởi phát quá trình thực bào của đại thực bào",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các tế bào T gây độc tác động lên các tế bào nhiễm bệnh khi các tế bào này có kháng nguyên phù hợp nằm trên bề mặt của chúng. Các tế bào T gây độc được kích thích bởi các lymphokine (cytokine do tế bào lympho tiết ra) được tạo ra từ sự hoạt hóa các tế bào T hỗ trợ. Các tế bào T gây độc tiêu diệt tế bào nhiễm bệnh bằng cách biểu hiện các protein tạo ra các lỗ thủng lớn trên màng của các tế bào nhiễm bệnh. Không có sự tương tác giữa các tế bào T gây độc và các tế bào B bình thường."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bé gái 9 tuổi bị chảy nước mũi và ngứa mắt vào mùa xuân hàng năm. Một bác sĩ dị ứng thực hiện test da bằng cách sử dụng hỗn hợp phấn hoa cỏ. Trong vòng vài phút, bé gái xuất hiện tình trạng đỏ và sưng khu trú tại vị trí test. Phản ứng này nhiều khả năng là do",
+      "options": [
+        {
+          "text": "Phức hợp kháng nguyên-kháng thể hình thành trong các mạch máu ở da",
+          "isCorrect": true
+        },
+        {
+          "text": "Sự hoạt hóa bạch cầu trung tính do các kháng nguyên được tiêm vào",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự hoạt hóa tế bào CD4 hỗ trợ và kết quả là tạo ra các kháng thể đặc hiệu",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự hoạt hóa tế bào lympho T gây độc để tiêu diệt kháng nguyên",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Vì người này đã từng biểu hiện các phản ứng dị ứng trước đó, phản ứng da ban đầu phản ánh sự gắn kết của kháng nguyên với IgE đặc hiệu trên bề mặt của các tế bào bạch cầu ái kiềm (basophils) và tế bào mast (mast cells), dẫn đến sự giải phóng một loạt các chất trung gian gây viêm. Ngoài ra, sự hoạt hóa hệ thống bổ thể (complement system) dẫn đến việc sản xuất C3a và C4a, những chất này cũng hoạt hóa các tế bào bạch cầu ái kiềm và tế bào mast. Sự xâm nhập của các bạch cầu trung tính (neutrophils), sự hoạt hóa các tế bào T hỗ trợ và sự tích tụ các tế bào lympho T đặc hiệu kháng nguyên sẽ cần một khoảng thời gian nhất định."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sự hoạt hóa hệ thống bổ thể dẫn đến tác động nào sau đây?",
+      "options": [
+        {
+          "text": "Sự gắn kết của vi khuẩn xâm nhập với IgG",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự bất hoạt bạch cầu ái toan",
+          "isCorrect": false
+        },
+        {
+          "text": "Giảm nồng độ bổ thể trong mô",
+          "isCorrect": false
+        },
+        {
+          "text": "Tạo ra các chất hóa hướng động (chemotactic substances)",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Sự hoạt hóa hệ thống bổ thể dẫn đến một loạt các hành động, bao gồm opsonin hóa (opsonization) và thực bào bởi các bạch cầu trung tính, ly giải vi khuẩn, ngưng kết các vi sinh vật, hoạt hóa các tế bào bạch cầu ái kiềm và tế bào mast, và hóa hướng động (chemotaxis). Mảnh C5a của hệ thống bổ thể gây ra hóa hướng động của các bạch cầu trung tính và đại thực bào."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Phát biểu nào sau đây là đúng về bệnh hồng cầu có nhân ở thai nhi (bệnh tan máu ở trẻ sơ sinh [HDN - Hemolytic Disease of the Newborn])?",
+      "options": [
+        {
+          "text": "HDN xảy ra khi mẹ có nhóm máu Rh dương tính sinh con có nhóm máu Rh âm tính",
+          "isCorrect": false
+        },
+        {
+          "text": "HDN được phòng ngừa bằng cách truyền máu cho người mẹ",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền máu toàn phần sau lần sinh đầu tiên sẽ ngăn ngừa được HDN",
+          "isCorrect": false
+        },
+        {
+          "text": "Người cha của đứa trẻ bắt buộc phải có nhóm máu Rh dương tính",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Bệnh tan máu ở trẻ sơ sinh (HDN - Hemolytic Disease of the Newborn) xảy ra khi một người mẹ có nhóm máu Rh âm tính sinh con thứ hai hoặc các con tiếp theo có nhóm máu Rh dương tính. Do đó, người cha phải có nhóm máu Rh dương tính. Người mẹ trở nên nhạy cảm với các kháng nguyên Rh trong các sự kiện liên quan đến quá trình sinh con có nhóm máu Rh dương tính. HDN trong các lần mang thai tương lai có thể được ngăn ngừa bằng cách điều trị cho người mẹ bằng các kháng thể chống lại kháng nguyên Rh vào thời điểm sinh mỗi đứa trẻ có nhóm máu Rh dương tính. Phương pháp điều trị này tiêu diệt các hồng cầu (RBCs - Red Blood Cells) của thai nhi trong cơ thể người mẹ và ngăn không cho người mẹ bị nhạy cảm với kháng nguyên Rh. Việc truyền máu cho trẻ sau khi sinh không ngăn ngừa được HDN trong các lần mang thai tương lai vì người mẹ đã tiếp xúc với kháng nguyên Rh trong quá trình sinh nở."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một cặp vợ chồng yêu cầu xác định nhóm máu cho con trai mới sinh (người chồng nhóm máu AB, Rh dương tính; người vợ nhóm máu A, Rh âm tính). Các xét nghiệm ngưng kết hồng cầu cho thấy đứa trẻ có nhóm máu O, Rh dương tính. Kết luận nào sau đây về huyết thống của đứa trẻ là hợp lệ?",
+      "options": [
+        {
+          "text": "Đứa trẻ có thể là con đẻ của cặp vợ chồng này",
+          "isCorrect": false
+        },
+        {
+          "text": "Người vợ có thể là mẹ đẻ, nhưng người chồng không thể là cha đẻ",
+          "isCorrect": true
+        },
+        {
+          "text": "Người chồng có thể là cha đẻ, nhưng người vợ không thể là mẹ đẻ",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả cha và mẹ đều không thể là cha mẹ đẻ của đứa trẻ",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Người mẹ có thể dị hợp tử về nhóm máu A và O, do đó có thể sinh con nhóm máu O. Sự dương tính với Rh có thể được xác định bởi một alen từ người cha thực sự. Người đàn ông trong cặp đôi này có nhóm máu AB và do đó không thể đóng góp alen nhóm máu O (những người có nhóm máu O phải nhận một alen O từ mỗi người cha mẹ)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người phụ nữ có nhóm máu A, Rh dương tính và một người đàn ông có nhóm máu B, Rh dương tính đến phòng khám cùng với một bé gái 3 tuổi có nhóm máu O, Rh âm tính. Có thể nói gì về mối quan hệ của hai người lớn này với đứa trẻ?",
+      "options": [
+        {
+          "text": "Người phụ nữ có thể là mẹ đẻ của đứa trẻ, nhưng người đàn ông không thể là cha đẻ",
+          "isCorrect": false
+        },
+        {
+          "text": "Người đàn ông có thể là cha đẻ của đứa trẻ, nhưng người phụ nữ không thể là mẹ đẻ",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả hai người lớn đều không thể là cha mẹ đẻ của đứa trẻ này",
+          "isCorrect": false
+        },
+        {
+          "text": "Cặp đôi này có thể là cha mẹ đẻ của đứa trẻ này",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Mỗi cha mẹ chỉ cần một alen duy nhất cho kháng nguyên A hoặc B hoặc kháng nguyên Rh(D) để biểu hiện các kháng nguyên này trên tế bào máu và các loại tế bào khác của họ. Do đó, nếu mỗi cha mẹ cũng mang một alen cho nhóm máu O, cũng như một alen vô hiệu (null allele) cho kháng nguyên Rh(D), thì đứa trẻ có thể đồng hợp tử về alen O lặn và alen Rh(D) âm tính."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Phương pháp điều trị thích hợp cho trẻ sơ sinh mắc HDN (bệnh hồng cầu có nhân) thể nặng là gì?",
+      "options": [
+        {
+          "text": "Tạo miễn dịch thụ động bằng globulin miễn dịch kháng Rh(D)",
+          "isCorrect": false
+        },
+        {
+          "text": "Tạo miễn dịch bằng kháng nguyên Rh(D)",
+          "isCorrect": false
+        },
+        {
+          "text": "Thay máu bằng máu Rh(D) dương tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Thay máu bằng máu Rh(D) âm tính",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Phương pháp điều trị thích hợp là loại bỏ lặp đi lặp lại máu Rh dương tính, thay thế bằng máu Rh âm tính (trao đổi khoảng 400 ml trong 90 phút). Phương pháp điều trị này có thể được thực hiện vài lần trong vài tuần. Các kháng thể của mẹ biến mất sau 1 đến 2 tháng, vì vậy các tế bào Rh dương tính nội sinh của trẻ sơ sinh không còn là mục tiêu tấn công. Thay máu (exchange transfusions) thực sự có thể được bắt đầu trong tử cung khi có bằng chứng về phản ứng miễn dịch hoạt động chống lại các tế bào máu của thai nhi."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Thải ghép mạn tính (chronic allograft rejection) chủ yếu là kết quả từ hoạt động của loại tế bào hiệu ứng nào?",
+      "options": [
+        {
+          "text": "Đại thực bào đã hoạt hóa",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào lympho T hỗ trợ",
+          "isCorrect": false
+        },
+        {
+          "text": "Tế bào lympho T gây độc",
+          "isCorrect": true
+        },
+        {
+          "text": "Tế bào tua (dendritic cells)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Sự thải ghép (allograft rejection) xảy ra chủ yếu thông qua hoạt động của các tế bào T gây độc (cytotoxic T cells). Các tế bào T hỗ trợ (T-helper cells) thúc đẩy phản ứng này nhưng không phải là các tế bào hiệu ứng (effector cells). Cả đại thực bào (macrophages) và tế bào tua (dendritic cells) đều có thể trình diện kháng nguyên giúp thúc đẩy đáp ứng miễn dịch, nhưng các tế bào hiệu ứng chính là tế bào T gây độc."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Truyền máu nào sau đây sẽ dẫn đến phản ứng truyền máu cấp tính?",
+      "options": [
+        {
+          "text": "Truyền máu toàn phần O Rh âm tính cho bệnh nhân O Rh dương tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền máu toàn phần A Rh âm tính cho bệnh nhân B Rh âm tính",
+          "isCorrect": true
+        },
+        {
+          "text": "Truyền máu toàn phần AB Rh âm tính cho bệnh nhân AB Rh dương tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền máu toàn phần B Rh âm tính cho bệnh nhân B Rh âm tính",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Nhóm máu A có kháng nguyên A trên bề mặt hồng cầu và các kháng thể trong huyết thanh chống lại kháng nguyên B. Nhóm máu B có các kháng nguyên B trên bề mặt và các kháng thể kháng A (anti-A antibodies). Do đó, truyền máu nhóm A cho người có nhóm máu B sẽ khiến các kháng thể kháng A ở người nhận nhóm B phản ứng với máu của người hiến. Việc truyền máu Rh âm tính cho người Rh dương tính có cùng nhóm máu ABO sẽ không dẫn đến bất kỳ phản ứng nào."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Với kỹ thuật ghép tối ưu, các loại mảnh ghép nào sau đây có thể được kỳ vọng thành công và được cơ thể chấp nhận lâu dài?",
+      "options": [
+        {
+          "text": "Ghép khác loài (allografts) và ghép khác loài (xenografts)",
+          "isCorrect": false
+        },
+        {
+          "text": "Ghép tự thân (autografts) và ghép đồng loài (allografts)",
+          "isCorrect": false
+        },
+        {
+          "text": "Ghép đồng nhất (isografts) và ghép tự thân (autografts)",
+          "isCorrect": true
+        },
+        {
+          "text": "Ghép đồng loài (allografts) và ghép đồng nhất (isografts)",
+          "isCorrect": false
+        },
+        {
+          "text": "Các mảnh ghép có ít nhất 3/6 chỉ số HLA tương thích",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Các mảnh ghép cùng loài (isografts) và mảnh ghép tự thân (autografts) lần lượt có nguồn gốc từ những người hiến có kiểu gen giống hệt nhau hoặc từ chính các mô của người nhận. Do đó, chúng thường được chấp nhận dễ dàng vì không trình diện các kháng nguyên lạ cho người nhận. Các mảnh ghép đồng loài (allografts) và mảnh ghép khác loài (xenografts) dẫn đến việc trình diện các kháng nguyên lạ. Bất kỳ sự không tương thích HLA (HLA mismatch) nào cũng cho thấy mô hoặc cơ quan được cấy ghép là mảnh ghép đồng loài mang các kháng nguyên lạ đã biết."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Sau chấn thương, một người có nhóm máu AB, Rh âm tính và chưa từng được truyền máu trước đó, nhận bốn đơn vị máu nhóm A, Rh dương tính đã được làm phản ứng chéo phù hợp. Kết quả nào có khả năng xảy ra nhất?",
+      "options": [
+        {
+          "text": "Sốt, ớn lạnh, khó thở, sốc tuần hoàn và suy thận",
+          "isCorrect": false
+        },
+        {
+          "text": "Tan máu nhanh các tế bào được truyền",
+          "isCorrect": false
+        },
+        {
+          "text": "Tan máu nội bào mức độ trung bình trong khoảng thời gian vài tuần",
+          "isCorrect": true
+        },
+        {
+          "text": "Sốc phản vệ",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Một người chưa từng tiếp xúc với kháng nguyên Rh trước đây sẽ không có kháng thể kháng Rh (anti-Rh antibodies) và do đó sẽ không có phản ứng truyền máu cấp tính. Thay vào đó, các kháng thể như vậy sẽ phát triển trong vài tuần, dẫn đến quá trình opsonin hóa (opsonization) và thực bào (phagocytosis) dần dần các tế bào được truyền vào, kèm theo tan máu nội bào (intracellular hemolysis) ở mức độ trung bình."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Truyền máu nào sau đây sẽ dẫn đến phản ứng truyền máu cấp tính? Giả sử bệnh nhân chưa từng được truyền máu trước đó.",
+      "options": [
+        {
+          "text": "Truyền khối hồng cầu O Rh âm tính cho bệnh nhân AB Rh dương tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền khối hồng cầu A Rh dương tính cho bệnh nhân A Rh âm tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền khối hồng cầu AB Rh dương tính cho bệnh nhân AB Rh dương tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền khối hồng cầu A Rh dương tính cho bệnh nhân O Rh dương tính",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Các tế bào nhóm A, Rh dương tính biểu hiện cả kháng nguyên A và Rh. Những người có nhóm máu O phát triển các kháng thể chống lại kháng nguyên A thông qua việc tiếp xúc qua chế độ ăn uống và môi trường. Do đó, việc truyền máu nhóm A cho người nhận nhóm O dẫn đến phản ứng truyền máu cấp tính. Phản ứng với các kháng nguyên Rh đòi hỏi phải có sự tiếp xúc trước đó thông qua truyền máu không tương thích Rh. Các phản ứng xảy ra giữa kháng thể của người nhận và kháng nguyên của người hiến như được trình bày trong bảng dưới đây."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Những kháng nguyên nào cần được tương thích tối ưu giữa người hiến và người nhận trong cấy ghép tạng đặc?",
+      "options": [
+        {
+          "text": "Chỉ các kháng nguyên bạch cầu người (HLA - Human Leukocyte Antigen) lớp I",
+          "isCorrect": false
+        },
+        {
+          "text": "Chỉ các kháng nguyên HLA lớp II",
+          "isCorrect": false
+        },
+        {
+          "text": "Chỉ các kháng nguyên HLA lớp I và lớp II",
+          "isCorrect": false
+        },
+        {
+          "text": "Các kháng nguyên HLA lớp I, lớp II và các kháng nguyên ABO",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Các kháng nguyên HLA của người hiến không tương thích thuộc cả hai lớp đều được các tế bào T của người nhận nhận diện là vật lạ. Ngoài ra, các kháng nguyên nhóm máu (ABO) được biểu hiện trên các tế bào của các cơ quan đặc và có thể dẫn đến thải ghép cơ quan mạnh và cấp tính."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một phụ nữ có nhóm máu A dương tính, luôn khỏe mạnh, vừa sinh đứa con thứ hai. Nhóm máu của người cha là O âm tính. Vì nhóm máu của đứa trẻ là O âm tính (O, Rh âm tính), bạn mong đợi tìm thấy điều gì ở đứa trẻ này?",
+      "options": [
+        {
+          "text": "Bệnh tan máu ở trẻ sơ sinh (Erythroblastosis fetalis) do bất đồng nhóm máu Rhesus",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh tan máu ở trẻ sơ sinh do bất đồng nhóm máu ABO",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả A và B",
+          "isCorrect": false
+        },
+        {
+          "text": "Không mong đợi đứa trẻ mắc bệnh tan máu ở trẻ sơ sinh (HDN - Hemolytic Disease of the Newborn)",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Bệnh tan máu ở trẻ sơ sinh (HDN - Hemolytic Disease of the Newborn) xảy ra khi người mẹ có Rh âm tính và người cha có Rh dương tính, dẫn đến trẻ có Rh dương tính. Vì đứa trẻ này thuộc nhóm O, Rh âm tính, nên không dự kiến sẽ phát triển HDN."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người đàn ông 55 tuổi đang được điều trị chống đông ổn định và thành công bằng warfarin do huyết khối tĩnh mạch sâu tái phát, nay được điều trị viêm phổi. 8 ngày sau, bệnh nhân xuất hiện tình trạng chảy máu đường tiêu hóa dưới. Thời gian prothrombin (prothrombin time) của bệnh nhân kéo dài đáng kể. Liệu pháp điều trị thích hợp là gì?",
+      "options": [
+        {
+          "text": "Điều trị bằng chất hoạt hóa plasminogen mô (tPA - tissue plasminogen activator)",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền canxi citrat",
+          "isCorrect": false
+        },
+        {
+          "text": "Điều trị bằng huyết tương tươi đông lạnh và vitamin K",
+          "isCorrect": true
+        },
+        {
+          "text": "Truyền nhanh protamine!!",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Điều trị bằng kháng sinh cho bệnh viêm phổi có thể tiêu diệt hệ vi khuẩn trong đường tiêu hóa vốn rất quan trọng cho việc sản xuất vitamin K. Quá trình sản xuất một số yếu tố đông máu hoạt động (prothrombin và các yếu tố VII, IX, và X) đã bị ức chế ở bệnh nhân này do warfarin ức chế VKOR c1, loại enzyme thường khử hóa học vitamin K để nó có thể kích hoạt các yếu tố đông máu nêu trên. Việc giảm thêm về mặt định lượng vitamin K do sự chết đi của hệ vi khuẩn đường ruột thiết yếu đã gây ra tình trạng chống đông quá mức và dẫn đến xuất huyết ở bệnh nhân này. Huyết tương tươi đông lạnh (fresh-frozen plasma) được truyền vào để cung cấp ngay lập tức các yếu tố đông máu hoạt động, và vitamin K được cung cấp để thúc đẩy quá trình sản xuất nội sinh các yếu tố đông máu hoạt động. Cả hai đều cần thiết trong tình trạng xuất huyết cấp tính."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bé trai 2 tuổi bị chảy máu quá mức từ các vết thương nhỏ và trước đây từng bị chảy máu nướu răng. Ông ngoại của bé mắc một rối loạn đông máu. Khám thực thể cho thấy khớp gối của trẻ hơi đau và có tích dịch trong khớp. Bạn nghi ngờ bệnh nhân này bị thiếu hụt yếu tố đông máu nào?",
+      "options": [
+        {
+          "text": "Chất hoạt hóa prothrombin",
+          "isCorrect": false
+        },
+        {
+          "text": "Yếu tố II",
+          "isCorrect": false
+        },
+        {
+          "text": "Yếu tố VIII hoặc Yếu tố IX",
+          "isCorrect": true
+        },
+        {
+          "text": "Yếu tố X",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Sự di truyền một rối loạn chảy máu từ ông ngoại là điển hình cho một rối loạn liên kết nhiễm sắc thể X (X-linked disorder)—người ông truyền alen X bị ảnh hưởng cho con gái, người này sau đó truyền cho con trai của mình. Bệnh máu khó đông (Hemophilia) A và B, dẫn đến thiếu hụt các yếu tố đông máu VIII và IX tương ứng, đều là các rối loạn liên kết nhiễm sắc thể X biểu hiện theo cách được mô tả cho cậu bé 2 tuổi này."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một cựu chiến binh Việt Nam mắc viêm gan C mạn tính, nặng, bị chảy máu cam không cầm được. Số lượng tiểu cầu của bệnh nhân là 180.000/µL, và tỷ số chuẩn hóa quốc tế (INR - International Normalized Ratio) tăng rõ rệt lên mức 7,0. Ngoài việc ép tại chỗ vị trí chảy máu, liệu pháp điều trị thích hợp là gì?",
+      "options": [
+        {
+          "text": "Coumarin",
+          "isCorrect": false
+        },
+        {
+          "text": "Huyết tương tươi đông lạnh",
+          "isCorrect": true
+        },
+        {
+          "text": "Truyền tiểu cầu",
+          "isCorrect": false
+        },
+        {
+          "text": "Truyền fibrinogen",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Ở bệnh nhân bị viêm gan virus mãn tính, nghiêm trọng này, tổn thương gan đã dẫn đến suy gan, khiến bệnh nhân không còn khả năng sản xuất đủ số lượng các yếu tố đông máu. Những yếu tố này phải được cung cấp trong tình trạng cấp cứu bằng cách điều trị với huyết tương tươi đông lạnh. Quá trình sản xuất fibrinogen thường vẫn đầy đủ ở những bệnh nhân suy gan."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Tác nhân nào không hiệu quả như một chất chống đông máu in vitro (trong ống nghiệm)?",
+      "options": [
+        {
+          "text": "Heparin",
+          "isCorrect": false
+        },
+        {
+          "text": "Warfarin (Coumadin)",
+          "isCorrect": true
+        },
+        {
+          "text": "Ethylenediamine tetraacetic acid (EDTA)",
+          "isCorrect": false
+        },
+        {
+          "text": "Natri citrat",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Warfarin hoạt động bằng cách can thiệp vào quá trình sản xuất các yếu tố đông máu hoạt động. Thuốc không có hiệu quả trong việc ức chế các yếu tố đông máu trong ống nghiệm (in vitro)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Bệnh Hemophilia A ảnh hưởng đến con đường đông máu nào?",
+      "options": [
+        {
+          "text": "Chỉ con đường nội sinh",
+          "isCorrect": true
+        },
+        {
+          "text": "Chỉ con đường ngoại sinh",
+          "isCorrect": false
+        },
+        {
+          "text": "Chỉ con đường nội sinh và ngoại sinh",
+          "isCorrect": false
+        },
+        {
+          "text": "Con đường nội sinh, ngoại sinh và con đường chung",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Bệnh máu khó đông A (Hemophilia A) gây ra do thiếu hụt yếu tố đông máu VIII, yếu tố này chỉ hoạt động trong con đường đông máu nội sinh (intrinsic clotting pathway)."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một người vô gia cư được đưa đến từ một bãi đất trống với các dấu hiệu nhiễm khuẩn huyết (sepsis) và chảy máu dai dẳng từ nướu, các vị trí lấy máu và xung quanh ống thông tĩnh mạch (IV catheters). Số lượng bạch cầu là 15.000/µL với hình thái tế bào bình thường và một vài bạch cầu trung tính chưa trưởng thành (tế bào đũa - band cells), số lượng tiểu cầu giảm nhẹ ở mức 95.000/µL. Chẩn đoán nào là khả thi nhất?",
+      "options": [
+        {
+          "text": "Giảm nồng độ fibrinogen do bệnh gan",
+          "isCorrect": false
+        },
+        {
+          "text": "Ức chế chức năng tiểu cầu do uống rượu methyl",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu hụt vitamin B12 và axit folic trong chế độ ăn",
+          "isCorrect": false
+        },
+        {
+          "text": "Đông máu nội mạch rải rác (DIC - Disseminated Intravascular Coagulation)",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Trong nhiễm khuẩn huyết (sepsis) và đặc biệt là sốc nhiễm khuẩn (septic shock), vi khuẩn và các độc tố vi khuẩn như nội độc tố (endotoxin), cộng với việc giải phóng một lượng lớn yếu tố mô (tissue factor) từ các mô bị chấn thương hoặc đang chết, gây ra sự kích hoạt lan rộng của hệ thống đông máu. Điều này tạo ra vô số cục máu đông nhỏ làm tắc nghẽn các mạch máu nhỏ và làm trầm trọng thêm tổn thương mô. Nghịch lý thay, điều này tiêu thụ các yếu tố đông máu đến mức kết quả lâm sàng là xuất huyết từ nhiều vị trí. Ngay cả khi một độc tố..."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Con đường đông máu nào bắt đầu bằng thromboplastin mô?",
+      "options": [
+        {
+          "text": "Con đường ngoại sinh",
+          "isCorrect": true
+        },
+        {
+          "text": "Con đường nội sinh",
+          "isCorrect": false
+        },
+        {
+          "text": "Con đường chung",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Con đường ngoại sinh bắt đầu bằng việc giải phóng thromboplastin mô để đáp ứng với tổn thương mạch máu hoặc sự tiếp xúc giữa mô ngoài mạch máu bị chấn thương và máu. Thromboplastin mô được cấu tạo từ các phospholipid từ màng của các mô bị tổn thương."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một thợ điện 56 tuổi bị nhạy cảm với gluten (gluten sensitivity) nghiêm trọng nhưng chưa được chẩn đoán, kèm tiêu chảy dai dẳng và sụt cân. Bệnh nhân bị chảy máu quá mức sau khi nhổ răng và được phát hiện có thời gian prothrombin kéo dài đáng kể (37 giây). Nguyên nhân nào là khả thi nhất gây ra tình trạng chảy máu quá mức của bệnh nhân?",
+      "options": [
+        {
+          "text": "Bệnh tế bào gan",
+          "isCorrect": false
+        },
+        {
+          "text": "Thiếu vitamin K",
+          "isCorrect": true
+        },
+        {
+          "text": "Suy dinh dưỡng protein với tình trạng thiếu hụt fibrinogen",
+          "isCorrect": false
+        },
+        {
+          "text": "Mất các yếu tố đông máu qua niêm mạc đường tiêu hóa",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Tiêu chảy nặng có thể dẫn đến kém hấp thu chất béo. Vì vitamin K là một loại vitamin tan trong chất béo, điều này có thể dẫn đến thiếu hụt vitamin K. Vitamin K cần thiết cho quá trình sản xuất các yếu tố đông máu hoạt động. Do đó, thiếu hụt vitamin K có thể gây ra rối loạn đông máu và chảy máu quá mức."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Điều nào sau đây giải thích tốt nhất cho kết quả xét nghiệm thời gian chảy máu (bleeding time) kéo dài?",
+      "options": [
+        {
+          "text": "Hemophilia A",
+          "isCorrect": false
+        },
+        {
+          "text": "Hemophilia B",
+          "isCorrect": false
+        },
+        {
+          "text": "Giảm tiểu cầu (Thrombocytopenia)",
+          "isCorrect": true
+        },
+        {
+          "text": "Sử dụng Coumadin",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Thời gian máu chảy (bleeding time), được đo bằng cách xác định thời gian cần thiết để máu ngừng chảy từ một vết cắt nhỏ, tiêu chuẩn, phản ánh sự kết tập và hoạt hóa tiểu cầu cũng như sự hình thành nút tiểu cầu trong các mạch máu nhỏ đã bị tổn thương. Quá trình đông máu liên quan đến việc hoạt hóa thrombin và sự tích tụ các sợi fibrin mất nhiều thời gian hơn đáng kể."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Điều nào sau đây là liệu pháp thích hợp cho thuyên tắc phổi (pulmonary embolism) mức độ nặng?",
+      "options": [
+        {
+          "text": "Huyết tương chứa citrat",
+          "isCorrect": false
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false
+        },
+        {
+          "text": "Chất hoạt hóa plasminogen mô",
+          "isCorrect": true
+        }
+      ],
+      "generalExplanation": "Điều trị thuyên tắc phổi (pulmonary embolus) ồ ạt là một tình trạng cấp cứu đòi hỏi phải làm tan cục máu đông hiện có. Điều này có thể đạt được bằng cách truyền chất hoạt hóa plasminogen mô (tissue plasminogen activator), chất này chuyển plasminogen thành plasmin, sau đó plasmin sẽ chủ động làm tan cục máu đông. Trong trường hợp này, các biện pháp ức chế hình thành cục máu đông ít có ý nghĩa hơn vì cục máu đông đe dọa tính mạng đã tồn tại sẵn."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Cơ chế chính mà heparin ngăn chặn quá trình đông máu là gì?",
+      "options": [
+        {
+          "text": "Hoạt hóa antithrombin III",
+          "isCorrect": true
+        },
+        {
+          "text": "Gắn kết và ức chế yếu tố mô",
+          "isCorrect": false
+        },
+        {
+          "text": "Gắn kết canxi có sẵn",
+          "isCorrect": false
+        },
+        {
+          "text": "Ức chế yếu tố hoạt hóa tiểu cầu",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Chức năng chính của heparin là liên kết và hoạt hóa antithrombin III."
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Một bé trai 14 tuổi có tiền sử chảy máu quá mức từ nhỏ, thường xuyên bị chảy máu vào khớp (tràn máu khớp - hemarthrosis). Có tiền sử dương tính về một rối loạn tương tự ở một vài người thân nam giới. Bạn có thể cho rằng cậu bé đã di truyền rối loạn này từ người cha hay mẹ?",
+      "options": [
+        {
+          "text": "Cha của cậu bé",
+          "isCorrect": false
+        },
+        {
+          "text": "Mẹ của cậu bé",
+          "isCorrect": true
+        },
+        {
+          "text": "Cả cha và mẹ",
+          "isCorrect": false
+        },
+        {
+          "text": "Độ thấm (penetrance) của rối loạn này là biến đổi và khó diễn giải",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "Một rối loạn gia đình chỉ xảy ra ở nam giới gợi ý đến một rối loạn liên kết nhiễm sắc thể X vì nam giới chỉ có một nhiễm sắc thể X, và nếu nhiễm sắc thể này bị khiếm khuyết, thì khiếm khuyết đó sẽ biểu hiện trên lâm sàng (thay vì bị che lấp bởi một nhiễm sắc thể X hoạt động bình thường như ở nữ giới). Nam giới nhận nhiễm sắc thể X từ mẹ và nhiễm sắc thể Y từ cha. Các rối loạn chảy máu liên kết nhiễm sắc thể X phổ biến nhất là bệnh máu khó đông A (hemophilia A) và bệnh máu khó đông B (hemophilia B), vốn có độ thấm (penetrance) rất cao."
+    }
+  ]
+}
