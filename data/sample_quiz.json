@@ -1,0 +1,32 @@
+{
+  "title": "Bộ đề ôn tập cơ bản 2026",
+  "description": "Bộ đề mẫu dành cho việc kiểm tra hệ thống",
+  "subject": "Y học cơ sở",
+  "topic": "Sinh lý học",
+  "questions": [
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "Đơn vị chức năng cơ bản của thận là gì?",
+      "options": [
+        { "text": "Nephron", "isCorrect": true },
+        { "text": "Neuron", "isCorrect": false },
+        { "text": "Alveoli", "isCorrect": false },
+        { "text": "Hepatocyte", "isCorrect": false }
+      ],
+      "generalExplanation": "Nephron là đơn vị cấu trúc và chức năng cơ bản của thận, chịu trách nhiệm lọc máu và tạo nước tiểu.",
+      "tags": ["Sinh lý học", "Thận"]
+    },
+    {
+      "type": "single",
+      "questionType": "true-false",
+      "questionText": "Tim người bình thường có 4 ngăn?",
+      "options": [
+        { "text": "Đúng", "isCorrect": true },
+        { "text": "Sai", "isCorrect": false }
+      ],
+      "generalExplanation": "Tim người gồm 2 tâm nhĩ và 2 tâm thất, tổng cộng là 4 ngăn.",
+      "tags": ["Sinh lý học", "Tim mạch"]
+    }
+  ]
+}

@@ -167,11 +167,16 @@ router.delete('/:id', async (req, res) => {
 // @desc    Nhập nhiều bộ đề từ một file JSON
 // @access  Public (Đã bỏ auth)
 router.post('/bulk-upload', async (req, res) => {
-    const quizzesData = req.body; 
+    let quizzesData = req.body; 
 
     try {
-        if (!Array.isArray(quizzesData) || quizzesData.length === 0) {
-            return res.status(400).json({ msg: 'Dữ liệu tải lên phải là một mảng JSON không rỗng của các bộ đề.' });
+        // Nếu chỉ gửi lên 1 đối tượng, bọc nó vào mảng
+        if (!Array.isArray(quizzesData)) {
+            quizzesData = [quizzesData];
+        }
+
+        if (quizzesData.length === 0) {
+            return res.status(400).json({ msg: 'Dữ liệu tải lên phải là một mảng JSON không rỗng hoặc một đối tượng bộ đề hợp lệ.' });
         }
 
         const insertedQuizzes = [];

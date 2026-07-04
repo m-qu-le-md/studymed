@@ -7,10 +7,12 @@ const Quiz = require('../models/Quiz');
 
 // @route   PUT api/users/bookmark/:question_id
 // @desc    Thêm/Xóa một câu hỏi khỏi danh sách bookmark của người dùng
-// @access  Private
-router.put('/bookmark/:question_id', auth, async (req, res) => {
+// @access  Public (Tạm thời bỏ xác thực cho người dùng cá nhân)
+router.put('/bookmark/:question_id', async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        // Tạm thời giả định user duy nhất có ID này (để tránh lỗi)
+        // Trong tương lai nếu có nhiều user thì cần cơ chế lưu theo thiết bị hoặc ID cố định
+        const user = await User.findOne();
         if (!user) {
             return res.status(404).json({ msg: 'Người dùng không tìm thấy' });
         }
@@ -42,10 +44,10 @@ router.put('/bookmark/:question_id', auth, async (req, res) => {
 
 // @route   GET api/users/bookmarks
 // @desc    Lấy tất cả các câu hỏi đã được bookmark bởi người dùng hiện tại
-// @access  Private
-router.get('/bookmarks', auth, async (req, res) => {
+// @access  Public (Tạm thời bỏ xác thực cho người dùng cá nhân)
+router.get('/bookmarks', async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findOne();
         if (!user) {
             return res.status(404).json({ msg: 'Người dùng không tìm thấy' });
         }

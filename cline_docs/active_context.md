@@ -18,3 +18,5 @@
 - Đã bổ sung hướng dẫn khởi động dự án vào `cline_docs/project_brief.md`.
 - Fix lỗi ESLint `react-hooks/exhaustive-deps` trong `QuestionItem.js` và `QuestionSingleDisplay.js` để vượt qua build trên Vercel.
 - Xây dựng bộ tài liệu kỹ thuật chi tiết (`cline_docs/pages_reference.md` và `cline_docs/component_reference.md`) nhằm mục đích onboarding cho dev mới.
+- Tạo mới bộ đề mẫu `data/sample_quiz.json` tuân thủ chuẩn `QuizSchema`.
+- Thiết lập quy trình tự động hóa git push cho tài khoản công việc (`mqule.md.hmu@gmail.com`).

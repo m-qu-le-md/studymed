@@ -121,18 +121,24 @@ function QuizTakingPage() {
     return () => clearInterval(timerRef.current);
   }, [timeLeft, isTimerPaused, loadingQuiz, isTimeUp, setAlert]);
 
-  const handleToggleBookmark = (questionId) => {
-    setBookmarkedQuestions(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(questionId)) {
-          newSet.delete(questionId);
-      } else {
+  const handleToggleBookmark = async (questionId) => {
+    try {
+      const res = await api.put(`/api/users/bookmark/${questionId}`, {});
+      setBookmarkedQuestions(prev => {
+        const newSet = new Set(prev);
+        if (res.data.bookmarked) {
           newSet.add(questionId);
-      }
-      const bookmarkKey = `studyMed_bookmarks_${id || 'virtual'}`;
-      localStorage.setItem(bookmarkKey, JSON.stringify([...newSet]));
-      return newSet;
-    });
+          setAlert('Đã đánh dấu câu hỏi', 'success');
+        } else {
+          newSet.delete(questionId);
+          setAlert('Đã bỏ đánh dấu câu hỏi', 'info');
+        }
+        return newSet;
+      });
+    } catch (err) {
+      console.error('Lỗi khi cập nhật bookmark:', err);
+      setAlert('Lỗi cập nhật đánh dấu.', 'error');
+    }
   };
 
   const handleAnswerChange = (questionId, optionId, questionType) => {
@@ -157,14 +163,33 @@ function QuizTakingPage() {
     }
   };
 
+  const handleJumpToQuestion = (index) => {
+    setShowFeedback(false);
+    setCurrentQuestionIndex(index);
+    if (quizMode === 'test') {
+      setTimeout(() => {
+        const question = displayQuestions[index];
+        const element = document.getElementById(`question-${question._id}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+    setIsNavDrawerOpen(false);
+  };
+
   const handleNextQuestion = () => {
     setShowFeedback(false);
-    if (currentQuestionIndex < displayQuestions.length - 1) setCurrentQuestionIndex(prev => prev + 1);
+    if (currentQuestionIndex < displayQuestions.length - 1) {
+        handleJumpToQuestion(currentQuestionIndex + 1);
+    }
   };
 
   const handlePreviousQuestion = () => {
     setShowFeedback(false);
-    if (currentQuestionIndex > 0) setCurrentQuestionIndex(prev => prev - 1);
+    if (currentQuestionIndex > 0) {
+        handleJumpToQuestion(currentQuestionIndex - 1);
+    }
   };
 
   const getGlobalQuestionNumber = useCallback((pIndex) => {
@@ -208,16 +233,16 @@ function QuizTakingPage() {
         />
       </div>
 
-      <QuizNavigationDrawer
-        isOpen={isNavDrawerOpen}
-        onClose={() => setIsNavDrawerOpen(false)}
-        originalQuiz={originalQuiz}
-        userAnswers={userAnswers}
-        bookmarkedQuestions={bookmarkedQuestions}
-        quizMode={quizMode}
-        currentQuestionIndex={currentQuestionIndex}
-        setCurrentQuestionIndex={setCurrentQuestionIndex}
-      />
+        <QuizNavigationDrawer
+          isOpen={isNavDrawerOpen}
+          onClose={() => setIsNavDrawerOpen(false)}
+          originalQuiz={originalQuiz}
+          userAnswers={userAnswers}
+          bookmarkedQuestions={bookmarkedQuestions}
+          quizMode={quizMode}
+          currentQuestionIndex={currentQuestionIndex}
+          setCurrentQuestionIndex={handleJumpToQuestion}
+        />
 
       {isTimeUp && (
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50">
@@ -281,14 +306,16 @@ function QuizTakingPage() {
                 }
                 if (item.type === 'group') {
                   return (
-                    <ResizableCaseStudy
-                      key={item._id || index} question={item} groupIndex={index} userAnswers={userAnswers}
-                      handleAnswerChange={handleAnswerChange} showFeedback={false}
-                      bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
-                      startingNumber={startNum} 
-                      caseStudyNumber={caseNum} 
-                      textSize={textSize}
-                    />
+                    <div key={item._id || index} id={`question-${item._id}`}>
+                      <ResizableCaseStudy
+                        question={item} groupIndex={index} userAnswers={userAnswers}
+                        handleAnswerChange={handleAnswerChange} showFeedback={false}
+                        bookmarkedQuestions={bookmarkedQuestions} handleToggleBookmark={handleToggleBookmark} quizMode={quizMode}
+                        startingNumber={startNum} 
+                        caseStudyNumber={caseNum} 
+                        textSize={textSize}
+                      />
+                    </div>
                   );
                 }
                 return null;

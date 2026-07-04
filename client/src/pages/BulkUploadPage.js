@@ -150,6 +150,11 @@ function BulkUploadPage() {
         }
         quizzesData = JSON.parse(jsonText);
       }
+
+      // Đảm bảo dữ liệu gửi lên là mảng để nhất quán với xử lý phía server
+      if (!Array.isArray(quizzesData)) {
+        quizzesData = [quizzesData];
+      }
     } catch (parseError) {
       console.error('Lỗi cú pháp JSON:', parseError);
       setAlert('Nội dung JSON không hợp lệ. Vui lòng kiểm tra lại cú pháp.', 'error');

@@ -18,7 +18,7 @@ const studyRoutes = require('./routes/api/study');
 app.use(cors());
 
 // Middlewares
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 // Route đánh thức server (dùng cho UptimeRobot)
 app.get('/ping', (req, res) => {

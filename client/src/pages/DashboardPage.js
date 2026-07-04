@@ -110,6 +110,9 @@ function DashboardPage() {
           <Link to="/study-by-tag" className="flex items-center px-3 py-2 text-sm text-zinc-600 rounded-md hover:bg-zinc-100 transition-colors">
             Ôn tập theo tag
           </Link>
+          <Link to="/bookmarks" className="flex items-center px-3 py-2 text-sm text-zinc-600 rounded-md hover:bg-zinc-100 transition-colors">
+            Câu hỏi đã gắn cờ
+          </Link>
         </nav>
       </aside>
 
