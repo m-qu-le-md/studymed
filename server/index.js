@@ -10,7 +10,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 // Import các router (Đã xóa authRoutes)
 const quizRoutes = require('./routes/api/quiz');
-const userRoutes = require('./routes/user');
 const studyRoutes = require('./routes/api/study');
 
 // Cấu hình CORS
@@ -32,7 +31,6 @@ app.get('/', (req, res) => {
 
 // Đã xóa app.use('/api/auth', authRoutes);
 app.use('/api/quizzes', quizRoutes);
-app.use('/api/users', userRoutes);
 app.use('/api/study', studyRoutes); // Đảm bảo dòng này được đăng ký
 
 // Kết nối Database

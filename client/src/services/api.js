@@ -13,19 +13,4 @@ const api = axios.create({
   },
 });
 
-// Interceptor để tự động thêm token vào header cho các yêu cầu xác thực
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  console.log('Interceptor - Token:', token);
-  if (token) {
-    config.headers['Authorization'] = `Bearer ${token}`;
-  } else {
-    console.warn('Interceptor - No token found in localStorage');
-  }
-  return config;
-}, (error) => {
-  console.error('Interceptor Error:', error);
-  return Promise.reject(error);
-});
-
 export default api;

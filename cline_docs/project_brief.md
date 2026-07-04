@@ -8,7 +8,6 @@ StudyMed là một nền tảng học tập y khoa toàn diện được phát t
 - **Tính năng cốt lõi**:
     - Quản lý bộ câu hỏi (CRUD quiz, câu hỏi đơn lẻ, bulk upload).
     - Quản lý tiến trình học tập (bookmark câu hỏi, kết quả kiểm tra).
-    - Quản lý người dùng (xác thực qua JWT, thông tin tài khoản).
     - Hỗ trợ công cụ học tập: Resizable Case study, Custom tag input, các thành phần giao diện chuyên dụng.
 
 ## Đối tượng sử dụng

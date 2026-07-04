@@ -67,7 +67,7 @@ function BookmarkedQuestionsPage() {
                 <span className="text-xs font-bold text-slate-400 uppercase">Bộ đề: {item.quizTitle}</span>
                 <div className="flex gap-3">
                   <button 
-                    onClick={() => window.open(`/quiz/edit/${item.quizId}`, '_blank')}
+                    onClick={() => navigate(`/quiz/${item.quizId}/edit-question/${q._id}`)}
                     className="text-blue-600 text-sm hover:underline"
                   >
                     Chỉnh sửa

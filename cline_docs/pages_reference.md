@@ -4,15 +4,10 @@
 
 ## 1. HomePage.js
 - **Vai trò**: Entry point của ứng dụng.
-- **Logic**: Sử dụng các phần tử tĩnh để giới thiệu giá trị cốt lõi của StudyMed. Không gọi API. Điều hướng người dùng bằng `react-router-dom` (Link/useNavigate) đến Dashboard nếu đã đăng nhập hoặc trang Auth nếu chưa.
+- **Logic**: Giới thiệu giá trị cốt lõi của StudyMed. Điều hướng tự động đến `DashboardPage`.
 
-## 2. LoginPage.js & RegisterPage.js
-- **Vai trò**: Xác thực người dùng (Authentication Layer).
-- **Logic**:
-    - Sử dụng `axios` gửi `POST` request đến `/api/users/login` hoặc `/api/users/register`.
-    - Quản lý trạng thái loading và error để phản hồi UI.
-    - Lưu trữ token (JWT) vào Local Storage sau khi đăng nhập thành công.
-- **Lưu ý**: Cần chuyển hướng người dùng về `DashboardPage` sau khi xác thực thành công.
+## 2. Đã loại bỏ
+- Các trang `LoginPage.js` và `RegisterPage.js` đã bị gỡ bỏ.
 
 ## 3. DashboardPage.js
 - **Vai trò**: Trung tâm điều khiển chính.
