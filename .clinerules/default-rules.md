@@ -1,51 +1,42 @@
 # Project Rules: StudyMed (MERN Stack)
 
 ## Core Philosophy
-- This is a MERN stack project (React, Express, MongoDB, Node.js).
-- Maintain modular structure: `client/` for frontend and `server/` for backend.
-- Prioritize security: Always check for `authMiddleware` implementation when touching protected routes.
+- **Stack**: MERN (MongoDB, Express, React, Node.js).
+- **Structure**: Modular architecture (`client/` for frontend, `server/` for backend).
+- **Security**: Strict enforcement of `authMiddleware` on all protected routes. JWT-based authentication.
 
 ## Development Workflow
-- **State Management**: Use React hooks; keep logic clean in custom hooks if complex.
-- **API Requests**: Use `axios` with configured `baseURL` (env variables). Always handle loading and error states in UI.
-- **Database**: Use Mongoose schemas strictly. Ensure all CRUD operations validate input before database interaction.
-- **File Handling**: When managing images/media, use `Multer` + `Cloudinary` as per architectural guidelines.
-- **Routing**: Utilize `react-router-dom` v7. Ensure protected routes are guarded.
-- **Frontend Design**: Always follow the "Anti-Slop Frontend Skill" rules defined in `.agents\skills\design-taste-frontend\SKILL.md`. Ensure design consistency, responsiveness, performance, and accessibility (WCAG AA).
+- **State**: Use React hooks; custom hooks for complex logic.
+- **API**: Axios with environment-based `baseURL`. Strict loading/error state management.
+- **Database**: Mongoose schemas only. Input validation required before DB interactions.
+- **Files**: Use Multer + Cloudinary (folder: `studymed_quizzes`).
+- **Routing**: `react-router-dom` v7. Protected routes guarded.
+- **Design**: Anti-slop guidelines (consistency, responsiveness, WCAG AA).
 
 ## Coding Standards
-- Use modern ES6+ syntax.
-- Maintain consistent indentation (2 spaces).
-- Update `cline_docs/active_context.md` whenever core business logic or infrastructure changes significantly.
+- Modern ES6+.
+- 2-space indentation.
+- Update `cline_docs/active_context.md` on core changes.
 
 ## Deployment & Version Control
-- Deployment targets: Render (server), Vercel (client).
-- Ensure `.env` variables are never committed (check `.gitignore`).
+- **Targets**: Render (server), Vercel (client).
+- **Security**: Never commit `.env`.
 
 ### GitHub Workflow (Work Account)
-- Always verify local git configuration before pushing:
-  ```bash
-  git config --local user.name "Quang Le"
-  git config --local user.email "mqule.md.hmu@gmail.com"
-  ```
-- Remote URL must be routed through `github.com-work`:
-  `git remote set-url origin git@github.com-work:m-qu-le-md/studymed.git`
-- Before pushing, verify with: `git config --local user.email` and `git remote -v`.
-- AUTOMATION: Always commit and push changes after completing a feature or fix.
-
-## Communication with Cline
-- Keep updates direct and technical.
-- When fixing bugs, prioritize existing test suites (if available) before implementing new reproduction scripts.
+- **Account**: `mqule.md.hmu@gmail.com`.
+- **SSH**: Remote must be `github.com-work`.
+- **Pre-push**: Always verify `git config --local user.email` and `git remote -v`.
+- **Automation**: Push changes immediately upon feature completion.
 
 ## Documentation Workflow
-- Always refer to `cline_docs/` for project standards and workflows:
-  - Read `cline_docs/project_brief.md` for project overview.
-  - Read `cline_docs/architecture.md` for technical structure.
-  - Read `cline_docs/github_config.md` for GitHub account/push configuration.
-  - Read `cline_docs/tech_stack.md` for information on project technologies.
-  - Read `cline_docs/quiz_upload_guide.md` for instructions on uploading quiz data.
-  - Read `cline_docs/active_context.md` for current project state.
-  - Read `cline_docs/component_reference.md` for UI component standards.
-  - Read `cline_docs/pages_reference.md` for routing and page structure.
-  - Read `cline_docs/quiz_data_structure.md` for JSON/DB schema standards.
-- When starting a task, search/read relevant documentation files first to understand existing procedures.
+Refer to `cline_docs/` for all standards:
+- `project_brief.md`: Project scope & goal.
+- `architecture.md`: Technical stack, data flow, CORS, Auth.
+- `tech_stack.md`: Versions (React 19, Express 4.18, etc.).
+- `active_context.md`: Current development state & recent changes.
+- `pages_reference.md`: Routing & page-level logic.
+- `component_reference.md`: UI components & reusability standards.
+- `quiz_data_structure.md`: JSON/Mongoose schema standards for Quizzes.
+- `github_config.md`: Account & SSH setup.
+- `quiz_upload_guide.md`: Seeding instructions (`node server/scripts/upload_quiz.js`).
+- *Mandatory*: Search docs before starting any task.
