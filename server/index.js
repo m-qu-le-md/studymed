@@ -11,6 +11,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Import các router (Đã xóa authRoutes)
 const quizRoutes = require('./routes/api/quiz');
 const studyRoutes = require('./routes/api/study');
+const bookmarkRoutes = require('./routes/api/bookmark');
 
 // Cấu hình CORS
 // Đã sửa lại thành hàm trống để cho phép mọi origin (bao gồm cả localhost) gọi dữ liệu
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 // Đã xóa app.use('/api/auth', authRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/study', studyRoutes); // Đảm bảo dòng này được đăng ký
+app.use('/api/bookmarks', bookmarkRoutes);
 
 // Kết nối Database
 const connectDB = async () => {

@@ -57,15 +57,15 @@ function QuizTakingPage() {
     localStorage.removeItem(`studyMed_bookmarks_${quizId}`); 
   }, [id, navigate, originalQuiz, userAnswers, quizMode]);
 
-  const fetchBookmarks = useCallback(() => {
+  const fetchBookmarks = useCallback(async () => {
     try {
-      const bookmarkKey = `studyMed_bookmarks_${id || 'virtual'}`;
-      const localBookmarks = JSON.parse(localStorage.getItem(bookmarkKey) || '[]');
-      setBookmarkedQuestions(new Set(localBookmarks));
+      const res = await api.get('/api/bookmarks');
+      const questionIds = res.data.map(item => item._id);
+      setBookmarkedQuestions(new Set(questionIds));
     } catch (err) {
       console.error('Lỗi tải bookmarks:', err);
     }
-  }, [id]);
+  }, []);
   
   useEffect(() => { fetchBookmarks(); }, [fetchBookmarks]);
 
@@ -123,7 +123,7 @@ function QuizTakingPage() {
 
   const handleToggleBookmark = async (questionId) => {
     try {
-      const res = await api.put(`/api/users/bookmark/${questionId}`, {});
+      const res = await api.post(`/api/bookmarks/${questionId}`, {});
       setBookmarkedQuestions(prev => {
         const newSet = new Set(prev);
         if (res.data.bookmarked) {

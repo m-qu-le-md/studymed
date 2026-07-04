@@ -15,7 +15,7 @@ function BookmarkedQuestionsPage() {
   useEffect(() => {
     const fetchBookmarks = async () => {
       try {
-        const res = await api.get('/api/users/bookmarks');
+        const res = await api.get('/api/bookmarks');
         setBookmarkedQuestions(res.data);
       } catch (err) {
         console.error('Lỗi khi tải bookmarks:', err);
@@ -37,8 +37,8 @@ function BookmarkedQuestionsPage() {
 
   const handleRemoveBookmark = async (questionId) => {
     try {
-      await api.put(`/api/users/bookmark/${questionId}`, {});
-      setBookmarkedQuestions(prev => prev.filter(item => item.question._id !== questionId));
+      await api.post(`/api/bookmarks/${questionId}`, {});
+      setBookmarkedQuestions(prev => prev.filter(item => item._id !== questionId));
     } catch (err) {
       console.error('Lỗi khi xóa bookmark:', err);
     }
@@ -55,7 +55,8 @@ function BookmarkedQuestionsPage() {
 
       <div className="max-w-3xl mx-auto space-y-6">
         {bookmarkedQuestions.map((item, idx) => {
-          const q = item?.question;
+          // item đã chứa thông tin câu hỏi trực tiếp (do đã sửa backend trả về flatten)
+          const q = item;
           if (!q) return null;
           const isRevealed = revealedQuestions?.has(q._id);
           // Tạo set chứa ID của câu hỏi này để hiển thị flag đúng
@@ -64,7 +65,7 @@ function BookmarkedQuestionsPage() {
           return (
             <div key={q._id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
               <div className="flex justify-between items-start mb-4">
-                <span className="text-xs font-bold text-slate-400 uppercase">Bộ đề: {item.quizTitle}</span>
+                <span className="text-xs font-bold text-slate-400 uppercase">Câu hỏi đã bookmark</span>
                 <div className="flex gap-3">
                   <button 
                     onClick={() => navigate(`/quiz/${item.quizId}/edit-question/${q._id}`)}

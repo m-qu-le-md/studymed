@@ -4,35 +4,28 @@
 Hệ thống bookmark cho phép người dùng lưu lại các câu hỏi quan trọng để ôn tập. Hệ thống hoạt động theo mô hình MERN nhưng đã loại bỏ xác thực người dùng (authentication) để đơn giản hóa cho người dùng cá nhân.
 
 ## 2. Kiến trúc & Cơ chế hoạt động
-Do không còn hệ thống đăng nhập, hệ thống sử dụng một **Fixed User ID** cố định để lưu trữ danh sách các câu hỏi đã gắn cờ trên MongoDB.
-
-### Cấu hình môi trường (Quan trọng)
-Hệ thống định danh người dùng qua biến môi trường:
-- `DEFAULT_USER_ID`: ID của một user duy nhất trong collection `users`. ID này phải khớp với ID của document user tồn tại trong database MongoDB.
+Hệ thống hiện tại sử dụng collection `Bookmark` riêng biệt trong MongoDB để lưu trữ các ID câu hỏi được gắn cờ. 
+- Không còn phụ thuộc vào `userId` hoặc `DEFAULT_USER_ID`.
+- Mọi người dùng truy cập hệ thống đều có chung một danh sách bookmark toàn cục.
 
 ## 3. Luồng dữ liệu (Data Flow)
 
-### Backend (`server/routes/user.js`)
-- **Tất cả các route** (PUT bookmark, GET bookmarks) đều sử dụng `User.findById(process.env.DEFAULT_USER_ID)`.
-- **Lưu ý**: Nếu `DEFAULT_USER_ID` không tồn tại trong DB, các route sẽ trả về lỗi 404. Cần đảm bảo database đã có sẵn document user này.
+### Backend (`server/routes/api/bookmark.js`)
+- `GET /api/bookmarks`: Truy vấn toàn bộ collection `Bookmark`, đối chiếu với `Quiz` collection để trả về chi tiết câu hỏi (đã flatten cả câu hỏi nhóm).
+- `POST /api/bookmarks/:questionId`: Kiểm tra sự tồn tại của `questionId` trong collection. Nếu có thì xóa (Toggle Off), nếu chưa có thì thêm mới (Toggle On).
 
 ### Frontend (`client/src/`)
 - **`QuizTakingPage.js`**:
-    - Gọi API `api.put('/api/users/bookmark/${questionId}')` để toggle trạng thái bookmark.
-    - Cập nhật state cục bộ `bookmarkedQuestions` (dạng `Set`) để phản ánh trạng thái trên UI ngay lập tức.
+    - Gọi API `POST /api/bookmarks/${questionId}` để toggle trạng thái.
+    - Duy trì state `Set` để cập nhật icon bookmark (🚩/🏳️) ngay lập tức trên UI.
 - **`BookmarkedQuestionsPage.js`**:
-    - Gọi API `api.get('/api/users/bookmarks')` để lấy danh sách chi tiết các câu hỏi đã lưu.
-    - Xử lý dữ liệu trả về và hiển thị dưới dạng danh sách các câu hỏi đã gắn cờ.
+    - Gọi API `GET /api/bookmarks` để nhận về danh sách câu hỏi đã được flatten.
+    - Hiển thị trực tiếp các câu hỏi này.
 
-## 4. Cách thiết lập khi deploy
-Khi triển khai trên Render hoặc môi trường production:
-1. Đảm bảo MongoDB đã có ít nhất một user.
-2. Lấy `_id` của user đó.
-3. Thiết lập biến môi trường trên Render:
-   - Key: `DEFAULT_USER_ID`
-   - Value: `[ID_đã_lấy]`
-4. Server sẽ tự động sử dụng ID này làm "chủ sở hữu" cho mọi hành động bookmark.
+## 4. Cấu trúc dữ liệu
+- Collection `Bookmark` lưu: `{ questionId: String, createdAt: Date }`.
+- API trả về một mảng object câu hỏi đã được bổ sung thông tin: `quizId`, `parentId` (nếu là câu hỏi nhóm), `isChild`.
 
-## 5. Xử lý lỗi thường gặp
-- **Lỗi 404 khi bookmark**: Kiểm tra xem `DEFAULT_USER_ID` trong `.env` có trùng khớp với ID trong database không.
-- **TypeError (Cannot read 'has' of undefined)**: Thường xảy ra ở `BookmarkedQuestionsPage.js` khi dữ liệu API trả về rỗng hoặc sai cấu trúc. Đã có code bảo vệ (`item?.question`), nhưng hãy kiểm tra lại cấu trúc dữ liệu nếu bạn thay đổi Model `Quiz`.
+## 5. Xử lý lỗi
+- **Lỗi cập nhật đánh dấu**: Đã xử lý tại Backend bằng cách kiểm tra và phản hồi chuẩn JSON, đồng thời Frontend đã được cập nhật để xử lý response này.
+- **Trang bookmark trống**: Đã khắc phục bằng cách sửa logic đối chiếu câu hỏi nhóm/đơn tại Backend.

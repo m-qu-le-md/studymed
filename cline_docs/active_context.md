@@ -13,3 +13,4 @@
 - Xóa bỏ các tệp: `server/routes/auth.js`, `server/routes/user.js`, `server/middleware/authMiddleware.js`, `server/models/User.js`.
 - Gỡ bỏ `AuthProvider` và các trang `LoginPage`, `RegisterPage` trong Frontend.
 - Loại bỏ `axios interceptor` trong `client/src/services/api.js` để xử lý các cảnh báo token lỗi trong console.
+- Khôi phục hệ thống bookmark: Chuyển sang cơ chế lưu trữ độc lập (không dựa trên `userId`), hỗ trợ cả câu hỏi nhóm.
