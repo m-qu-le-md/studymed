@@ -121,25 +121,29 @@ function QuizTakingPage() {
     return () => clearInterval(timerRef.current);
   }, [timeLeft, isTimerPaused, loadingQuiz, isTimeUp, setAlert]);
 
-  const handleToggleBookmark = async (questionId) => {
+  const handleToggleBookmark = useCallback(async (questionId) => {
     try {
       const res = await api.post(`/api/bookmarks/${questionId}`, {});
       setBookmarkedQuestions(prev => {
         const newSet = new Set(prev);
         if (res.data.bookmarked) {
           newSet.add(questionId);
-          setAlert('Đã đánh dấu câu hỏi', 'success');
         } else {
           newSet.delete(questionId);
-          setAlert('Đã bỏ đánh dấu câu hỏi', 'info');
         }
         return newSet;
       });
+      
+      if (res.data.bookmarked) {
+        setAlert('Đã đánh dấu câu hỏi', 'success');
+      } else {
+        setAlert('Đã bỏ đánh dấu câu hỏi', 'info');
+      }
     } catch (err) {
       console.error('Lỗi khi cập nhật bookmark:', err);
       setAlert('Lỗi cập nhật đánh dấu.', 'error');
     }
-  };
+  }, [setAlert]);
 
   const handleAnswerChange = (questionId, optionId, questionType) => {
     if (quizMode === 'review' && displayQuestions[currentQuestionIndex]?.type !== 'group' && questionType !== 'multi-select') {
@@ -291,7 +295,7 @@ function QuizTakingPage() {
                 
                 if (item.type === 'single') {
                   return (
-                    <div key={item._id || index} id={`question-${item._id}`} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div key={item._id} id={`question-${item._id}`} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                       <QuestionItem 
                         question={item} 
                         index={startNum - 1} 
@@ -306,7 +310,7 @@ function QuizTakingPage() {
                 }
                 if (item.type === 'group') {
                   return (
-                    <div key={item._id || index} id={`question-${item._id}`}>
+                    <div key={item._id} id={`question-${item._id}`}>
                       <ResizableCaseStudy
                         question={item} groupIndex={index} userAnswers={userAnswers}
                         handleAnswerChange={handleAnswerChange} showFeedback={false}

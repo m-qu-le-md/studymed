@@ -183,7 +183,7 @@ function QuizFormPage() {
   const handleAddSingleQuestion = () => {
     setQuiz(prev => ({ ...prev, questions: [
       ...prev.questions,
-      { type: 'single', questionText: '', imageUrl: '', questionType: 'single-choice', tags: [], difficulty: 'Thông hiểu', options: [{ text: '', isCorrect: true }, { text: '', isCorrect: false }], generalExplanation: '' }
+      { type: 'single', questionText: '', imageUrl: '', questionType: 'single-choice', tags: [], options: [{ text: '', isCorrect: true }, { text: '', isCorrect: false }], generalExplanation: '' }
     ]}));
   };
   
@@ -197,7 +197,7 @@ function QuizFormPage() {
   const handleAddChildQuestion = (qIndex) => {
     const newQuestions = JSON.parse(JSON.stringify(quiz.questions));
     newQuestions[qIndex].childQuestions.push({
-      questionText: '', imageUrl: '', questionType: 'single-choice', tags: [], difficulty: 'Thông hiểu', options: [{ text: '', isCorrect: true }, { text: '', isCorrect: false }], generalExplanation: ''
+      questionText: '', imageUrl: '', questionType: 'single-choice', tags: [], options: [{ text: '', isCorrect: true }, { text: '', isCorrect: false }], generalExplanation: ''
     });
     setQuiz(prev => ({ ...prev, questions: newQuestions }));
   };

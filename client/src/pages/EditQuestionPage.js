@@ -10,6 +10,7 @@ function EditQuestionPage() {
   const { setAlert } = useAlert();
   const [quiz, setQuiz] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     const fetchQuiz = async () => {
@@ -27,12 +28,15 @@ function EditQuestionPage() {
   }, [quizId, navigate, setAlert]);
 
   const handleUpdate = async () => {
+    if (isSaving) return;
+    setIsSaving(true);
     try {
       await api.put(`/api/quizzes/${quizId}`, quiz);
       setAlert('Cập nhật câu hỏi thành công!', 'success');
-      window.close();
+      navigate('/bookmarks');
     } catch (err) {
       setAlert('Cập nhật thất bại', 'error');
+      setIsSaving(false);
     }
   };
 
@@ -85,8 +89,14 @@ function EditQuestionPage() {
           }}
         />
         <div className="mt-6 flex justify-end gap-4">
-          <button onClick={() => window.close()} className="px-4 py-2 text-zinc-500">Hủy</button>
-          <button onClick={handleUpdate} className="bg-blue-600 text-white px-6 py-2 rounded-lg">Lưu thay đổi</button>
+          <button onClick={() => navigate(-1)} className="px-4 py-2 text-zinc-500">Hủy</button>
+          <button 
+            onClick={handleUpdate} 
+            disabled={isSaving}
+            className={`px-6 py-2 rounded-lg ${isSaving ? 'bg-gray-400' : 'bg-blue-600'} text-white`}
+          >
+            {isSaving ? 'Đang lưu...' : 'Lưu thay đổi'}
+          </button>
         </div>
       </div>
     </div>

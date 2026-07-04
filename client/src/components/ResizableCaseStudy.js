@@ -145,16 +145,16 @@ const ResizableCaseStudy = ({
         </div>
 
         <div className="space-y-8 flex-1 custom-scrollbar">
-          {question.childQuestions?.map((childQ, cqIdx) => {
-            const globalCqNum = startingNumber + cqIdx;
-            const isCqBookmarked = bookmarkedQuestions.has(childQ._id);
-            const cqAnswers = userAnswers[childQ._id] || [];
-            
-            // Lấy ra mảng màu đã được xáo trộn dành riêng cho câu hỏi này
-            const randomColors = randomColorsMap[childQ._id] || PASTEL_VARIANTS;
+            {question.childQuestions?.map((childQ, cqIdx) => {
+              const globalCqNum = startingNumber + cqIdx;
+              const isCqBookmarked = bookmarkedQuestions.has(childQ._id);
+              const cqAnswers = userAnswers[childQ._id] || [];
+              
+              // Lấy ra mảng màu đã được xáo trộn dành riêng cho câu hỏi này
+              const randomColors = randomColorsMap[childQ._id] || PASTEL_VARIANTS;
 
-            return (
-              <div key={childQ._id || cqIdx} className="border-b border-slate-100 pb-8 last:border-0 last:pb-0">
+              return (
+                <div key={childQ._id} className="border-b border-slate-100 pb-8 last:border-0 last:pb-0">
                 <div className="flex justify-between items-start mb-4 gap-3">
                   <h5 className={`${titleSizeClass} font-bold text-slate-800 leading-relaxed flex-1`}>
                     <span className="text-blue-700 font-extrabold mr-2">Câu {globalCqNum}:</span>

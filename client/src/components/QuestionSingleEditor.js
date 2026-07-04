@@ -84,19 +84,6 @@ const QuestionSingleEditor = ({
               />
             </div>
             
-            <div className="bg-gray-50 p-3 rounded-md border border-gray-200 shadow-sm">
-              <label className="block text-sm font-bold text-gray-700 mb-2">Độ khó:</label>
-              <select
-                value={question.difficulty || 'Thông hiểu'}
-                onChange={(e) => handleQuestionChange(qIndex, 'difficulty', e.target.value)}
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 outline-none bg-white"
-              >
-                <option value="Nhận biết">Nhận biết</option>
-                <option value="Thông hiểu">Thông hiểu</option>
-                <option value="Vận dụng">Vận dụng</option>
-                <option value="Vận dụng cao">Vận dụng cao</option>
-              </select>
-            </div>
           </div>
 
           <div className="mb-4 bg-gray-50 p-3 rounded-md border border-dashed border-gray-300">
