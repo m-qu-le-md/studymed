@@ -55,25 +55,37 @@ function BookmarkedQuestionsPage() {
 
       <div className="max-w-3xl mx-auto space-y-6">
         {bookmarkedQuestions.map((item, idx) => {
-          const q = item.question;
-          const isRevealed = revealedQuestions.has(q._id);
+          const q = item?.question;
+          if (!q) return null;
+          const isRevealed = revealedQuestions?.has(q._id);
+          // Tạo set chứa ID của câu hỏi này để hiển thị flag đúng
+          const currentBookmarkedSet = new Set([q._id]);
 
           return (
             <div key={q._id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
               <div className="flex justify-between items-start mb-4">
                 <span className="text-xs font-bold text-slate-400 uppercase">Bộ đề: {item.quizTitle}</span>
-                <button 
-                  onClick={() => handleRemoveBookmark(q._id)}
-                  className="text-red-500 text-sm hover:underline"
-                >
-                  Bỏ gắn cờ
-                </button>
+                <div className="flex gap-3">
+                  <button 
+                    onClick={() => window.open(`/quiz/edit/${item.quizId}`, '_blank')}
+                    className="text-blue-600 text-sm hover:underline"
+                  >
+                    Chỉnh sửa
+                  </button>
+                  <button 
+                    onClick={() => handleRemoveBookmark(q._id)}
+                    className="text-red-500 text-sm hover:underline"
+                  >
+                    Bỏ gắn cờ
+                  </button>
+                </div>
               </div>
 
               {q.type === 'group' ? (
                 <ResizableCaseStudy
                   question={q}
                   userAnswers={{}}
+                  handleAnswerChange={() => {}}
                   showFeedback={isRevealed}
                   mode="review"
                 />
@@ -81,8 +93,11 @@ function BookmarkedQuestionsPage() {
                 <QuestionSingleDisplay
                   currentQuestion={q}
                   userAnswers={{}}
+                  handleAnswerChange={() => {}}
                   showFeedback={isRevealed}
-                  mode="review"
+                  bookmarkedQuestions={currentBookmarkedSet}
+                  handleToggleBookmark={() => handleRemoveBookmark(q._id)}
+                  globalNumber={idx + 1}
                 />
               )}
 

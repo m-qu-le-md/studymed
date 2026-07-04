@@ -13,6 +13,7 @@ import QuizTakingPage from './pages/QuizTakingPage';
 import QuizResultPage from './pages/QuizResultPage';
 import QuizReviewPage from './pages/QuizReviewPage';
 import BookmarkedQuestionsPage from './pages/BookmarkedQuestionsPage';
+import EditQuestionPage from './pages/EditQuestionPage';
 import StudyByTagPage from './pages/StudyByTagPage';
 
 import { AlertProvider } from './context/AlertContext';
@@ -37,9 +38,10 @@ function App() {
           <Route path="/quiz/edit/:id" element={<QuizFormPage />} />
           <Route path="/quiz/take/:id" element={<QuizTakingPage />} />
           <Route path="/quiz/result/:id" element={<QuizResultPage />} />
-          <Route path="/quiz/review/:id" element={<QuizReviewPage />} />
-          <Route path="/bookmarks" element={<BookmarkedQuestionsPage />} />
-          <Route path="/study-by-tag" element={<StudyByTagPage />} />
+           <Route path="/quiz/review/:id" element={<QuizReviewPage />} />
+           <Route path="/quiz/:quizId/edit-question/:questionId" element={<EditQuestionPage />} />
+           <Route path="/bookmarks" element={<BookmarkedQuestionsPage />} />
+           <Route path="/study-by-tag" element={<StudyByTagPage />} />
         </Routes>
       </AlertProvider>
     </Router>

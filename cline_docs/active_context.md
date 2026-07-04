@@ -20,3 +20,5 @@
 - Xây dựng bộ tài liệu kỹ thuật chi tiết (`cline_docs/pages_reference.md` và `cline_docs/component_reference.md`) nhằm mục đích onboarding cho dev mới.
 - Tạo mới bộ đề mẫu `data/sample_quiz.json` tuân thủ chuẩn `QuizSchema`.
 - Thiết lập quy trình tự động hóa git push cho tài khoản công việc (`mqule.md.hmu@gmail.com`).
+- Fix lỗi `TypeError: handleAnswerChange is not a function` tại `BookmarkedQuestionsPage`.
+- Thêm tính năng chỉnh sửa câu hỏi trực tiếp từ `BookmarkedQuestionsPage` thông qua `EditQuestionPage` (mở tab mới).

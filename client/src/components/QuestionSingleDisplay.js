@@ -22,7 +22,7 @@ const QuestionSingleDisplay = ({
   userAnswers,
   handleAnswerChange,
   showFeedback,
-  bookmarkedQuestions,
+  bookmarkedQuestions = new Set(),
   handleToggleBookmark,
   globalNumber,
   textSize = 'base'
@@ -45,10 +45,10 @@ const QuestionSingleDisplay = ({
   }, []);
 
   return (
-    <div className="w-full h-full max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 overflow-hidden">
+    <div className="w-full max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6">
       
       {/* CỘT TRÁI: Nội dung câu hỏi và các phương án */}
-      <div className="flex-1 min-w-0 bg-white rounded-xl p-6 border border-slate-200 flex flex-col h-full overflow-y-auto shadow-sm">
+      <div className="flex-1 min-w-0 bg-white rounded-xl p-6 border border-slate-200 flex flex-col shadow-sm">
         <div className="flex justify-between items-start mb-4 shrink-0">
           <h2 className={`${titleSizeClass} font-bold text-slate-800 flex-1 pr-4 leading-relaxed`}>
             <span className="text-blue-600 font-bold mr-2">Câu {globalNumber}:</span>

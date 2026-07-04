@@ -48,5 +48,12 @@
 - **Logic**: Xử lý input JSON thô. Cần validate cấu trúc JSON theo Mongoose Schema (`Quiz.js`) trước khi gửi lên `POST /api/quizzes/bulk`.
 
 ## 9. BookmarkedQuestionsPage.js
-- **Vai trò**: Lưu trữ thông tin cá nhân.
-- **Trạng thái**: Tạm thời sử dụng Local Storage để lưu `questionId`. Đang trong giai đoạn kế hoạch chuyển đổi sang DB để đồng bộ đa thiết bị.
+- **Vai trò**: Lưu trữ và quản lý câu hỏi đã gắn cờ.
+- **Tính năng**: Cho phép review câu hỏi, bỏ gắn cờ và chỉnh sửa câu hỏi trực tiếp (điều hướng sang `EditQuestionPage`).
+
+## 10. EditQuestionPage.js
+- **Vai trò**: Chỉnh sửa chi tiết một câu hỏi cụ thể trong bộ đề.
+- **Logic**: 
+    - Nhận `quizId` và `questionId` qua URL params.
+    - Fetch dữ liệu bộ đề và render `QuestionSingleEditor`.
+    - Gọi API `PUT /api/quizzes/:quizId` để cập nhật dữ liệu.
