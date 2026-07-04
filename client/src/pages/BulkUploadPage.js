@@ -19,7 +19,6 @@ const jsonFormatGuide = `[
         "imageUrl": "https://link-anh.com/xquang.jpg",
         "generalExplanation": "Bóng tim to trên X-quang gợi ý tình trạng suy tim.",
         "tags": ["x-quang", "suy-tim"],
-        "difficulty": "Thông hiểu",
         "options": [
           { "text": "Suy tim trái", "isCorrect": true },
           { "text": "Bình thường", "isCorrect": false }
@@ -31,7 +30,6 @@ const jsonFormatGuide = `[
         "questionType": "multi-select",
         "generalExplanation": "Đái tháo đường có 4 nhiều: Ăn nhiều, uống nhiều, đái nhiều, gầy nhiều.",
         "tags": ["trieu-chung", "noi-tiet"],
-        "difficulty": "Nhận biết",
         "options": [
           { "text": "Ăn nhiều", "isCorrect": true },
           { "text": "Uống nhiều", "isCorrect": true },
@@ -43,7 +41,6 @@ const jsonFormatGuide = `[
         "questionText": "3. CÂU HỎI ĐƠN (Đúng/Sai): Kháng sinh Penicillin diệt khuẩn bằng cách ức chế tổng hợp vách tế bào?",
         "questionType": "true-false",
         "tags": ["duoc-ly", "khang-sinh"],
-        "difficulty": "Nhận biết",
         "options": [
           { "text": "Đúng", "isCorrect": true },
           { "text": "Sai", "isCorrect": false }
@@ -54,7 +51,6 @@ const jsonFormatGuide = `[
         "caseStem": "4. TÌNH HUỐNG LÂM SÀNG: Bệnh nhân nam, 60 tuổi, đau ngực trái lan ra tay...",
         "imageUrl": "https://link-anh.com/ecg-toan-canh.jpg",
         "tags": ["nhoi-mau-co-tim", "cap-cuu", "case-study"],
-        "difficulty": "Vận dụng cao",
         "childQuestions": [
           {
             "questionText": "Dựa vào đoạn cắt ECG này, nhịp tim của bệnh nhân là bao nhiêu?",

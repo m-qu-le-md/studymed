@@ -17,3 +17,4 @@
 - Fix lỗi `textSize` is not defined trong `QuizReviewPage` và `QuizTakingPage`.
 - Đã bổ sung hướng dẫn khởi động dự án vào `cline_docs/project_brief.md`.
 - Fix lỗi ESLint `react-hooks/exhaustive-deps` trong `QuestionItem.js` và `QuestionSingleDisplay.js` để vượt qua build trên Vercel.
+- Xây dựng bộ tài liệu kỹ thuật chi tiết (`cline_docs/pages_reference.md` và `cline_docs/component_reference.md`) nhằm mục đích onboarding cho dev mới.
