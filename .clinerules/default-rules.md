@@ -45,4 +45,7 @@
   - Read `cline_docs/tech_stack.md` for information on project technologies.
   - Read `cline_docs/quiz_upload_guide.md` for instructions on uploading quiz data.
   - Read `cline_docs/active_context.md` for current project state.
+  - Read `cline_docs/component_reference.md` for UI component standards.
+  - Read `cline_docs/pages_reference.md` for routing and page structure.
+  - Read `cline_docs/quiz_data_structure.md` for JSON/DB schema standards.
 - When starting a task, search/read relevant documentation files first to understand existing procedures.

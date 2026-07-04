@@ -1,0 +1,756 @@
+{
+  "title": "1. Tế bào và Sinh lý học đại cương",
+  "description": "Bộ câu hỏi ôn tập Tế bào và Sinh lý học đại cương",
+  "subject": "Sinh lý học",
+  "topic": "Tế bào và Sinh lý học đại cương",
+  "questions": [
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "1. Nếu độ lợi phản hồi (feedback gain) của một hệ thống điều khiển là -3,0, điều này có nghĩa là hệ thống đó là:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Một hệ thống phản hồi âm có khả năng điều chỉnh 1/3 nhiễu loạn ban đầu của hệ thống",
+          "isCorrect": false
+        },
+        {
+          "text": "Một hệ thống phản hồi âm có khả năng điều chỉnh 2/3 nhiễu loạn ban đầu của hệ thống",
+          "isCorrect": false
+        },
+        {
+          "text": "Một hệ thống phản hồi âm có khả năng điều chỉnh 3/4 nhiễu loạn ban đầu của hệ thống",
+          "isCorrect": true
+        },
+        {
+          "text": "Một hệ thống phản hồi dương có khả năng điều chỉnh 1/3 nhiễu loạn ban đầu của hệ thống",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "C) Độ lợi phản hồi (feedback gain) của một hệ thống điều khiển được tính bằng lượng hiệu chỉnh chia cho sai số còn lại của hệ thống. Độ lợi phản hồi là -3,0 có nghĩa là 3/4 sai số ban đầu đã được hệ thống hiệu chỉnh. Ví dụ, nếu sai số ban đầu là 4 đơn vị và còn lại 1 đơn vị sai số sau khi hiệu chỉnh, thì lượng hiệu chỉnh là -3 (từ 4 xuống 1), sai số còn lại là 1 và độ lợi phản hồi là -3,0.\nTMP14 tr. 8–9",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "2. Hầu hết các tế bào, ngoại trừ tế bào mỡ, được cấu tạo chủ yếu từ:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Protein",
+          "isCorrect": false
+        },
+        {
+          "text": "Các ion",
+          "isCorrect": false
+        },
+        {
+          "text": "Nước",
+          "isCorrect": true
+        },
+        {
+          "text": "Các vi sợi (microfilaments)/bộ khung tế bào (cell cytoskeleton)",
+          "isCorrect": false
+        },
+        {
+          "text": "Các túi bài tiết (secretory vesicles)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "C) Hầu hết các tế bào, ngoại trừ tế bào mỡ, chủ yếu được cấu tạo từ nước với nồng độ từ 70% đến 85%. Sau nước, các chất phong phú nhất trong hầu hết các tế bào là protein, thường chiếm từ 10% đến 20% khối lượng tế bào.\nTMP14 tr. 13",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "3. Các bào quan trung hòa thuốc và độc tố là:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Nhân tế bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Ty thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false
+        },
+        {
+          "text": "Peroxisome",
+          "isCorrect": true
+        },
+        {
+          "text": "Lưới nội chất",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "D) Peroxisome chứa các oxidase có khả năng kết hợp oxy với các ion hydro có nguồn gốc từ các hóa chất nội bào khác nhau để tạo thành hydro peroxide (H2O2), một chất oxy hóa mạnh được sử dụng kết hợp với catalase, một enzyme oxidase khác có mặt với số lượng lớn trong peroxisome. Các enzyme này oxy hóa và trung hòa nhiều loại thuốc và độc tố mà nếu không có chúng, các chất này có thể gây độc cho tế bào.\nTMP14 tr. 18",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "4. Các lipid màng tế bào phong phú nhất là:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Sphingolipid",
+          "isCorrect": false
+        },
+        {
+          "text": "Phospholipid",
+          "isCorrect": true
+        },
+        {
+          "text": "Cholesterol",
+          "isCorrect": false
+        },
+        {
+          "text": "Triglyceride",
+          "isCorrect": false
+        },
+        {
+          "text": "Sterol",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Lớp kép lipid cơ bản của màng tế bào được cấu tạo từ protein và ba loại lipid chính: phospholipid, sphingolipid và cholesterol. Thành phần xấp xỉ là 55% protein, 25% phospholipid, 13% cholesterol, 4% lipid khác và 3% carbohydrate.\nTMP14 tr. 15–16",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "5. Giai đoạn đầu tiên của quá trình nguyên phân (mitosis) được gọi là:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Kỳ sau (Anaphase)",
+          "isCorrect": false
+        },
+        {
+          "text": "Kỳ đầu (Prophase)",
+          "isCorrect": true
+        },
+        {
+          "text": "Kỳ giữa đầu (Prometaphase)",
+          "isCorrect": false
+        },
+        {
+          "text": "Kỳ giữa (Metaphase)",
+          "isCorrect": false
+        },
+        {
+          "text": "Kỳ cuối (Telophase)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Giai đoạn đầu tiên của nguyên phân (mitosis), quá trình mà tế bào phân chia thành hai tế bào mới, được gọi là kỳ đầu (prophase) (xem hình bên dưới).\nTMP14 tr. 41–43\n\n**Hình: Các giai đoạn của quá trình sinh sản tế bào. A, B, và C, Kỳ đầu. D, Kỳ tiền giữa. E, Kỳ giữa. F, Kỳ sau. G và H, Kỳ cuối.**",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "6. Vùng trình tự nucleotide lặp lại nằm ở mỗi đầu của một chromatid được gọi là:",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Đoạn Okazaki (Okazaki fragment)",
+          "isCorrect": false
+        },
+        {
+          "text": "Chạc sao chép (Replication fork)",
+          "isCorrect": false
+        },
+        {
+          "text": "Telomere",
+          "isCorrect": true
+        },
+        {
+          "text": "Trung tử (Centriole)",
+          "isCorrect": false
+        },
+        {
+          "text": "Mạch trễ (Lagging strand)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "C) Telomere là các trình tự nucleotide lặp lại nằm ở mỗi đầu của một chromatid và đóng vai trò như các nắp bảo vệ giúp ngăn chặn sự hư hỏng của nhiễm sắc thể trong quá trình phân chia tế bào. Nếu không có telomere, bộ gen sẽ dần dần mất thông tin và bị rút ngắn sau mỗi lần phân chia tế bào.\nTMP14 tr. 44",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "7. Phát biểu nào sau đây về quá trình sao chép DNA là không chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Cả hai mạch của DNA trong mỗi nhiễm sắc thể đều được sao chép",
+          "isCorrect": false
+        },
+        {
+          "text": "Cả hai mạch của chuỗi xoắn DNA đều được sao chép thành các đoạn nhỏ rồi mới lắp ráp lại, tương tự như quá trình phiên mã RNA",
+          "isCorrect": true
+        },
+        {
+          "text": "Trước khi DNA có thể được sao chép, phân tử mạch kép phải được \"tháo xoắn\" (unzipped) thành hai mạch đơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự tháo xoắn của các chuỗi xoắn DNA được thực hiện bởi các enzyme DNA helicase",
+          "isCorrect": false
+        },
+        {
+          "text": "Khi các mạch DNA đã được tách rời, một đoạn RNA ngắn gọi là đoạn mồi RNA (RNA primer) sẽ gắn vào đầu 3’ của mạch dẫn đầu (leading strand)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Cả hai sợi của chuỗi xoắn DNA trong mỗi nhiễm sắc thể đều được sao chép từ đầu này đến đầu kia, thay vì chỉ sao chép các đoạn nhỏ như xảy ra trong quá trình phiên mã RNA (xem hình bên dưới).\n\n* **Centromere**: Tâm động\n* **Chromosome**: Nhiễm sắc thể\n* **Nuclear membrane**: Màng nhân\n* **Nucleolus**: Nhân con\n* **Aster**: Thể sao\n* **Centriole**: Trung tử\n* **Parent DNA strands**: Các sợi DNA mẹ\n* **Newly synthesized strands**: Các sợi mới tổng hợp\n* **Replication fork**: Chạc sao chép\n* **Topoisomerase**: Topoisomerase\n* **Helicase**: Helicase\n* **Primase**: Primase\n* **RNA primer**: Mồi RNA\n* **Okazaki fragment**: Đoạn Okazaki\n* **DNA ligase**: DNA ligase\n* **DNA polymerase**: DNA polymerase\n* **Leading strand**: Sợi dẫn đầu\n* **Lagging strand**: Sợi theo sau\n\n**Cấu trúc xoắn kép của gen. Các sợi bên ngoài được cấu tạo từ axit phosphoric và đường deoxyribose. Các phân tử bên trong kết nối hai sợi của chuỗi xoắn là các bazơ purine và pyrimidine, chúng xác định \"mã\" của gen.**\nTMP14 tr. 41–42",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "8. Phát biểu nào sau đây về sự biệt hóa tế bào là chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Biệt hóa là kết quả của sự mất chọn lọc các gene khác nhau từ tế bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Biệt hóa là kết quả của sự ức chế chọn lọc các promoter gene khác nhau",
+          "isCorrect": true
+        },
+        {
+          "text": "Biệt hóa là kết quả của sự hoạt hóa chọn lọc telomerase trong các tế bào khác nhau",
+          "isCorrect": false
+        },
+        {
+          "text": "Biệt hóa chủ yếu là kết quả của các đột biến gene",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Biệt hóa tế bào (cell differentiation) đề cập đến những thay đổi về đặc tính vật lý và chức năng của các tế bào khi chúng tăng sinh trong phôi thai để hình thành các cấu trúc và cơ quan cơ thể khác nhau; kết quả này không phải do mất gen mà do sự ức chế chọn lọc các promoter gen khác nhau.\nTMP14 tr. 45",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "9. Phát biểu nào về microRNA (miRNA) là chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "miRNA được hình thành trong tế bào chất và ức chế quá trình dịch mã hoặc thúc đẩy sự phân hủy RNA thông tin (mRNA) trước khi nó có thể được dịch mã",
+          "isCorrect": true
+        },
+        {
+          "text": "miRNA được hình thành trong nhân và sau đó được xử lý trong tế bào chất bởi enzyme dicer",
+          "isCorrect": false
+        },
+        {
+          "text": "miRNA là các đoạn RNA mạch kép ngắn (21 đến 23 nucleotide) có chức năng điều hòa biểu hiện gene",
+          "isCorrect": false
+        },
+        {
+          "text": "miRNA ức chế quá trình phiên mã gene",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "A) Các miRNA được hình thành trong tế bào chất từ các pre-miRNA và được xử lý bởi enzyme dicer, enzyme này cuối cùng lắp ráp phức hợp gây im lặng do RNA hướng dẫn (RNA-induced silencing complex), từ đó tạo ra các miRNA. Các miRNA điều hòa biểu hiện gen bằng cách liên kết với vùng bổ sung của...\n\nRNA và ức chế quá trình dịch mã hoặc thúc đẩy sự phân hủy RNA thông tin (messenger RNA) trước khi nó có thể được dịch mã bởi ribosome.\nTMP14 tr. 36–37",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "10. So với dịch nội bào, dịch ngoại bào có nồng độ ion natri __________, nồng độ ion kali __________, nồng độ ion clorua __________ và nồng độ ion phosphate __________.",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Thấp hơn, thấp hơn, thấp hơn, thấp hơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Thấp hơn, cao hơn, thấp hơn, thấp hơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Thấp hơn, cao hơn, cao hơn, thấp hơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Cao hơn, thấp hơn, cao hơn, thấp hơn",
+          "isCorrect": true
+        },
+        {
+          "text": "Cao hơn, cao hơn, thấp hơn, cao hơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Cao hơn, cao hơn, cao hơn, cao hơn",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "D) Dịch ngoại bào có nồng độ ion natri và clorua tương đối cao nhưng nồng độ kali và phosphat thấp hơn so với dịch nội bào.\nTMP14 tr. 4",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "11. Sự kiện nào sau đây không xảy ra trong quá trình nguyên phân?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Sự ngưng tụ của các nhiễm sắc thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự sao chép hệ gene",
+          "isCorrect": true
+        },
+        {
+          "text": "Sự phân mảnh của màng nhân",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự sắp xếp của các chromatid dọc theo mặt phẳng xích đạo",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự phân tách các chromatid thành hai bộ gồm 46 nhiễm sắc thể \"con\"",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Quá trình sao chép DNA diễn ra trong pha S của chu kỳ tế bào và xảy ra trước nguyên phân (mitosis). Sự ngưng tụ của các nhiễm sắc thể xảy ra trong kỳ đầu (prophase) của nguyên phân. Sự phân mảnh của màng nhân xảy ra trong kỳ đầu giữa (prometaphase) của nguyên phân. Các nhiễm sắc tử (chromatids) xếp hàng tại mặt phẳng xích đạo trong kỳ giữa (metaphase) và tách thành hai bộ nhiễm sắc thể con hoàn chỉnh trong kỳ sau (anaphase).\nTMP14 tr. 43",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "12. Thuật ngữ \"glycocalyx\" đề cập đến cái gì?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Các chuỗi carbohydrate tích điện âm nhô vào bào tương từ các glycolipid và glycoprotein xuyên màng",
+          "isCorrect": false
+        },
+        {
+          "text": "Lớp carbohydrate tích điện âm trên bề mặt ngoài của tế bào",
+          "isCorrect": true
+        },
+        {
+          "text": "Lớp các anion sắp xếp trên bề mặt bào tương của màng sinh chất",
+          "isCorrect": false
+        },
+        {
+          "text": "Các kho dự trữ glycogen lớn được tìm thấy trong các cơ \"nhanh\"",
+          "isCorrect": false
+        },
+        {
+          "text": "Một cơ chế gắn kết giữa các tế bào",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) \"Glycocalyx\" của tế bào là lớp áo carbohydrate tích điện âm, lỏng lẻo nằm ở mặt ngoài của màng tế bào. Các carbohydrate màng thường tồn tại dưới dạng kết hợp với protein hoặc lipid dưới dạng glycoprotein hoặc glycolipid, và phần \"glyco\" của các phân tử này hầu như luôn luôn nhô ra phía ngoài tế bào.\nTMP14 tr. 16",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "13. Phát biểu nào sau đây là không chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Thuật ngữ \"nội môi\" (homeostasis) mô tả việc duy trì các điều kiện gần như không đổi trong cơ thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Trong hầu hết các bệnh lý, các cơ chế nội môi không còn hoạt động trong cơ thể",
+          "isCorrect": true
+        },
+        {
+          "text": "Các cơ chế bù trừ của cơ thể thường dẫn đến những sai lệch so với phạm vi bình thường trong một số chức năng của cơ thể",
+          "isCorrect": false
+        },
+        {
+          "text": "Bệnh tật thường được coi là một trạng thái bị phá vỡ nội môi",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Thuật ngữ cân bằng nội môi (homeostasis) mô tả việc duy trì các điều kiện gần như không đổi trong môi trường bên trong cơ thể, và bệnh tật thường được coi là trạng thái bị phá vỡ cân bằng nội môi. Tuy nhiên, ngay cả trong bệnh tật, các cơ chế bù trừ cân bằng nội môi vẫn tiếp tục hoạt động nhằm duy trì các chức năng cơ thể ở mức độ cho phép sự sống tiếp diễn. Những sự bù trừ này có thể dẫn đến những sai lệch so với mức bình thường của một số chức năng cơ thể như một sự \"đánh đổi\" (trade-off) cần thiết để duy trì các chức năng sống của cơ thể.\nTMP14 tr. 4",
+      "tags": []
+    },
+    {
+      "type": "group",
+      "caseStem": "**Các câu hỏi 14–16**\n\nA) Nhân con (Nucleolus)\nB) Nhân tế bào (Nucleus)\nC) Lưới nội chất trơn (Agranular endoplasmic reticulum)\nD) Lưới nội chất hạt (Granular endoplasmic reticulum)\nE) Bộ máy Golgi (Golgi apparatus)\nF) Nội bào quan (Endosomes)\nG) Peroxisome\nH) Lysosome\nI) Bào tương (Cytosol)\nJ) Khung xương tế bào (Cytoskeleton)\nK) Lớp áo tế bào (Glycocalyx)\nL) Vi ống (Microtubules)\n\nĐối với mỗi tình huống được mô tả dưới đây, hãy xác định vị trí dưới tế bào (subcellular site) có khả năng nhất trong danh sách trên tương ứng với protein bị thiếu hụt hoặc đột biến.",
+      "imageUrl": "",
+      "generalExplanation": "",
+      "childQuestions": [
+        {
+          "questionText": "14. Sự cắt đứt bất thường các gốc mannose trong quá trình xử lý sau dịch mã (post-translational processing) của các glycoprotein dẫn đến sự phát triển của bệnh tự miễn giống lupus ở chuột. Sự cắt đứt bất thường này là do đột biến của enzyme α-mannosidase II.",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": false },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": true },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": false },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": false },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": false },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "E) Các protein màng được glycosyl hóa trong quá trình tổng hợp tại lòng của lưới nội chất hạt (rough endoplasmic reticulum). Tuy nhiên, hầu hết các biến đổi sau dịch mã của các chuỗi oligosaccharide xảy ra trong quá trình vận chuyển protein qua các lớp của chất nền bộ máy Golgi (Golgi apparatus), nơi các enzyme như α-mannosidase II được khu trú.\nTMP14 tr. 16–17"
+        },
+        {
+          "questionText": "15. Quan sát cho thấy sự cắt đứt bất thường các gốc mannose từ các glycoprotein gây ra bệnh tự miễn ở chuột, điều này củng cố vai trò của cấu trúc này trong đáp ứng miễn dịch bình thường.",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": false },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": false },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": false },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": false },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": true },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "K) Các chuỗi oligosaccharide được thêm vào các glycoprotein ở phía lòng của lưới nội chất hạt, và sau đó được biến đổi trong quá trình vận chuyển qua bộ máy Golgi, được gắn vào bề mặt ngoại bào của tế bào. Lớp các gốc carbohydrate tích điện âm này được gọi chung là glycocalyx. Nó tham gia vào các tương tác giữa tế bào với tế bào, tương tác giữa tế bào với phối tử (ligand), và đáp ứng miễn dịch.\nTMP14 tr. 16"
+        },
+        {
+          "questionText": "16. Các nghiên cứu hoàn tất trên một bé trai 5 tuổi cho thấy sự tích tụ các ester cholesterol và triglyceride trong gan, lách và ruột, cùng với tình trạng vôi hóa ở cả hai tuyến thượng thận. Các nghiên cứu bổ sung chỉ ra nguyên nhân là do sự thiếu hụt hoạt tính của enzyme acid lipase A.",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": false },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": false },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": true },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": false },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": false },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "H) Các acid lipase, cùng với các acid hydrolase khác, được khu trú trong lysosome. Sự hòa màng của các túi nội bào (endocytotic vesicles) và túi tự thực (autolytic vesicles) với lysosome khởi đầu quá trình nội bào cho phép tế bào tiêu hóa các mảnh vụn tế bào và các hạt được hấp thụ từ môi trường ngoại bào, bao gồm cả vi khuẩn. Trong môi trường acid bình thường của lysosome, các acid lipase sử dụng hydro để chuyển hóa lipid thành acid béo và glycerol. Các acid lipase khác bao gồm nhiều loại nuclease, protease và các enzyme thủy phân polysaccharide.\nTMP14 tr. 17–18"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "type": "group",
+      "caseStem": "**Các câu hỏi 17–20**\n\nA) Nhân con (Nucleolus)\nB) Nhân tế bào (Nucleus)\nC) Lưới nội chất trơn (Agranular endoplasmic reticulum)\nD) Lưới nội chất hạt (Granular endoplasmic reticulum)\nE) Bộ máy Golgi (Golgi apparatus)\nF) Nội bào quan (Endosomes)\nG) Peroxisome\nH) Lysosome\nI) Bào tương (Cytosol)\nJ) Khung xương tế bào (Cytoskeleton)\nK) Lớp áo tế bào (Glycocalyx)\nL) Vi ống (Microtubules)\n\nHãy ghép vị trí tế bào cho từng bước liên quan đến quá trình tổng hợp và đóng gói một protein bài tiết được liệt kê dưới đây với thuật ngữ chính xác từ danh sách trên.",
+      "imageUrl": "",
+      "generalExplanation": "",
+      "childQuestions": [
+        {
+          "questionText": "17. Ngưng tụ và đóng gói protein",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": false },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": true },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": false },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": false },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": false },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "E) Các protein bài tiết được cô đặc, phân loại và đóng gói vào các túi bài tiết ở các phần tận cùng của bộ máy Golgi, còn được gọi là mạng lưới trans-Golgi (trans-Golgi network). Chính tại đây, các protein dành cho bài tiết được tách ra khỏi các protein dành cho các ngăn nội bào hoặc màng tế bào.\nTMP14 tr. 17"
+        },
+        {
+          "questionText": "18. Khởi đầu dịch mã",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": false },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": false },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": false },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": true },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": false },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "I) Sự khởi đầu dịch mã, dù là của một protein bào tương, một protein gắn màng hay một protein bài tiết, đều xảy ra trong bào tương và liên quan đến một nhóm ribosome chung. Chỉ sau khi đầu N-tận cùng của polypeptide xuất hiện, nó mới được xác định là protein dành cho bài tiết. Tại thời điểm này, ribosome gắn vào bề mặt bào tương của lưới nội chất hạt. Quá trình dịch mã tiếp tục, và polypeptide mới được đẩy vào chất nền của lưới nội chất.\nTMP14 tr. 37–38"
+        },
+        {
+          "questionText": "19. Phiên mã gen",
+          "questionType": "single-choice",
+          "imageUrl": "",
+          "options": [
+            { "text": "A) Nhân con (Nucleolus)", "isCorrect": false },
+            { "text": "B) Nhân tế bào (Nucleus)", "isCorrect": true },
+            { "text": "C) Lưới nội chất trơn (Agranular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "D) Lưới nội chất hạt (Granular endoplasmic reticulum)", "isCorrect": false },
+            { "text": "E) Bộ máy Golgi (Golgi apparatus)", "isCorrect": false },
+            { "text": "F) Nội bào quan (Endosomes)", "isCorrect": false },
+            { "text": "G) Peroxisome", "isCorrect": false },
+            { "text": "H) Lysosome", "isCorrect": false },
+            { "text": "I) Bào tương (Cytosol)", "isCorrect": false },
+            { "text": "J) Khung xương tế bào (Cytoskeleton)", "isCorrect": false },
+            { "text": "K) Lớp áo tế bào (Glycocalyx)", "isCorrect": false },
+            { "text": "L) Vi ống (Microtubules)", "isCorrect": false }
+          ],
+          "generalExplanation": "B) Tất cả các sự kiện phiên mã đều xảy ra trong nhân, bất kể đích đến cuối cùng của sản phẩm protein là gì. Phân tử RNA thông tin thu được sẽ được vận chuyển qua các lỗ nhân trong màng nhân và được dịch mã vào bào tương hoặc vào lòng của lưới nội chất hạt.\nTMP14 tr. 33–34"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "20. Các bào quan bị hư hỏng được chuyển đến lysosome bởi thành phần nào sau đây?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Autophagosome (Thể tự thực)",
+          "isCorrect": true
+        },
+        {
+          "text": "Lưới nội chất hạt",
+          "isCorrect": false
+        },
+        {
+          "text": "Lưới nội chất trơn",
+          "isCorrect": false
+        },
+        {
+          "text": "Bộ máy Golgi",
+          "isCorrect": false
+        },
+        {
+          "text": "Ty thể (Mitochondria)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "A) Tự thực (autophagy) là một quá trình \"quản gia\" (housekeeping process), nhờ đó các bào quan lỗi thời và các tập hợp protein lớn bị phân hủy và tái chế (xem hình bên phải). Các bào quan tế bào đã cũ được chuyển đến lysosome bởi các cấu trúc màng kép gọi là thể tự thực (autophagosomes) được hình thành trong bào tương.\nTMP14 tr. 22–23\n\n**Hình: Sơ đồ các bước của quá trình tự thực (autophagy)**\n\n* **VESICLE NUCLEATION**: Sự tạo nhân túi\n* **Isolation membrane**: Màng cô lập\n* **AUTOSOME FORMATION**: Sự hình thành thể tự thực (autosome)\n* **Autophagosome**: Thể tự thực (autophagosome)\n* **Lysosome**: Tiêu thể (lysosome)\n* **DOCKING AND FUSION WITH LYSOSOME**: Sự gắn kết và hòa màng với tiêu thể\n* **Autolysosome**: Thể tự thực-tiêu thể (autolysosome)\n* **Lysosomal hydrolase**: Enzyme thủy phân trong tiêu thể\n* **VESICLE BREAKDOWN AND DEGRADATION**: Sự phân hủy và thoái hóa túi",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "21. Thành phần nào sau đây không đóng vai trò trực tiếp trong quá trình phiên mã?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Helicase",
+          "isCorrect": true
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false
+        },
+        {
+          "text": "Trình tự kết thúc chuỗi (Chain-terminating sequence)",
+          "isCorrect": false
+        },
+        {
+          "text": "Các phân tử RNA \"được hoạt hóa\" (\"Activated\" RNA molecules)",
+          "isCorrect": false
+        },
+        {
+          "text": "Trình tự khởi động (Promoter sequence)",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "A) Helicase là một trong nhiều loại protein tham gia vào quá trình sao chép DNA. Nó không đóng vai trò trong quá trình phiên mã. RNA polymerase gắn vào trình tự promoter và tạo điều kiện cho việc bổ sung các phân tử RNA \"được hoạt hóa\" vào chuỗi RNA đang phát triển cho đến khi polymerase đạt đến trình tự kết thúc chuỗi trên phân tử DNA khuôn mẫu.\nTMP14 tr. 33–34, 42",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "22. Phát biểu nào sau đây là đúng cho cả ẩm bào (pinocytosis) và thực bào (phagocytosis)?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Liên quan đến việc huy động các sợi actin",
+          "isCorrect": true
+        },
+        {
+          "text": "Xảy ra một cách tự phát và không chọn lọc",
+          "isCorrect": false
+        },
+        {
+          "text": "Các túi nội bào (endocytotic vesicles) hòa màng với các ribosome giải phóng hydrolase vào trong túi",
+          "isCorrect": false
+        },
+        {
+          "text": "Chỉ được quan sát thấy ở đại thực bào và bạch cầu trung tính",
+          "isCorrect": false
+        },
+        {
+          "text": "Không đòi hỏi ATP",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "A) Cả ẩm bào (pinocytosis) và thực bào (phagocytosis) đều liên quan đến sự chuyển động của màng sinh chất. Ẩm bào liên quan đến sự lõm vào (invagination) của màng tế bào, trong khi thực bào liên quan đến sự lồi ra (evagination). Cả hai quá trình đều đòi hỏi sự huy động của actin và các thành phần khung tế bào khác. Thực bào không phải là quá trình tự phát mà có tính chọn lọc, được kích hoạt bởi các tương tác đặc hiệu giữa thụ thể và phối tử (receptor-ligand interactions).\nTMP14 tr. 21–22",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "23. Phát biểu nào sau đây là không chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Tiền ung thư (Proto-oncogenes) là các gen bình thường mã hóa cho các protein kiểm soát sự phát triển của tế bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Tiền ung thư là các gen bình thường mã hóa cho các protein kiểm soát sự phân chia tế bào",
+          "isCorrect": false
+        },
+        {
+          "text": "Sự bất hoạt của các gen ức chế khối u (anti-oncogenes) bảo vệ cơ thể chống lại sự phát triển của ung thư",
+          "isCorrect": true
+        },
+        {
+          "text": "Nhiều gen gây ung thư (oncogenes) khác nhau được kích hoạt đồng thời thường là cần thiết để gây ra ung thư",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "C) Sự bất hoạt các gen chống ung thư (anti-oncogenes), còn được gọi là gen ức chế khối u (tumor suppressor genes), có thể cho phép kích hoạt các gen gây ung thư (oncogenes) dẫn đến ung thư. Tất cả các phát biểu khác đều đúng.\nTMP14 tr. 46–47",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "24. Phát biểu nào về các hệ thống kiểm soát phản hồi (feedback control systems) là không chính xác?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Hầu hết các hệ thống kiểm soát của cơ thể hoạt động theo cơ chế phản hồi âm",
+          "isCorrect": false
+        },
+        {
+          "text": "Phản hồi dương thường thúc đẩy sự ổn định trong một hệ thống",
+          "isCorrect": true
+        },
+        {
+          "text": "Sự tạo thành điện thế hoạt động của thần kinh liên quan đến phản hồi dương",
+          "isCorrect": false
+        },
+        {
+          "text": "Kiểm soát chuyển tiếp (Feed-forward control) rất quan trọng trong việc điều hòa hoạt động cơ",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Phản hồi dương tính (positive feedback) trong một hệ thống thường thúc đẩy sự mất ổn định thay vì ổn định, và trong một số trường hợp thậm chí dẫn đến tử vong. Vì lý do này, phản hồi dương tính thường được gọi là \"vòng xoắn bệnh lý\" (vicious cycle). Tuy nhiên, trong một số trường hợp, phản hồi dương tính có thể hữu ích. Một ví dụ là điện thế hoạt động của thần kinh, nơi sự kích thích màng thần kinh gây ra một lượng nhỏ natri rò rỉ, dẫn đến việc mở thêm các kênh natri, làm thay đổi điện thế nhiều hơn và mở thêm nhiều kênh hơn nữa cho đến khi một lượng lớn natri tràn vào bên trong sợi thần kinh tạo ra điện thế hoạt động. Kiểm soát chuyển tiếp (feed-forward control) được sử dụng để thông báo cho não bộ biết liệu một cử động cơ có được thực hiện chính xác hay không. Nếu không, não bộ sẽ điều chỉnh các tín hiệu chuyển tiếp mà nó gửi đến các cơ vào lần tiếp theo khi cần thực hiện cử động đó. Cơ chế này thường được gọi là kiểm soát thích nghi (adaptive control).\nTMP14 tr. 8–10",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "25. Bào quan nào sau đây chịu trách nhiệm sản xuất adenosine triphosphate (ATP), đơn vị năng lượng của tế bào?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Lưới nội chất",
+          "isCorrect": false
+        },
+        {
+          "text": "Ty thể",
+          "isCorrect": true
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false
+        },
+        {
+          "text": "Bộ máy Golgi",
+          "isCorrect": false
+        },
+        {
+          "text": "Peroxisome",
+          "isCorrect": false
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "B) Ty thể (mitochondria) thường được gọi là \"nhà máy năng lượng\" của tế bào và chứa các enzyme oxy hóa cho phép oxy hóa các chất dinh dưỡng, từ đó tạo ra carbon dioxide và nước, đồng thời giải phóng năng lượng. Năng lượng được giải phóng này được sử dụng để tổng hợp ATP \"giàu năng lượng\".\nTMP14 tr. 18–19",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "26. Phát biểu nào về mRNA là đúng?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "mRNA mang mã di truyền đến bào tương",
+          "isCorrect": true
+        },
+        {
+          "text": "mRNA mang các acid amin đã được hoạt hóa đến ribosome",
+          "isCorrect": false
+        },
+        {
+          "text": "mRNA được cấu tạo từ các phân tử RNA sợi đơn gồm 21 đến 23 nucleotide có khả năng điều hòa phiên mã gen",
+          "isCorrect": false
+        },
+        {
+          "text": "mRNA tạo thành ribosome",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "A) Các phân tử mRNA là những sợi RNA đơn, dài, lơ lửng trong tế bào chất và bao gồm từ vài trăm đến vài nghìn nucleotide RNA trong các sợi không bắt cặp. mRNA mang mã di truyền đến tế bào chất để kiểm soát loại protein được hình thành. RNA vận chuyển (transfer RNA - tRNA) vận chuyển các acid amin đã được hoạt hóa đến các ribosome. RNA ribosome (ribosomal RNA - rRNA), cùng với khoảng 75 loại protein khác nhau, tạo thành ribosome. MicroRNA là các phân tử RNA sợi đơn gồm 21 đến 23 nucleotide có chức năng điều hòa quá trình phiên mã và dịch mã gen.\nTMP14 tr. 35",
+      "tags": []
+    },
+    {
+      "type": "single",
+      "questionType": "single-choice",
+      "questionText": "27. \"Tính dư thừa\" (Redundancy) hoặc \"tính thoái hóa\" (degeneration) của mã di truyền xảy ra trong bước nào của quá trình tổng hợp protein?",
+      "imageUrl": "",
+      "options": [
+        {
+          "text": "Nhân đôi DNA",
+          "isCorrect": false
+        },
+        {
+          "text": "Phiên mã",
+          "isCorrect": false
+        },
+        {
+          "text": "Biến đổi sau phiên mã",
+          "isCorrect": false
+        },
+        {
+          "text": "Dịch mã",
+          "isCorrect": true
+        },
+        {
+          "text": "Glycosyl hóa protein",
+          "isCorrect": false
+        }
+      ],
+      "generalExplanation": "D) Trong cả quá trình sao chép và phiên mã, phân tử acid nucleic mới là bản bổ sung chính xác của phân tử DNA mẹ nhờ kết quả của sự bắt cặp base có thể dự đoán được, đặc hiệu và theo tỷ lệ một-một. Tuy nhiên, trong quá trình dịch mã, mỗi acid amin trong chuỗi polypeptide mới được mã hóa bởi một codon—một chuỗi gồm ba nucleotide liên tiếp. Trong khi mỗi codon mã hóa cho một acid amin cụ thể, hầu hết các acid amin có thể được mã hóa bởi nhiều codon. Sự dư thừa này xảy ra vì 60 codon chỉ mã hóa cho 20 acid amin.\nTMP14 tr. 34–36",
+      "tags": []
+    }
+  ]
+}
