@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSwipe } from '../hooks/useSwipe';
 import ExplanationBlock from '../components/ExplanationBlock';
 import QuizNavigationDrawer from '../components/QuizNavigationDrawer';
