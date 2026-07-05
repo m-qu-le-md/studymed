@@ -27,6 +27,7 @@ const QuizTakingMobile = ({
   const currentQuestion = displayQuestions?.[currentQuestionIndex];
 
   // Tạo bộ màu thay đổi mỗi khi người dùng vuốt sang câu hỏi đơn mới
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const randomColors = useMemo(() => {
     return [...PASTEL_VARIANTS].sort(() => 0.5 - Math.random());
   }, [currentQuestionIndex]);
