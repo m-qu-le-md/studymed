@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
+import ExplanationBlock from './ExplanationBlock';
 
-// Khai báo mảng màu Pastel
 const PASTEL_VARIANTS = [
   "bg-sky-50/70 border-sky-100 hover:bg-sky-100",
   "bg-amber-50/70 border-amber-100 hover:bg-amber-100",
@@ -14,8 +14,8 @@ const PASTEL_VARIANTS = [
   "bg-pink-50/70 border-pink-100 hover:bg-pink-100"
 ];
 
-const CaseStudyMobile = ({ question, startingNumber, userAnswers, showFeedback, onOpenSheet, handleAnswerChange }) => {
-  // Tạo bộ màu ngẫu nhiên nhưng giữ nguyên giá trị cho từng câu hỏi con (tránh nháy màu khi re-render)
+const CaseStudyMobile = ({ question, startingNumber, userAnswers, showFeedback, handleAnswerChange }) => {
+  
   const randomColorsMap = useMemo(() => {
     const map = {};
     if (question.childQuestions) {
@@ -28,15 +28,40 @@ const CaseStudyMobile = ({ question, startingNumber, userAnswers, showFeedback, 
 
   return (
     <div className="space-y-6">
-      {question.childQuestions?.map((childQ, index) => (
-        <div key={childQ._id} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-          <div className="font-semibold text-slate-800 mb-3">
-            {startingNumber + index}. {childQ.question}
+      {/* VÙNG 1: BỆNH ÁN GỐC HIỂN THỊ TRỰC QUAN */}
+      <div className="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 shadow-sm mb-6">
+        <h3 className="font-bold text-blue-800 text-[15px] flex items-center gap-2 mb-3 uppercase tracking-wider">
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+          Bệnh án lâm sàng
+        </h3>
+        <div className="text-slate-800 text-[16px] leading-relaxed whitespace-pre-line">
+          {question.caseStem}
+        </div>
+        {question.imageUrl && (
+          <div className="mt-4 flex justify-center">
+            <img src={question.imageUrl} alt="Case visual" className="w-full max-h-[30vh] object-contain rounded-xl border border-blue-200 bg-white p-1" />
           </div>
+        )}
+      </div>
+
+      {/* VÙNG 2: DANH SÁCH CÂU HỎI CON */}
+      {question.childQuestions?.map((childQ, index) => (
+        <div key={childQ._id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+          <div className="font-semibold text-slate-800 mb-4 text-[18px] leading-relaxed">
+            <span className="text-blue-600 mr-2 font-extrabold">Câu {startingNumber + index}:</span>
+            {childQ.questionText} {/* Đã sửa lỗi: childQ.question -> childQ.questionText */}
+          </div>
+
+          {childQ.imageUrl && (
+            <div className="mb-4 flex justify-center">
+              <img src={childQ.imageUrl} alt="Context visual" className="max-w-full max-h-[25vh] rounded-xl object-contain" />
+            </div>
+          )}
+
           <div className="space-y-3">
             {childQ.options.map((option, idx) => {
               const isSelected = userAnswers[childQ._id]?.includes(option._id) || false;
-              const randomColors = randomColorsMap[childQ._id] || PASTEL_VARIANTS; // Trích xuất màu
+              const randomColors = randomColorsMap[childQ._id] || PASTEL_VARIANTS; 
 
               let containerClass = "";
               let textClass = "text-slate-700 font-medium";
@@ -49,7 +74,6 @@ const CaseStudyMobile = ({ question, startingNumber, userAnswers, showFeedback, 
                 containerClass = "bg-blue-50 border-blue-400 ring-1 ring-blue-400"; 
                 textClass = "text-blue-900 font-bold"; 
               } else {
-                // Áp dụng màu Pastel ngẫu nhiên
                 containerClass = randomColors[idx % randomColors.length];
               }
 
@@ -70,6 +94,20 @@ const CaseStudyMobile = ({ question, startingNumber, userAnswers, showFeedback, 
               );
             })}
           </div>
+
+          {/* VÙNG 3: GIẢI THÍCH CHI TIẾT KHI XEM LẠI */}
+          {showFeedback && (
+            <div className="mt-6 pt-5 border-t border-slate-100">
+              <div className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span> Phân tích đáp án
+              </div>
+              <ExplanationBlock 
+                question={childQ} 
+                userAnswers={userAnswers[childQ._id] || []} 
+                mode="review" 
+              />
+            </div>
+          )}
         </div>
       ))}
     </div>

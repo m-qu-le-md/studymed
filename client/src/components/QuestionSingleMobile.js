@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import ExplanationBlock from './ExplanationBlock';
 
 const PASTEL_VARIANTS = [
@@ -15,9 +15,20 @@ function QuestionSingleMobile({
     return [...PASTEL_VARIANTS].sort(() => 0.5 - Math.random());
   }, []);
 
+  // Khởi tạo state để tự điều khiển việc đóng/mở Bottom Sheet
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  // Mở sheet tự động khi showFeedback kích hoạt hoặc khi chuyển câu hỏi
+  useEffect(() => {
+    if (showFeedback) {
+      setIsSheetOpen(true);
+    } else {
+      setIsSheetOpen(false);
+    }
+  }, [currentQuestion._id, showFeedback]);
+
   return (
     <div className="flex flex-col h-full w-full relative overflow-hidden bg-white">
-      {/* Vùng cuộn chứa câu hỏi, dùng px-5 thay vì p-4 -> p-5 */}
       <div className="flex-1 overflow-y-auto px-5 pt-6 pb-28 custom-scrollbar">
          
          <div className="flex justify-between items-start mb-6">
@@ -70,22 +81,37 @@ function QuestionSingleMobile({
              );
            })}
          </div>
+
+         {/* Nút để gọi lại Bottom Sheet khi người dùng đã đóng nó đi */}
+         {showFeedback && !isSheetOpen && (
+           <button
+             onClick={() => setIsSheetOpen(true)}
+             className="mt-6 w-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 py-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-colors"
+           >
+             💡 Xem phân tích đáp án
+           </button>
+         )}
       </div>
 
-      {/* Bottom Sheet Giải thích tối ưu lại UI */}
+      {/* Bottom Sheet Giải thích (Có Header và Nút Đóng) */}
       <div 
-        className={`absolute bottom-0 left-0 w-full bg-white rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.08)] border-t border-slate-100 transition-transform duration-300 ease-out z-50 flex flex-col ${
-          showFeedback ? 'translate-y-0 h-[65%]' : 'translate-y-full h-0'
+        className={`absolute bottom-0 left-0 w-full bg-white rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.15)] border-t border-slate-100 transition-transform duration-300 ease-out z-50 flex flex-col ${
+          isSheetOpen ? 'translate-y-0 h-[70%]' : 'translate-y-full h-0'
         }`}
       >
-        <div className="flex justify-center py-4 shrink-0">
-          <div className="w-12 h-1.5 bg-slate-200 rounded-full"></div>
+        <div className="flex justify-between items-center px-6 py-5 shrink-0 border-b border-slate-100">
+          <h4 className="font-bold text-slate-900 text-[19px] flex items-center gap-3">
+            <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span> Phân tích y khoa
+          </h4>
+          <button 
+            onClick={() => setIsSheetOpen(false)} 
+            className="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-600 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 pb-8 custom-scrollbar">
-            <h4 className="font-bold text-slate-900 text-xl mb-4 flex items-center gap-3">
-              <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span> Phân tích y khoa
-            </h4>
+        <div className="flex-1 overflow-y-auto px-6 py-4 custom-scrollbar">
             <ExplanationBlock 
               question={currentQuestion} 
               userAnswers={userAnswers[currentQuestion._id]} 
@@ -94,8 +120,12 @@ function QuestionSingleMobile({
         </div>
       </div>
       
-      {showFeedback && (
-        <div className="absolute inset-0 bg-slate-900/10 backdrop-blur-[2px] z-40" />
+      {/* Lớp phủ mờ giúp click ra ngoài để đóng */}
+      {isSheetOpen && (
+        <div 
+          className="absolute inset-0 bg-slate-900/30 backdrop-blur-[2px] z-40 transition-opacity" 
+          onClick={() => setIsSheetOpen(false)}
+        />
       )}
     </div>
   );

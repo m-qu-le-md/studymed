@@ -1,3 +1,4 @@
+// src/pages/QuizTakingMobile.js
 import React, { useState, useEffect } from 'react';
 import { useSwipe } from '../hooks/useSwipe';
 import ExplanationBlock from '../components/ExplanationBlock';
@@ -70,7 +71,13 @@ const QuizTakingMobile = ({
   };
 
   return (
-    <div className="flex flex-col h-[100dvh] bg-white relative overflow-hidden selection:bg-blue-200">
+    // ĐÃ CẬP NHẬT: Đưa xử lý vuốt chạm lên layer gốc để bắt được thao tác toàn màn hình
+    <div 
+      onTouchStart={onTouchStart} 
+      onTouchMove={onTouchMove} 
+      onTouchEnd={onTouchEnd}
+      className="flex flex-col h-[100dvh] bg-white relative overflow-hidden selection:bg-blue-200"
+    >
       
       {isTimeUp && (
         <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-[100] px-4 animate-fadeIn">
@@ -123,11 +130,9 @@ const QuizTakingMobile = ({
         </div>
       </div>
 
+      {/* ĐÃ SỬA: Loại bỏ các điều kiện ràng buộc touch ở đây để tránh xung đột sự kiện */}
       <div 
         ref={scrollContainerRef}
-        onTouchStart={!isSheetOpen ? onTouchStart : undefined} 
-        onTouchMove={!isSheetOpen ? onTouchMove : undefined} 
-        onTouchEnd={!isSheetOpen ? onTouchEnd : undefined}
         className="flex-1 w-full overflow-y-auto pt-6 pb-32 custom-scrollbar bg-white"
       >
         <div key={currentQuestion?._id} className="animate-fadeIn px-5">
