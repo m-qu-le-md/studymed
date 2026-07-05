@@ -3,7 +3,7 @@
 ## Core Philosophy
 - **Stack**: MERN (MongoDB, Express, React, Node.js).
 - **Structure**: Modular architecture (`client/` for frontend, `server/` for backend).
-- **Security**: Strict enforcement of `authMiddleware` on all protected routes (JWT).
+- **Security**: Open-access, no authentication required.
 
 ## Development Workflow
 - **State**: Use React hooks; custom hooks for complex logic.
@@ -11,7 +11,7 @@
 - **Database**: Mongoose schemas only. Input validation required before DB interactions.
 - **Files**: Use Multer + Cloudinary (folder: `studymed_quizzes`).
 - **Routing**: `react-router-dom` v7.
-- **Design**: Anti-slop guidelines (consistency, responsiveness, WCAG AA).
+- **Design**: Anti-slop guidelines (consistency, responsive Edge-to-Edge).
 
 ## Startup & Seeding
 - **Start Backend**: `cd server && npm run dev`
@@ -22,15 +22,15 @@
 ### Architecture & Tech Stack
 - **Frontend**: React 19.1.0, Tailwind CSS 3.4.4, react-router-dom 7.7.1, Axios 1.11.0.
 - **Backend**: Express 4.18.2, Mongoose 6.12.0.
-- **Data Flow**: Server handles API via modules (`quiz`, `user`, `study`). CORS enabled for local dev.
-- **Auth**: JWT required via `Authorization` header.
+- **Data Flow**: Server handles API via modules (`quiz`, `study`, `bookmark`). CORS enabled for local dev.
+- **Auth**: No authentication.
 
 ### Quiz & Data Management
 - **Schema**: Must follow `server/models/Quiz.js` structure (`single` vs `group` types).
-- **Bookmark System**: Uses `DEFAULT_USER_ID` from `.env` (maps to a fixed MongoDB user).
+- **Bookmark System**: Global, independent storage (no user ID).
 
 ### UI/UX Standards
-- **Components**: Use `InputField`, `QuestionSingleEditor`, `QuestionGroupEditor`, `QuestionSingleDisplay`, `ResizableCaseStudy`, `QuizNavigationDrawer`.
+- **Components**: Use `InputField`, `QuestionSingleEditor`, `QuestionGroupEditor`, `QuestionSingleDisplay`, `CaseStudyDisplay`, `QuizNavigationDrawer`.
 - **Page Logic**: Refer to `pages_reference.md` for specific routing logic and CRUD handlers.
 
 ## Coding Standards

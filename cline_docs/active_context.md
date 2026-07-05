@@ -1,16 +1,17 @@
 # Active Context: StudyMed
 
 ## Trạng thái hiện tại
-- Dự án đã chuyển sang chế độ mở (Open-access), loại bỏ hoàn toàn cơ chế đăng nhập và xác thực.
-- Deployment: Server chạy trên Render, Frontend chạy trên Vercel.
-- Cấu hình server đã đơn giản hóa API endpoints:
-  - `/api/quizzes`: Quản lý quiz.
-  - `/api/study`: Quản lý tiến trình học tập.
-- CORS đã cấu hình mở cho phép mọi origin truy cập.
+- Dự án đã hoàn thiện kiến trúc Open-access, loại bỏ hoàn toàn cơ chế đăng nhập và xác thực.
+- Deployment: Server (Render), Frontend (Vercel).
+- API cấu hình mở: `/api/quizzes`, `/api/study`, `/api/bookmark` (không yêu cầu auth).
 
 ## Các thay đổi gần đây
-- Loại bỏ hoàn toàn chức năng đăng nhập, đăng ký và bảo mật JWT.
-- Xóa bỏ các tệp: `server/routes/auth.js`, `server/routes/user.js`, `server/middleware/authMiddleware.js`, `server/models/User.js`.
-- Gỡ bỏ `AuthProvider` và các trang `LoginPage`, `RegisterPage` trong Frontend.
-- Loại bỏ `axios interceptor` trong `client/src/services/api.js` để xử lý các cảnh báo token lỗi trong console.
-- Khôi phục hệ thống bookmark: Chuyển sang cơ chế lưu trữ độc lập (không dựa trên `userId`), hỗ trợ cả câu hỏi nhóm.
+- **Kiến trúc UI/UX:** Hoàn tất chuyển đổi sang thiết kế Responsive (Edge-to-Edge) cho mobile. 
+- **Component System:** Tái cấu trúc thành các bộ hiển thị chuyên biệt (`CaseStudyDisplay`, `QuestionSingleDisplay`) hỗ trợ cả Desktop và Mobile.
+- **Mobile optimization:** Sử dụng JS thuần (không thư viện UI ngoài), định dạng file `.js` chuẩn, tối ưu bằng `?.` và kỹ thuật vuốt (useSwipe) tự xây dựng.
+- **Loại bỏ Auth:** Đã dọn dẹp toàn bộ middleware và route liên quan đến JWT/User.
+- **Hệ thống Bookmark:** Chuyển sang lưu trữ cục bộ độc lập, hỗ trợ linh hoạt cho cả câu hỏi đơn và nhóm câu hỏi.
+
+## Ưu tiên hiện tại
+- Duy trì tính ổn định của giao diện Edge-to-Edge.
+- Đảm bảo tính nhất quán giữa tài liệu kỹ thuật và mã nguồn sau khi refactor.

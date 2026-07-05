@@ -1,54 +1,45 @@
 # Detailed Page Reference: StudyMed (Technical Documentation)
 
-Đây là tài liệu hướng dẫn chuyên sâu về các trang (Pages) của hệ thống. Tài liệu dành cho các nhà phát triển mới tiếp cận dự án.
+Đây là tài liệu hướng dẫn chuyên sâu về các trang (Pages) của hệ thống. 
 
 ## 1. HomePage.js
 - **Vai trò**: Entry point của ứng dụng.
-- **Logic**: Giới thiệu giá trị cốt lõi của StudyMed. Điều hướng tự động đến `DashboardPage`.
+- **Logic**: Giới thiệu giá trị cốt lõi, điều hướng đến `DashboardPage`.
 
-## 2. Đã loại bỏ
-- Các trang `LoginPage.js` và `RegisterPage.js` đã bị gỡ bỏ.
+## 2. DashboardPage.js
+- **Vai trò**: Trung tâm điều khiển.
+- **Logic**: Fetch toàn bộ quiz (`GET /api/quizzes`), hiển thị danh sách để quản lý (CRUD) hoặc Bắt đầu học.
 
-## 3. DashboardPage.js
-- **Vai trò**: Trung tâm điều khiển chính.
-- **Logic**:
-    - Gọi `GET /api/quizzes` để lấy toàn bộ danh sách bộ đề.
-    - Sử dụng React Hooks (`useEffect`) để fetch dữ liệu.
-    - Hiển thị các hành động (CRUD): Chỉnh sửa (`QuizFormPage`), Xóa (xác nhận trước khi gọi DELETE API), hoặc Bắt đầu học (`QuizTakingPage`).
-
-## 4. QuizFormPage.js
+## 3. QuizFormPage.js
 - **Vai trò**: Form quản lý nội dung (Quiz Builder).
-- **Logic**:
-    - Nhận `quizId` qua `useParams` để quyết định trạng thái (Create/Edit).
-    - Quản lý state phức tạp bao gồm: Thông tin chung (`QuizGeneralInfo`), Danh sách câu hỏi (`QuestionSingleEditor` hoặc `QuestionGroupEditor`).
-    - Validation: Kiểm tra dữ liệu trước khi `POST` hoặc `PUT` lên server.
+- **Logic**: Xử lý Create/Edit quiz. Quản lý state `QuizGeneralInfo` và các trình soạn thảo câu hỏi (`QuestionSingleEditor`/`QuestionGroupEditor`).
 
-## 5. QuizTakingPage.js
-- **Vai trò**: Môi trường làm bài thi thực tế.
-- **Logic**:
-    - Fetch chi tiết bộ đề qua `GET /api/quizzes/:id`.
-    - Sử dụng `QuizNavigationDrawer` để người dùng nhảy nhanh giữa các câu hỏi.
-    - Quản lý state "câu trả lời hiện tại" cục bộ trước khi submit kết quả cuối cùng qua `POST /api/study/submit`.
+## 4. QuizTakingPage.js (Container)
+- **Vai trò**: Điều phối môi trường làm bài thi (Container pattern).
+- **Logic**: 
+    - Sử dụng `useDevice.js` để render `QuizTakingDesktop.js` hoặc `QuizTakingMobile.js`.
+    - Quản lý State: Timer, Bookmark, Answer Management.
+    - Responsive: Tích hợp design Edge-to-Edge trên Mobile.
+
+## 5. Presenter Components (QuizTakingDesktop/Mobile)
+- **QuizTakingDesktop.js**: UI chuẩn cho Desktop, dùng `QuizNavigationDrawer`, `CaseStudyDisplay`.
+- **QuizTakingMobile.js**: Tối ưu Mobile, dùng `useSwipe.js` và Bottom Sheet thuần CSS. Không sử dụng thư viện UI ngoài.
 
 ## 6. QuizResultPage.js
-- **Vai trò**: Màn hình báo cáo kết quả.
-- **Logic**: Nhận dữ liệu kết quả từ state của `QuizTakingPage` (hoặc thông qua location state). Tính toán phần trăm, điểm số và hiển thị summary.
+- **Vai trò**: Báo cáo kết quả.
+- **Logic**: Tổng hợp kết quả, hiển thị feedback điểm số.
 
 ## 7. QuizReviewPage.js
-- **Vai trò**: Phân tích đáp án (Learning & Reflection).
-- **Logic**: Hiển thị lại toàn bộ bộ đề, mỗi câu hỏi được đối chiếu với đáp án người dùng chọn để highlight đúng/sai. Tích hợp `ExplanationBlock` để show giải thích y khoa.
+- **Vai trò**: Phân tích đáp án.
+- **Logic**: Render lại đề, highlight kết quả đúng/sai kèm `ExplanationBlock`.
 
 ## 8. BulkUploadPage.js
-- **Vai trò**: Tiện ích nạp liệu nhanh.
-- **Logic**: Xử lý input JSON thô. Cần validate cấu trúc JSON theo Mongoose Schema (`Quiz.js`) trước khi gửi lên `POST /api/quizzes/bulk`.
+- **Vai trò**: Tiện ích nạp liệu JSON.
 
 ## 9. BookmarkedQuestionsPage.js
-- **Vai trò**: Lưu trữ và quản lý câu hỏi đã gắn cờ.
-- **Tính năng**: Cho phép review câu hỏi, bỏ gắn cờ và chỉnh sửa câu hỏi trực tiếp (điều hướng sang `EditQuestionPage`).
+- **Vai trò**: Quản lý bookmark.
+- **Logic**: Gọi `GET /api/bookmarks`, hiển thị danh sách câu hỏi đã được flatten, hỗ trợ chỉnh sửa nhanh qua `EditQuestionPage`.
 
 ## 10. EditQuestionPage.js
-- **Vai trò**: Chỉnh sửa chi tiết một câu hỏi cụ thể trong bộ đề.
-- **Logic**: 
-    - Nhận `quizId` và `questionId` qua URL params.
-    - Fetch dữ liệu bộ đề và render `QuestionSingleEditor`.
-    - Gọi API `PUT /api/quizzes/:quizId` để cập nhật dữ liệu.
+- **Vai trò**: Chỉnh sửa chi tiết câu hỏi đơn lẻ.
+- **Logic**: API `PUT` lên server để cập nhật nội dung sau khi sửa.

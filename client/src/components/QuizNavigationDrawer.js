@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useDevice } from '../hooks/useDevice';
 
 const QuizNavigationDrawer = ({
   isOpen,
@@ -10,6 +11,7 @@ const QuizNavigationDrawer = ({
   currentQuestionIndex,
   setCurrentQuestionIndex
 }) => {
+  const { isMobile } = useDevice();
   // Khoá cuộn màn hình nền khi mở ngăn kéo
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
@@ -20,10 +22,11 @@ const QuizNavigationDrawer = ({
   if (!isOpen) return null;
 
   const handleNavigate = (index, qId) => {
-    if (quizMode === 'review') {
+    // Trạng thái Review HOẶC đang dùng Mobile thì đều dùng phân trang
+    if (quizMode === 'review' || isMobile) {
       setCurrentQuestionIndex(index);
     } else {
-      // Chế độ Test: Cuộn màn hình đến phần tử có ID tương ứng
+      // Chế độ Test trên Desktop: Cuộn màn hình
       const el = document.getElementById(`question-${qId}`);
       if (el) {
         // Trừ đi 100px để không bị thanh công cụ (sticky header) che mất

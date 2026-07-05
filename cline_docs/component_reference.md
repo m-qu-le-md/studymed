@@ -23,9 +23,14 @@ Dành cho nhà phát triển: Cách thức hoạt động và tái sử dụng c
 - **QuestionSingleDisplay.js**:
     - *Purpose*: Render câu hỏi trong môi trường làm bài/xem lại.
     - *Features*: Hiển thị trạng thái đã chọn (selected) hoặc trạng thái đúng/sai (khi ở chế độ Review).
-- **ResizableCaseStudy.js**:
-    - *Purpose*: Tối ưu hóa đọc văn bản dài y khoa.
-    - *Logic*: Sử dụng CSS/JS để drag hoặc kéo thả thay đổi height của container.
+- **CaseStudyDesktop.js**:
+    - *Purpose*: Tối ưu hóa đọc văn bản dài y khoa trên desktop.
+    - *Logic*: Hỗ trợ kéo thả (resize) cột nội dung bệnh án.
+- **CaseStudyMobile.js**:
+    - *Purpose*: Hiển thị nội dung ca lâm sàng trên thiết bị di động.
+    - *Logic*: Thiết kế dạng khối, tích hợp nút mở bệnh án gốc qua Bottom Sheet.
+- **CaseStudyDisplay.js**:
+    - *Purpose*: Wrapper điều phối hiển thị giữa `CaseStudyDesktop` và `CaseStudyMobile` dựa trên thiết bị.
 - **ExplanationBlock.js**:
     - *Purpose*: Hiển thị thông tin diễn giải (Medical Reasoning).
     - *Features*: Hỗ trợ render Markdown hoặc Rich text (cần cẩn trọng khi dùng `dangerouslySetInnerHTML`).
@@ -34,3 +39,12 @@ Dành cho nhà phát triển: Cách thức hoạt động và tái sử dụng c
 - **Button.js**: Thiết kế theo biến thể `variant` (primary, danger, secondary).
 - **QuizNavigationDrawer.js**:
     - *Logic*: Nhận vào mảng danh sách câu hỏi. Render grid các nút, highlight nút theo trạng thái (Đã làm/Chưa làm).
+
+## 5. Mobile Specialized Components
+- **QuizTakingDesktop.js** & **QuizTakingMobile.js**:
+    - *Purpose*: Presenter components trong mô hình Container-Presenter.
+    - *Logic*: Tách biệt giao diện cho desktop và mobile. Mobile dùng CSS thuần và `div` tĩnh.
+- **useDevice.js** (Hook):
+    - *Purpose*: Nhận diện thiết bị (breakpoint 1024px) phục vụ điều hướng responsive.
+- **useSwipe.js** (Hook):
+    - *Purpose*: Triển khai logic vuốt (Swipe left/right) bằng JS thuần cho giao diện Mobile.

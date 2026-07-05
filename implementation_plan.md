@@ -1,30 +1,33 @@
 # Implementation Plan
 
-## Overview
-Fix and implement a comprehensive test/deployment plan for the question bookmarking feature to resolve the "Lỗi cập nhật đánh dấu" (404 error).
+Cập nhật tài liệu trong thư mục `cline_docs/` để phản ánh chính xác cấu trúc và trạng thái hệ thống StudyMed hiện tại.
 
-## Types
-Data structure modifications involve ensuring the `User` model correctly initializes in the absence of an authentication system.
+[Types]
+Không có thay đổi về kiểu dữ liệu hệ thống, chỉ cập nhật tài liệu mô tả.
 
-## Files
-- Modified: `server/routes/user.js` (Added logic to auto-create a default user).
+[Files]
+Các file cần sửa đổi trong thư mục `cline_docs/`:
+- `active_context.md`: Dọn dẹp nội dung cũ, chuẩn hóa trạng thái ổn định.
+- `architecture.md`: Cập nhật công nghệ Frontend và cấu trúc Backend.
+- `bookmark_system_guide.md`: Cập nhật logic bookmark toàn cục.
+- `tech_stack.md`: Cập nhật phiên bản các thư viện chính.
+- `pages_reference.md`: Bổ sung và cập nhật logic trang.
 
-## Functions
-- Modified `router.put('/bookmark/:question_id')`: Added fallback to create a default user if none is found.
-- Modified `router.get('/bookmarks')`: Added fallback to create a default user if none is found.
+[Functions]
+Không áp dụng.
 
-## Classes
-N/A
+[Classes]
+Không áp dụng.
 
-## Dependencies
-N/A
+[Dependencies]
+Không áp dụng.
 
-## Testing
-- Verify that clicking the flag icon in the UI triggers a `PUT` request to `/api/users/bookmark/:id`.
-- Confirm the backend returns a successful JSON response instead of a 404.
-- Verify `localStorage` or UI state updates correctly to reflect the bookmarked status.
+[Testing]
+Kiểm tra tính nhất quán giữa tài liệu và mã nguồn.
 
-## Implementation Order
-1. Analyze existing route and model constraints.
-2. Implement user existence checks and auto-creation.
-3. Test bookmark toggle functionality in the UI.
+[Implementation Order]
+1. Cập nhật `active_context.md`.
+2. Cập nhật `architecture.md`.
+3. Cập nhật `bookmark_system_guide.md`.
+4. Cập nhật `tech_stack.md`.
+5. Cập nhật `pages_reference.md`.

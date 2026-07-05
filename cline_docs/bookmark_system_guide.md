@@ -1,31 +1,28 @@
 # Hướng dẫn Hệ thống Bookmarking (StudyMed)
 
 ## 1. Tổng quan
-Hệ thống bookmark cho phép người dùng lưu lại các câu hỏi quan trọng để ôn tập. Hệ thống hoạt động theo mô hình MERN nhưng đã loại bỏ xác thực người dùng (authentication) để đơn giản hóa cho người dùng cá nhân.
+Hệ thống bookmark cho phép lưu lại các câu hỏi quan trọng để ôn tập. Dự án hiện tại đã loại bỏ xác thực người dùng (Open-access), mọi truy cập đều là ẩn danh.
 
 ## 2. Kiến trúc & Cơ chế hoạt động
-Hệ thống hiện tại sử dụng collection `Bookmark` riêng biệt trong MongoDB để lưu trữ các ID câu hỏi được gắn cờ. 
-- Không còn phụ thuộc vào `userId` hoặc `DEFAULT_USER_ID`.
-- Mọi người dùng truy cập hệ thống đều có chung một danh sách bookmark toàn cục.
+Hệ thống sử dụng collection `Bookmark` trong MongoDB để lưu trữ các ID câu hỏi được gắn cờ. 
+- **Không phụ thuộc người dùng**: Loại bỏ hoàn toàn `userId` và `DEFAULT_USER_ID`.
+- **Toàn cục**: Danh sách bookmark dùng chung cho mọi truy cập.
 
 ## 3. Luồng dữ liệu (Data Flow)
 
 ### Backend (`server/routes/api/bookmark.js`)
-- `GET /api/bookmarks`: Truy vấn toàn bộ collection `Bookmark`, đối chiếu với `Quiz` collection để trả về chi tiết câu hỏi (đã flatten cả câu hỏi nhóm).
-- `POST /api/bookmarks/:questionId`: Kiểm tra sự tồn tại của `questionId` trong collection. Nếu có thì xóa (Toggle Off), nếu chưa có thì thêm mới (Toggle On).
+- `GET /api/bookmarks`: Truy vấn collection `Bookmark`, đối chiếu với collection `Quiz` để trả về chi tiết câu hỏi (đã flatten cả câu hỏi nhóm).
+- `POST /api/bookmarks/:questionId`: Chức năng Toggle (Nếu chưa có thì thêm, nếu đã có thì xóa).
 
 ### Frontend (`client/src/`)
-- **`QuizTakingPage.js`**:
-    - Gọi API `POST /api/bookmarks/${questionId}` để toggle trạng thái.
-    - Duy trì state `Set` để cập nhật icon bookmark (🚩/🏳️) ngay lập tức trên UI.
-- **`BookmarkedQuestionsPage.js`**:
-    - Gọi API `GET /api/bookmarks` để nhận về danh sách câu hỏi đã được flatten.
-    - Hiển thị trực tiếp các câu hỏi này.
+- **Tương tác**: Gọi trực tiếp API `/api/bookmarks/:questionId` để toggle trạng thái.
+- **State Management**: Duy trì local state (thường là `Set`) để đồng bộ UI (icon 🚩/🏳️) ngay lập tức mà không cần reload trang.
+- **Hiển thị**: Trang `BookmarkedQuestionsPage.js` gọi API GET để render danh sách đã flatten.
 
 ## 4. Cấu trúc dữ liệu
-- Collection `Bookmark` lưu: `{ questionId: String, createdAt: Date }`.
-- API trả về một mảng object câu hỏi đã được bổ sung thông tin: `quizId`, `parentId` (nếu là câu hỏi nhóm), `isChild`.
+- Collection `Bookmark`: `{ questionId: String, createdAt: Date }`.
+- Response API: Mảng object câu hỏi đã được bổ sung thông tin `quizId`, `parentId` (nếu có), `isChild`.
 
-## 5. Xử lý lỗi
-- **Lỗi cập nhật đánh dấu**: Đã xử lý tại Backend bằng cách kiểm tra và phản hồi chuẩn JSON, đồng thời Frontend đã được cập nhật để xử lý response này.
-- **Trang bookmark trống**: Đã khắc phục bằng cách sửa logic đối chiếu câu hỏi nhóm/đơn tại Backend.
+## 5. Quy chuẩn Frontend
+- Mọi thành phần hiển thị câu hỏi (như `QuestionSingleDisplay`) cần tương tác đồng bộ với state bookmark thông qua hook hoặc prop truyền từ Container Page.
+- Đảm bảo xử lý `?.` (Optional Chaining) khi truy xuất dữ liệu câu hỏi trong trang bookmark để tránh crash runtime.

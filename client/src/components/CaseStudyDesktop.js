@@ -1,4 +1,4 @@
-// src/components/ResizableCaseStudy.js
+// src/components/CaseStudyDesktop.js
 import React, { useState, useRef, useCallback, useMemo } from 'react';
 import ExplanationBlock from './ExplanationBlock';
 
@@ -16,7 +16,7 @@ const PASTEL_VARIANTS = [
   "bg-pink-50/70 border-pink-100 hover:bg-pink-100"
 ];
 
-const ResizableCaseStudy = ({
+const CaseStudyDesktop = ({
   question,
   groupIndex,
   userAnswers,
@@ -213,16 +213,16 @@ const ResizableCaseStudy = ({
 
                     return (
                       <label key={option._id || optIdx} className={`flex items-start p-3.5 md:p-4 border rounded-xl cursor-pointer transition-all duration-200 relative ${containerClass}`}>
-                        <input
-                          type={childQ.questionType === 'multi-select' ? 'checkbox' : 'radio'}
-                          name={`child_question_${childQ._id}`}
-                          value={option._id}
-                          checked={isSelected}
-                          onChange={() => handleAnswerChange(childQ._id, option._id, childQ.questionType || 'single-choice')}
-                          className={`mt-1 h-4 w-4 md:h-5 md:w-5 shrink-0 transition-transform ${childQ.questionType === 'multi-select' ? 'form-checkbox text-blue-600 rounded' : 'form-radio text-blue-600'}`}
-                          disabled={showFeedback}
-                        />
-                        <span className={`ml-3 md:ml-4 ${textClass} ${optionSizeClass} leading-relaxed flex-1 break-words`}>
+  <input
+    type={childQ.questionType === 'multi-select' ? 'checkbox' : 'radio'}
+    name={`child_question_${childQ._id}`}
+    value={option._id}
+    checked={isSelected}
+    onChange={() => handleAnswerChange(childQ._id, option._id, childQ.questionType || 'single-choice')}
+    className="hidden"
+    disabled={showFeedback}
+  />
+  <span className={`${textClass} ${optionSizeClass} leading-relaxed flex-1 break-words`}>
                           <span className={`font-bold mr-2 ${indexClass}`}>
                             {String.fromCharCode(65 + optIdx)}.
                           </span>
@@ -274,4 +274,4 @@ const ResizableCaseStudy = ({
   );
 };
 
-export default ResizableCaseStudy;
+export default CaseStudyDesktop;

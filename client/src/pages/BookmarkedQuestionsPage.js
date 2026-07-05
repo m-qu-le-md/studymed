@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import QuestionSingleDisplay from '../components/QuestionSingleDisplay';
-import ResizableCaseStudy from '../components/ResizableCaseStudy';
+import CaseStudyDisplay from '../components/CaseStudyDisplay';
 import Button from '../components/Button';
 
 function BookmarkedQuestionsPage() {
@@ -53,17 +53,20 @@ function BookmarkedQuestionsPage() {
         <Button secondary onClick={() => navigate('/dashboard')}>Quay về Dashboard</Button>
       </div>
 
-      <div className="max-w-3xl mx-auto space-y-6">
+      <div className="mx-auto space-y-6 flex flex-col items-center w-full">
         {bookmarkedQuestions.map((item, idx) => {
-          // item đã chứa thông tin câu hỏi trực tiếp (do đã sửa backend trả về flatten)
           const q = item;
           if (!q) return null;
           const isRevealed = revealedQuestions?.has(q._id);
-          // Tạo set chứa ID của câu hỏi này để hiển thị flag đúng
           const currentBookmarkedSet = new Set([q._id]);
 
           return (
-            <div key={q._id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <div 
+              key={q._id} 
+              className={`bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all duration-300 w-full ${
+                isRevealed ? 'max-w-6xl' : 'max-w-3xl'
+              }`}
+            >
               <div className="flex justify-between items-start mb-4">
                 <span className="text-xs font-bold text-slate-400 uppercase">Câu hỏi đã bookmark</span>
                 <div className="flex gap-3">
@@ -83,12 +86,11 @@ function BookmarkedQuestionsPage() {
               </div>
 
               {q.type === 'group' ? (
-                <ResizableCaseStudy
+                <CaseStudyDisplay
                   question={q}
                   userAnswers={{}}
                   handleAnswerChange={() => {}}
                   showFeedback={isRevealed}
-                  mode="review"
                 />
               ) : (
                 <QuestionSingleDisplay
@@ -116,7 +118,9 @@ function BookmarkedQuestionsPage() {
           );
         })}
         {bookmarkedQuestions.length === 0 && (
-          <div className="text-center py-20 text-slate-500">Chưa có câu hỏi nào được gắn cờ.</div>
+          <div className="text-center py-20 text-slate-500 max-w-3xl w-full">
+            Chưa có câu hỏi nào được gắn cờ.
+          </div>
         )}
       </div>
     </div>

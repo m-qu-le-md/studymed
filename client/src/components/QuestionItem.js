@@ -107,16 +107,16 @@ const QuestionItem = ({
 
           return (
             <label key={option._id} className={`flex items-start p-4 border rounded-xl cursor-pointer transition-all duration-200 ${containerClass}`}>
-              <input
-                type={question.questionType === 'multi-select' ? 'checkbox' : 'radio'}
-                name={`question-${questionId}`}
-                value={option._id}
-                checked={isSelected}
-                onChange={() => onAnswerChange(questionId, option._id, question.questionType)}
-                className={`mt-1 h-4 w-4 shrink-0 ${question.questionType === 'multi-select' ? 'form-checkbox rounded text-blue-600' : 'form-radio text-blue-600'}`}
-                disabled={showFeedback}
-              />
-              <span className={`ml-3 ${textClass} ${optionSizeClass} flex-1 leading-relaxed transition-all duration-300 break-words`}>
+  <input
+    type={question.questionType === 'multi-select' ? 'checkbox' : 'radio'}
+    name={`question-${questionId}`}
+    value={option._id}
+    checked={isSelected}
+    onChange={() => onAnswerChange(questionId, option._id, question.questionType)}
+    className="hidden"
+    disabled={showFeedback}
+  />
+  <span className={`${textClass} ${optionSizeClass} flex-1 leading-relaxed transition-all duration-300 break-words`}>
                 <span className={`font-bold mr-2 ${indexClass}`}>{String.fromCharCode(65 + idx)}.</span>
                 {option.text}
               </span>
