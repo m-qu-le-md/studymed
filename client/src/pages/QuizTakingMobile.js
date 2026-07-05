@@ -29,7 +29,7 @@ const QuizTakingMobile = ({
   // Tạo bộ màu thay đổi mỗi khi người dùng vuốt sang câu hỏi đơn mới
   const randomColors = useMemo(() => {
     return [...PASTEL_VARIANTS].sort(() => 0.5 - Math.random());
-  }, [currentQuestion?._id]);
+  }, [currentQuestionIndex]);
 
   useEffect(() => {
     setIsSheetOpen(false);
